@@ -1,0 +1,2 @@
+
+int pedirOperandos(char texto[]);

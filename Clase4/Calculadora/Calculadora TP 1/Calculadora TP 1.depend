@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1553612960 source:c:\users\alumno\desktop\laboratorio-programacion-i\clase4\calculadora\calculadora tp 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"pedirOperandos.h"
+	"menuOpciones.h"
+
+1553612441 c:\users\alumno\desktop\laboratorio-programacion-i\clase4\calculadora\calculadora tp 1\pediroperandos.h
+
+1553612533 source:c:\users\alumno\desktop\laboratorio-programacion-i\clase4\calculadora\calculadora tp 1\pediroperandos.c
+
+1553613131 c:\users\alumno\desktop\laboratorio-programacion-i\clase4\calculadora\calculadora tp 1\menuopciones.h
+
+1553613221 source:c:\users\alumno\desktop\laboratorio-programacion-i\clase4\calculadora\calculadora tp 1\menuopciones.c
+

@@ -1,5 +1,5 @@
 #include "Recursividad.h"
-int factorial(int numero)
+int factorial(int numero) //parametro formal, no cambia
 {
     int resultado;
 

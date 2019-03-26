@@ -1,0 +1,2 @@
+
+void menuOpciones(char menuOpciones[]);
