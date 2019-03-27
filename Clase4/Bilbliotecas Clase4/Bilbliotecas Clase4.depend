@@ -17,3 +17,21 @@
 1553609055 source:c:\users\alumno\desktop\laboratorio-programacion-i\clase4\bilbliotecas clase4\recursividad.c
 	"Recursividad.h"
 
+1553709282 source:c:\users\jonathan roberts\desktop\laboratorio-programacion-i\clase4\bilbliotecas clase4\ingresos.c
+	"Ingresos.h"
+	<stdio.h>
+	<stdlib.h>
+
+1553709282 c:\users\jonathan roberts\desktop\laboratorio-programacion-i\clase4\bilbliotecas clase4\ingresos.h
+
+1553709282 source:c:\users\jonathan roberts\desktop\laboratorio-programacion-i\clase4\bilbliotecas clase4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Ingresos.h"
+	"Recursividad.h"
+
+1553709282 c:\users\jonathan roberts\desktop\laboratorio-programacion-i\clase4\bilbliotecas clase4\recursividad.h
+
+1553709282 source:c:\users\jonathan roberts\desktop\laboratorio-programacion-i\clase4\bilbliotecas clase4\recursividad.c
+	"Recursividad.h"
+

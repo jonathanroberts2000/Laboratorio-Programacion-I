@@ -28,7 +28,7 @@ int main()
         {
             case 1:
                 printf("Estoy dando de alta\n");
-            break;
+                break;
             case 2:
                 printf("Estoy dando de baja\n");
                 break;
