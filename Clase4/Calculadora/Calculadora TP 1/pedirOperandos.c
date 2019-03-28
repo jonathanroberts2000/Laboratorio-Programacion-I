@@ -9,3 +9,11 @@ int pedirOperandos(char texto[])
     scanf("%d" , &operandos);
     return operandos;
 }
+int mostrarResultados(char textoMensaje[] , int resultado)
+{
+    int resultados;
+
+    printf("%s" , textoMensaje);
+    printf("%d \n" , resultado);
+    return resultados;
+}

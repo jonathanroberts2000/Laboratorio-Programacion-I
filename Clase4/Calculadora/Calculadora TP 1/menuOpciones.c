@@ -51,28 +51,24 @@
 int sumaOperandos(int operando1, int operando2)
 {
     int suma;
-
     suma = operando1 + operando2;
     return suma;
 }
 int restaOperandos(int operando1 , int operando2)
 {
     int resta;
-
     resta = operando1 - operando2;
     return resta;
 }
 int divisionOperandos(int operando1 , int operando2)
 {
     int division;
-
     division = operando1 / operando2;
     return division;
 }
 int multiplicacionOperandos(int operando1, int operando2)
 {
     int multiplicacion;
-
     multiplicacion = operando1 * operando2;
     return multiplicacion;
 }
