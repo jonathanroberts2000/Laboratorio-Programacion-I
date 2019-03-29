@@ -9,14 +9,30 @@ int main()
     int operando2;
     int suma;
     int resta;
-    int division;
+    float division;
     int multiplicacion;
     int factorial1;
     int factorial2;
+    int flagX = 0;
+    int flagY = 0;
+    int flagCero = 0;
     char seguir = 's';
     do{
-        printf("1.Ingresar 1er operando (A=x) \n ");
-        printf("2.Ingresar 2do operando (B=y) \n ");
+        if(flagX == 0)
+        {
+             printf("1.Ingresar 1er operando (A=x) \n ");
+        }else
+        {
+            printf("1.Ingresar 1er operando (A=%d) \n " , operando1);
+        }
+        if(flagY == 0)
+        {
+            printf("2.Ingresar 2do operando (B=y) \n ");
+        }else
+        {
+            printf("2.Ingresar 2do operando (B=%d) \n " , operando2);
+        }
+
         printf("3.Calcular todas las operaciones \n ");
         printf("4.Informar resultados \n");
         printf("5.Salir \n ");
@@ -27,9 +43,15 @@ int main()
         {
             case 1:
                 operando1 = pedirOperandos("1.Ingresar 1er operando: ");
+                flagX = 1;
                 break;
             case 2:
                 operando2 = pedirOperandos("2.Ingresar 2do operando: ");
+                if(operando2 == 0)
+                {
+                    flagCero = 1;
+                }
+                flagY = 1;
                 break;
             case 3:
                 printf("Calculando las operaciones solicitadas... \n ");
@@ -41,21 +63,20 @@ int main()
                 factorial2 = factorialOperandos(operando2);
                 break;
             case 4:
-                //printf("El resultado de A+B es: %d \n" , suma);
-                mostrarResultados("El resultado de A+B es: \n" , suma);
-                //printf("El resultado de A-B es: %d \n" , resta);
-                mostrarResultados("El resultado de A-B es: \n" , resta);
-                //printf("El resultado de A/B es: %d \n" , division);
-                mostrarResultados("El resultado de A/B es: \n" , division);
-                //printf("El resultado de A*B es: %d \n" , multiplicacion);
-                mostrarResultados("El resultado de A*B es: \n" , multiplicacion);
-                //printf("El factorial de A es: %d \n" , factorial1);
-                mostrarResultados("El factorial de A es: \n" , factorial1);
-                //printf("El factorial de B es: %d \n" , factorial2);
-                mostrarResultados("El factorial de B es: \n" , factorial2);
+                printf("El resultado de A+B es: %d \n" , suma);
+                printf("El resultado de A-B es: %d \n" , resta);
+                if(flagCero == 1)
+                {
+                    printf("No es posible dividir por cero \n");
+                }else
+                {
+                    printf("El resultado de A/B es: %f \n" , division);
+                }
+                printf("El resultado de A*B es: %d \n" , multiplicacion);
+                printf("El factorial de A es: %d \n" , factorial1);
+                printf("El factorial de B es: %d \n" , factorial2);
                 break;
             case 5:
-                printf("Entro case 5, salir del programa. \n ");
                 return 0;
                 break;
             default:

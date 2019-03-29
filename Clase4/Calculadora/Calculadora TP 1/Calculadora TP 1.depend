@@ -31,3 +31,21 @@
 
 1553725657 c:\users\jonathan roberts\desktop\laboratorio-programacion-i\clase4\calculadora\calculadora tp 1\menuopciones.h
 
+1553890570 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase4\calculadora\calculadora tp 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"pedirOperandos.h"
+	"menuOpciones.h"
+
+1553797454 c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase4\calculadora\calculadora tp 1\pediroperandos.h
+
+1553725657 c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase4\calculadora\calculadora tp 1\menuopciones.h
+
+1553797118 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase4\calculadora\calculadora tp 1\menuopciones.c
+	<stdio.h>
+	<stdlib.h>
+
+1553880296 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase4\calculadora\calculadora tp 1\pediroperandos.c
+	<stdio.h>
+	<stdlib.h>
+
