@@ -9,7 +9,7 @@ int main()
     int operando2;
     int suma;
     int resta;
-    float division;
+    int division;
     int multiplicacion;
     int factorial1;
     int factorial2;
@@ -47,17 +47,20 @@ int main()
                 break;
             case 2:
                 operando2 = pedirOperandos("2.Ingresar 2do operando: ");
-                if(operando2 == 0)
-                {
-                    flagCero = 1;
-                }
+                //aca va el flag = 1 con su condicion
                 flagY = 1;
                 break;
             case 3:
                 printf("Calculando las operaciones solicitadas... \n");
                 suma = sumaOperandos(operando1 , operando2);
                 resta = restaOperandos(operando1 , operando2);
-                division = divisionOperandos(operando1 , operando2);
+                if(operando2 == 0)
+                {
+                    flagCero = 1;
+                }else
+                {
+                    division = divisionOperandos(operando1 , operando2);
+                }
                 multiplicacion = multiplicacionOperandos(operando1 , operando2);
                 factorial1 = factorialOperandos(operando1);
                 factorial2 = factorialOperandos(operando2);
@@ -70,7 +73,7 @@ int main()
                     printf("No es posible dividir por cero \n");
                 }else
                 {
-                    printf("El resultado de A/B es: %f \n" , division);
+                    printf("El resultado de A/B es: %d \n" , division);
                 }
                 printf("El resultado de A*B es: %d \n" , multiplicacion);
                 printf("El factorial de A es: %d \n" , factorial1);
@@ -85,6 +88,8 @@ int main()
         }
         system("pause");
         system("cls");
+        fflush(stdin);
     }while(seguir == 's');
     return 0;
 }
+
