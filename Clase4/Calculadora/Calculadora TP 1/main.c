@@ -20,22 +20,22 @@ int main()
     do{
         if(flagX == 0)
         {
-             printf("1.Ingresar 1er operando (A=x) \n ");
+             printf("1.Ingresar 1er operando (A=x)\n");
         }else
         {
-            printf("1.Ingresar 1er operando (A=%d) \n " , operando1);
+            printf("1.Ingresar 1er operando (A=%d)\n" , operando1);
         }
         if(flagY == 0)
         {
-            printf("2.Ingresar 2do operando (B=y) \n ");
+            printf("2.Ingresar 2do operando (B=y)\n");
         }else
         {
-            printf("2.Ingresar 2do operando (B=%d) \n " , operando2);
+            printf("2.Ingresar 2do operando (B=%d)\n" , operando2);
         }
 
-        printf("3.Calcular todas las operaciones \n ");
-        printf("4.Informar resultados \n");
-        printf("5.Salir \n ");
+        printf("3.Calcular todas las operaciones\n");
+        printf("4.Informar resultados\n");
+        printf("5.Salir\n");
 
         opcion = pedirOperandos("Ingrese una opcion por favor: ");
 
@@ -54,7 +54,7 @@ int main()
                 flagY = 1;
                 break;
             case 3:
-                printf("Calculando las operaciones solicitadas... \n ");
+                printf("Calculando las operaciones solicitadas... \n");
                 suma = sumaOperandos(operando1 , operando2);
                 resta = restaOperandos(operando1 , operando2);
                 division = divisionOperandos(operando1 , operando2);
@@ -80,7 +80,7 @@ int main()
                 return 0;
                 break;
             default:
-                printf("Error! No ha ingresado una opcion correcta. \n ");
+                printf("Error! No ha ingresado una opcion correcta. \n");
                 break;
         }
         system("pause");
