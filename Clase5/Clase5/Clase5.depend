@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1554130912 source:c:\users\alumno\desktop\laboratorio_programacion_i-master\clase5\clase5\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionVector.h"
+
+1554131107 source:c:\users\alumno\desktop\laboratorio_programacion_i-master\clase5\clase5\funcionvector.c
+	"funcionVector.h"
+
+1554130019 c:\users\alumno\desktop\laboratorio_programacion_i-master\clase5\clase5\funcionvector.h
+
