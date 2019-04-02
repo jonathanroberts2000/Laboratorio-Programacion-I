@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 int pedirOpciones(char texto[])
 {
     int opcion;
@@ -11,7 +13,7 @@ float pedirOperandos(char texto[])
     float operandos;
 
     printf("%s" , texto);
-    scanf("%.2f" , &operandos);
+    scanf("%f" , &operandos);
     return operandos;
 }
 float sumaOperandos(float operando1, float operando2)
@@ -43,10 +45,10 @@ int factorialOperandos(int numero)
     int factorial;
     if(numero == 0 || numero == 1)
     {
-        factorial = 1;
+    factorial = 1;
     }else
     {
-        factorial = numero * factorialOperandos(numero -1);
+    factorial = numero * factorialOperandos(numero -1);
     }
     return factorial;
 }
