@@ -4,14 +4,15 @@
 int main()
 {
     //int ler;
-    char palabra[10] = "philipa";
-    char palabra2[10] = "lampara";
+    char palabra[100] = "philipa";
+    char palabra2[100] = " lampara";
     //funcion para pasar todo a mayuscula
     //strupr(palabra);
     //printf("%s" , palabra);
     //para concatenar usamos...
-    strcat(palabra, palabra2);
-    printf("%s" , palabra2);
+    //strcat(palabra, palabra2);
+    strcat(palabra, " ");
+    printf("%s1" , palabra);
     //int com;
     /*printf("Ingrese nombre y apellido: ");
     //scanf("%[^\n]" , palabra); //funciona en linux y windows
