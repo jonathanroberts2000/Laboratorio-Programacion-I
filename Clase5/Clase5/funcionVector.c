@@ -45,3 +45,16 @@ int buscarNumero(int numerosEnteros[], int tam, int numero)
     }
     return posicion;
 }
+void ordenarVector(int numeroEnteros[], int tam){
+    int i, j, aux;
+    for(i=0;i<tam -1;i++){
+
+        for(j=i+1;j<tam;j++){
+            if(numeroEnteros[i] > numeroEnteros[j]){//criterio
+                aux = numeroEnteros[i];
+                numeroEnteros[i] = numeroEnteros[j];
+                numeroEnteros[j] = aux;
+            }
+        }
+    }
+}
