@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "string.h"
+#include <string.h>
 
-void vector(char nombre[], int tam);
-
+void vector(char nombre[]);
 int main()
 {
     char nombre[75];
@@ -22,13 +21,13 @@ int main()
     printf("%s" , apellido_nombre);
     return 0;
 }
-void vector(char nombre[], int tam)
+void vector(char nombre[])
 {
-    int i;
+    /*int i;
     for(i=0;i<tam;i++)
     {
 
-    }
+    }*/
 }
 
 
