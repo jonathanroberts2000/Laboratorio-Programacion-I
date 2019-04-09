@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 #define T 3
 
 void pedirCadena(char[] , char[] , int);
@@ -7,7 +9,6 @@ void pedirCadena(char[] , char[] , int);
 int main()
 {
     int legajos[T];
-    float sueldos[T];
     float sueldoNeto[T];
     float sueldoBruto[T];
     char sexos[T];
@@ -21,8 +22,8 @@ int main()
     {
         printf("Ingrese legajo: ");
         scanf("%d" , &legajos[i]);
-        printf("Ingrese sueldo: ");
-        scanf("%f" , &sueldos[i]);
+        printf("Ingrese sueldo bruto: ");
+        scanf("%f" , &sueldoBruto[i]);
         printf("Ingrese sexo: ");
         fflush(stdin);
         scanf("%c" , &sexos[i]);
@@ -41,22 +42,24 @@ int main()
                 legajos[i] = legajos[j];
                 legajos[j] = auxEnteros;
 
-                auxFlotantes = sueldos[i];
-                sueldos[i] = sueldos[j];
-                sueldos[j] = auxFlotantes;
+                auxFlotantes = sueldoNeto[i];
+                sueldoNeto[i] = sueldoNeto[j];
+                sueldoNeto[j] = auxFlotantes;
 
                 auxCaracter = sexos[i];
                 sexos[i] = sexos[j];
                 sexos[j] = auxCaracter;
 
-                //auxCadena = nombres[]
-            }
+                strcpy(auxCadena , nombres[i]);
+                strcpy(nombres[i] , nombres[j]);
+                strcpy(nombres[j] , auxCadena);
+            }//me permite ordenar en el metodo de burbujeo todos los datos a cada elemento de la matriz
         }
     }
 
     for(i=0;i<T;i++)
     {
-        printf("%d--%s--%f--%c\n" , legajos[i] , nombres[i] , sueldos[i] , sexos[i]);
+        printf("%d--%s--%f--%c\n" , legajos[i] , nombres[i] , sueldoNeto[i] , sexos[i]);
     }
     return 0;
 }

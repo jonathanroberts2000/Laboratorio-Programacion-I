@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1554813694 source:c:\users\alumno\desktop\cadenas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1554846833 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase7\clase 7 german\cadenas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+

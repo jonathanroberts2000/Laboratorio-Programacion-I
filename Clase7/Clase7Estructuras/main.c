@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 struct eEmpleado /*typedef struct*/
 {
     int legajo;
@@ -32,8 +32,7 @@ int main()
     printf("%d--%s--%c--%f--%f--\n" , unEmpleado.legajo , unEmpleado.nombre , unEmpleado.sexo , unEmpleado.sueldoBruto , unEmpleado.sueldoNeto);
     printf("%d--%s--%c--%f--%f--\n" , otroEmpleado.legajo , otroEmpleado.nombre , otroEmpleado.sexo , otroEmpleado.sueldoBruto , otroEmpleado.sueldoNeto);
 
-    //puts(unEmpleado.nombre);
-
+    puts(unEmpleado.nombre);
 
     return 0;
 }
