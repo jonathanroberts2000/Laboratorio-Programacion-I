@@ -12,10 +12,13 @@ int main()
     char apellido[20];
     char apellidoNombre[41] = "";
     int i = 0;
-    //char auxCadena[100];
+    //char auxCadena0[100];
+    //char auxCadena1[100];
 
     pedirCadena("nombre: " , nombre , 20);
+    //strcpy(auxCadena0, apellidoNombre);
     pedirCadena("apellido: " , apellido, 20);
+    //strcpy(auxCadena1, apellidoNombre);
 
     strcat(apellidoNombre , apellido);
     strcat(apellidoNombre , ", ");
@@ -33,6 +36,8 @@ int main()
         }
         i++;
     }
+    //strcpy(auxCadena, apellidoNombre);
+    /*no va*/
     puts(apellidoNombre);
     return 0;
 }
@@ -52,4 +57,4 @@ void validarCadena(char mensajeError[] , char cadena [] , int tam)
         scanf("%[^\n]" , cadena);
     }
 }
-//ERROR CUANDO SOBRECARGO NOMBRE Y APELLIDO;
+//ERROR CUANDO SOBRECARGO NOMBRE Ó APELLIDO;
