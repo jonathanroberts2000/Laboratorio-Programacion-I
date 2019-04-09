@@ -52,3 +52,4 @@ void validarCadena(char mensajeError[] , char cadena [] , int tam)
         scanf("%[^\n]" , cadena);
     }
 }
+//ERROR CUANDO SOBRECARGO NOMBRE Y APELLIDO;
