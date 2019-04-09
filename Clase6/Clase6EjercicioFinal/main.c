@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
+#include <ctype.h> //isspace()0 si no es espacio
 
 void pedirCadena(char[] , char[] , int);
 void validarCadena(char[] , char[] , int);
