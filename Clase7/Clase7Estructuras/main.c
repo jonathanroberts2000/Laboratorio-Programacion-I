@@ -14,15 +14,15 @@ int main()
 {
     struct eEmpleado unEmpleado; //no pondria struct de la forma del comentario;
     struct eEmpleado otroEmpleado;
-    printf("Ingrese legajo");
+    printf("Ingrese legajo: ");
     scanf("%d" , &unEmpleado.legajo);
-    printf("Ingrese nombre");
+    printf("Ingrese nombre: ");
     fflush(stdin);
     gets(unEmpleado.nombre);
-    printf("Ingrese sexo");
+    printf("Ingrese sexo(F o M): ");
     fflush(stdin);
     scanf("%c" , &unEmpleado.sexo);
-    printf("Ingrese sueldo bruto");
+    printf("Ingrese sueldo bruto: ");
     scanf("%f" , &unEmpleado.sueldoBruto);
     unEmpleado.sueldoBruto = unEmpleado.sueldoBruto*0.85;
 
@@ -32,7 +32,7 @@ int main()
     printf("%d--%s--%c--%f--%f--\n" , unEmpleado.legajo , unEmpleado.nombre , unEmpleado.sexo , unEmpleado.sueldoBruto , unEmpleado.sueldoNeto);
     printf("%d--%s--%c--%f--%f--\n" , otroEmpleado.legajo , otroEmpleado.nombre , otroEmpleado.sexo , otroEmpleado.sueldoBruto , otroEmpleado.sueldoNeto);
 
-    puts(unEmpleado.nombre);
+    //puts(unEmpleado.nombre);
 
     return 0;
 }
