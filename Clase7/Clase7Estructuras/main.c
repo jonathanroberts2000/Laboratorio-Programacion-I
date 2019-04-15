@@ -9,6 +9,9 @@ struct eEmpleado /*typedef struct*/
     float sueldoBruto;
     float sueldoNeto;
 } /*eEmpleado*/;
+//funciones se declaran debajo de estructuras;
+
+void mostrarEmpleado(eEmpleado);
 
 int main()
 {
@@ -29,10 +32,16 @@ int main()
     otroEmpleado = unEmpleado; //se puede hacer sin importar que este algo adentro
     unEmpleado.legajo = 7000;//mirar esto y sus efectos al ejecutar
 
-    printf("%d--%s--%c--%f--%f--\n" , unEmpleado.legajo , unEmpleado.nombre , unEmpleado.sexo , unEmpleado.sueldoBruto , unEmpleado.sueldoNeto);
-    printf("%d--%s--%c--%f--%f--\n" , otroEmpleado.legajo , otroEmpleado.nombre , otroEmpleado.sexo , otroEmpleado.sueldoBruto , otroEmpleado.sueldoNeto);
-
+    mostrarEmpleado(unEmpleado);
+    mostrarEmpleado(otroEmpleado);
     //puts(unEmpleado.nombre);
 
     return 0;
+}
+
+void mostrarEmpleado(eEmpleado miEmpleado)
+{
+    printf("%d--%s--%c--%f--%f--\n" , miEmpleado.legajo , miEmpleado.nombre , miEmpleado.sexo , miEmpleado.sueldoBruto , miEmpleado.sueldoNeto);
+    //printf("%d--%s--%c--%f--%f--\n" , otroEmpleado.legajo , otroEmpleado.nombre , otroEmpleado.sexo , otroEmpleado.sueldoBruto , otroEmpleado.sueldoNeto);
+
 }
