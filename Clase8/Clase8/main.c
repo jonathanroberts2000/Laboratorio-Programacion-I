@@ -5,34 +5,32 @@
 #define LIBRE 0
 typedef struct{
     int legajo;
-    char nombre[20];
-    char sexo;
+    int estado;
     float sueldoBruto;
     float sueldoNeto;
-    int estado;
+    char nombre[20];
+    char sexo;
 }eEmpleado;
 
+void inicializarEmpleados(eEmpleado[], int);
 void cargarEmpleado(eEmpleado[], int);
 void mostrarEmpleado(eEmpleado);
 void mostrarListaEmpleado(eEmpleado[], int);
-void inicializarEmpleados(eEmpleado[], int);
-int buscarLibre(eEmpleado[], int);
 int pedirOpcion(char mensaje[]);
+int buscarLibre(eEmpleado[], int);
 int buscarUno(eEmpleado[], int, int);
 int borrarUno(eEmpleado[], int, int);
 
-
 int main()
 {
-    //eEmpleado unEmpleado;
     eEmpleado lista[T];
     char seguir = 's';
     int opcion;
 
     do{
-        printf("1. inicializar empleado \n");
-        printf("2. cargar empledos \n");
-        printf("3. mostrar lista empleados \n");
+        printf("1. Inicializar empleado \n");
+        printf("2. Cargar empledos \n");
+        printf("3. Mostrar lista de empleados \n");
         printf("4. Salir \n");
 
         opcion = pedirOpcion("Ingrese una opcion por favor: ");
@@ -48,7 +46,8 @@ int main()
                 mostrarListaEmpleado(lista, T);
                 break;
             case 4:
-                return 0;
+                //return 0;
+                seguir = 'n';
                 break;
             default:
                 opcion = pedirOpcion("Error! Ingrese una opcion correcta: ");
@@ -89,7 +88,8 @@ void cargarEmpleado(eEmpleado miEmpleado[], int tam)
         scanf("%c" , &miEmpleado[i].sexo);
         printf("Ingrese sueldo bruto: ");
         scanf("%f" , &miEmpleado[i].sueldoBruto);
-        miEmpleado[i].sueldoBruto = miEmpleado[i].sueldoBruto*0.85;
+        miEmpleado[i].sueldoNeto = miEmpleado[i].sueldoBruto*0.85;
+        miEmpleado[i].estado = OCUPADO;
     }
 }
 int pedirOpcion(char mensaje[])
@@ -117,17 +117,17 @@ void inicializarEmpleados(eEmpleado miEmpleado[] , int tam)
     int i;
     for(i=0;i<tam;i++)
     {
-        miEmpleado[i].estado = -1;
+        miEmpleado[i].estado = LIBRE;
     }
 }
-int buscarUno(eEmpleado miEmpleado[], int indice , int tam)
+int buscarUno(eEmpleado miEmpleado[], int legajo , int tam)
 {
     int posicion;
     int i;
 
     for(i=0;i<tam;i++)
     {
-        if(miEmpleado[i].estado == LIBRE)
+        if(miEmpleado[i].legajo == legajo)
         {
             posicion = i;
         }
@@ -135,10 +135,16 @@ int buscarUno(eEmpleado miEmpleado[], int indice , int tam)
     return posicion;
 
 }
-int borrarUno(eEmpleado miEmpleado[], int indice, int tam)
+int borrarUno(eEmpleado miEmpleado[], int legajo, int tam)
 {
     int posicion;
+    posicion = buscarUno(miEmpleado, legajo, tam);
 
-
-    return posicion;
+    if(posicion == -1)
+    {
+        return 0;
+    }else{
+        miEmpleado[posicion].estado = LIBRE;
+        return 1;
+    }
 }
