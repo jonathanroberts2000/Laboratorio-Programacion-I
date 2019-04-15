@@ -54,7 +54,6 @@ int main()
                 opcion = pedirOpcion("Error! Ingrese una opcion correcta: ");
                 break;
         }
-
         system("pause");
         system("cls");
         fflush(stdin);
