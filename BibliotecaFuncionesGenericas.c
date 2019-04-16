@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 int pedirEntero(char mensaje[]);
 float pedirFlotante(char mensaje[]);
 char pedirCaracter(char mensaje[]);
@@ -25,3 +27,4 @@ char pedirCaracter(char mensaje[])
     scanf("%c" , &caracter);
     return caracter;
 }
+
