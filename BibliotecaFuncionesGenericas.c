@@ -3,6 +3,7 @@
 int pedirEntero(char mensaje[]);
 float pedirFlotante(char mensaje[]);
 char pedirCaracter(char mensaje[]);
+void recorrerVector(int vector_1[], int tam);
 
 int pedirEntero(char mensaje[])
 {
@@ -28,3 +29,11 @@ char pedirCaracter(char mensaje[])
     return caracter;
 }
 
+void recorrerVector(int vector_1[], int tam)
+{
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        printf("%d" , vector_1[i]);
+    }
+}
