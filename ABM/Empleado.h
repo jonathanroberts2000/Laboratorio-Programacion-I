@@ -21,7 +21,7 @@ int buscarLibre(eEmpleado[], int);
 void inicializarEmpleados(eEmpleado[], int);
 void hardcodearDatosEmpleados(eEmpleado[], int);
 
-int buscarLegajo(eEmpleado[], int tam, int legajo);
+int buscarLegajo(eEmpleado[], int tam, int valor);
 void modificarDatos(eEmpleado[], int tam);
-
+void borrarDatos(eEmpleado[], int tam, int valor);
 int pedirOpcion(char mensaje[]);

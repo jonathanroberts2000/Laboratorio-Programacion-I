@@ -5,7 +5,7 @@ void cargarEmpleado(eEmpleado lista[], int tam)
 {
     int i;
     i = buscarLibre(lista, tam);
-    if(i!=-1)
+    if(i != -1)
     {
         printf("Ingrese legajo: ");
         scanf("%d", &lista[i].legajo);
@@ -96,9 +96,8 @@ int buscarLegajo(eEmpleado lista[], int tam, int valor)
         if(lista[i].legajo == valor)
         {
             indice = i;
-        }/*else{
-            printf("no hay legajo");
-        }arreglar con flag o en el menu si es -1 decir que no existe legajo(2 opciones)*/
+            break;
+        }
     }
     return indice;
 }
@@ -108,7 +107,11 @@ void modificarDatos(eEmpleado lista[], int tam)
     int legajo = pedirOpcion("Ingrese el legajo a buscar: ");
     int index = buscarLegajo(lista, tam, legajo);
     int opcion;
-    do{
+    if(index == -1)
+    {
+        printf("No se encontro el valor solicitado! \n");
+    }else{
+        do{
         opcion = pedirOpcion("1.Modificar nombre\n2.Modificar sexo\n3.Modificar sueldo bruto\n4.Salir del menu\nElija una opcion: ");
     switch(opcion)
     {
@@ -135,6 +138,7 @@ void modificarDatos(eEmpleado lista[], int tam)
             break;
         }
     }while(opcion !=4);
+    }
 }
 
 int pedirOpcion(char mensaje[])
@@ -145,3 +149,21 @@ int pedirOpcion(char mensaje[])
     return opcion;
 }
 
+void borrarDatos(eEmpleado lista[], int tam, int valor)
+{
+    int legajo = pedirOpcion("Ingrese el legajo del empleado que desea borrar: ");
+    int i;
+    int flag = 0;
+    for(i=0;i<tam;i++)
+    {
+        if(lista[i].legajo == legajo)
+        {
+            lista[i].estado = LIBRE;
+            flag = 1;
+        }
+    }
+   if(flag == 0)
+   {
+       printf("El legajo ingresado no esta registrado en el sistema! \n");
+   }
+}
