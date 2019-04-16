@@ -10,3 +10,14 @@
 	"Empleado.h"
 	<string.h>
 
+1555421472 source:c:\users\alumno\desktop\laboratorio_programacion_i\abm\main.c
+	<stdlib.h>
+	"Empleado.h"
+
+1555422488 c:\users\alumno\desktop\laboratorio_programacion_i\abm\empleado.h
+	<stdio.h>
+
+1555426766 source:c:\users\alumno\desktop\laboratorio_programacion_i\abm\empleado.c
+	"Empleado.h"
+	<string.h>
+

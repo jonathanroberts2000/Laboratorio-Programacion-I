@@ -89,14 +89,16 @@ void hardcodearDatosEmpleados(eEmpleado lista[], int tam)
 }
 int buscarLegajo(eEmpleado lista[], int tam, int valor)
 {
-   int indice = -1;
+    int indice = -1;
     int i;
     for(i=0;i<tam;i++)
     {
-        if(lista[i].legajo == valor )
+        if(lista[i].legajo == valor)
         {
             indice = i;
-        }
+        }/*else{
+            printf("no hay legajo");
+        }arreglar con flag o en el menu si es -1 decir que no existe legajo(2 opciones)*/
     }
     return indice;
 }
