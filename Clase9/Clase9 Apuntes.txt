@@ -1,0 +1,1 @@
+Añadir 2 estructuras mas al proyecto ABM, debe contar con la id de cada sector de la empresa y la descripcion. Enlazar ambas estructuras.

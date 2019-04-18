@@ -166,38 +166,3 @@ void borrarDatos(eEmpleado lista[], int tam, int valor)
        printf("El legajo ingresado no esta registrado en el sistema! \n");
    }
 }
-
-void hardcodearDatosSectores(eSectores listaSectores[], int tam)
-{
-    int i;
-    int idSector[] = {1,2,3,4,5,6};
-    char descSector[][200] = {"Finanzas","Marketing","Produccion","Desarrollo","Contabilidad","RR.HH."};
-
-    for(i=0;i<tam;i++)
-    {
-        listaSectores[i].idSector = idSector[i];
-        strcpy(listaSectores[i].descSector, descSector[i]);
-        listaSectores[i].estado = OCUPADO;
-    }
-}
-
-void mostrarListaSectores(eSectores listaSectores[], int tam)
-{
-    int i;
-
-    for(i=0;i<tam;i++)
-    {
-        if(listaSectores[i].estado != LIBRE)
-        {
-            mostrarSectorEmpleado(listaSectores[i]);
-        }
-    }
-}
-
-void mostrarSectorEmpleado(eSectores unEmpleado)
-{
-    printf("%d-%s\n", unEmpleado.idSector, unEmpleado.descSector);
-}
-
-
-

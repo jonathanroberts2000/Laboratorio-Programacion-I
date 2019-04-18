@@ -12,13 +12,6 @@ typedef struct
     int estado;
 } eEmpleado;
 
-typedef struct
-{
-    int idSector;
-    char descSector[50];
-    int estado;
-} eSectores;
-
 void mostrarEmpleado(eEmpleado);
 void cargarEmpleado(eEmpleado[], int);
 void mostrarListaEmpleados(eEmpleado[], int);
@@ -27,11 +20,7 @@ int buscarLibre(eEmpleado[], int);
 void inicializarEmpleados(eEmpleado[], int);
 void hardcodearDatosEmpleados(eEmpleado[], int);
 
-int buscarLegajo(eEmpleado[], int, int);
-void modificarDatos(eEmpleado[], int);
-void borrarDatos(eEmpleado[], int, int);
-int pedirOpcion(char[]);
-
-void hardcodearDatosSectores(eSectores[], int);
-void mostrarListaSectores(eSectores[], int);
-void mostrarSectorEmpleado(eSectores);
+int buscarLegajo(eEmpleado[], int tam, int valor);
+void modificarDatos(eEmpleado[], int tam);
+void borrarDatos(eEmpleado[], int tam, int valor);
+int pedirOpcion(char mensaje[]);
