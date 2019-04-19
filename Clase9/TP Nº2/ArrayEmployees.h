@@ -7,3 +7,5 @@ typedef struct
     int sector;
     int isEmpty;
 } Employee;
+
+int pedirEntero(char mensaje[]);
