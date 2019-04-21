@@ -136,18 +136,83 @@ void borrarEmpleado(Employee lista[], int tam)
 
 void mostrarEmpleado(Employee unEmpleado)
 {
-    printf("%d--%s--%s--%f--%d" , unEmpleado.id, unEmpleado.name, unEmpleado.lastName, unEmpleado.salary, unEmpleado.sector);
+    printf("%d--%s--%s--%f--%d \n" , unEmpleado.id, unEmpleado.name, unEmpleado.lastName, unEmpleado.salary, unEmpleado.sector);
 }
 
 void mostrarListaEmpleados(Employee lista[], int tam)
 {
     int i;
+    ordenarListaEmpleados(lista, tam);
     for(i=0;i<tam;i++)
     {
         mostrarEmpleado(lista[i]);
     }
 }
 
+void ordenarListaEmpleados(Employee lista[], int tam)
+{
+    int i;
+    int j;
+    char auxCadenaLastName[51];
+    int auxEnteroSector;
+    int auxEnteroId;
+    char auxCadenaName[51];
+    float auxFlotanteSalary;
+    /*for(i=0;i<tam-1;i++)
+    {
+        for(j=i+1;j<tam;j++)
+        {
+            if(lista[i].lastName<lista[j].lastName && lista[i].sector>lista[j].sector)
+            {
+                strcpy(auxCadenaLastName, lista[i].lastName);
+                strcpy(lista[i].lastName, lista[j].lastName);
+                strcpy(lista[j].lastName, auxCadenaLastName);
 
+                auxEnteroSector = lista[i].sector;
+                lista[i].sector = lista[j].sector;
+                lista[j].sector = auxEnteroSector;
 
+                auxEnteroId = lista[i].id;
+                lista[i].id = lista[j].id;
+                lista[j].id = auxEnteroId;
 
+                strcpy(auxCadenaName, lista[i].name);
+                strcpy(lista[i].name, lista[j].name);
+                strcpy(lista[j].name, auxCadenaName);
+
+                auxFlotanteSalary = lista[i].salary;
+                lista[i].salary = lista[j].salary;
+                lista[j].salary = auxFlotanteSalary;
+            }
+        }
+    }*/
+    //i = 0;
+    for(i=0;i<tam-1;i++)
+    {
+        for(j=i+1;j<tam;j++)
+        {
+            if(lista[i].sector>lista[j].sector)
+            {
+                strcpy(auxCadenaLastName, lista[i].lastName);
+                strcpy(lista[i].lastName, lista[j].lastName);
+                strcpy(lista[j].lastName, auxCadenaLastName);
+
+                auxEnteroSector = lista[i].sector;
+                lista[i].sector = lista[j].sector;
+                lista[j].sector = auxEnteroSector;
+
+                auxEnteroId = lista[i].id;
+                lista[i].id = lista[j].id;
+                lista[j].id = auxEnteroId;
+
+                strcpy(auxCadenaName, lista[i].name);
+                strcpy(lista[i].name, lista[j].name);
+                strcpy(lista[j].name, auxCadenaName);
+
+                auxFlotanteSalary = lista[i].salary;
+                lista[i].salary = lista[j].salary;
+                lista[j].salary = auxFlotanteSalary;
+            }
+        }
+    }
+}

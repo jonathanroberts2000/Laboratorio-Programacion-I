@@ -14,3 +14,18 @@
 1555821449 c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\arrayemployees.h
 	<stdio.h>
 
+1555873163 source:e:\laboratorio_programacion_i\clase9\tp nº2\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"ArrayEmployees.h"
+
+1555873051 e:\laboratorio_programacion_i\clase9\tp nº2\arrayemployees.h
+	<stdio.h>
+
+1555873114 source:e:\laboratorio_programacion_i\clase9\tp nº2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployees.h"
+

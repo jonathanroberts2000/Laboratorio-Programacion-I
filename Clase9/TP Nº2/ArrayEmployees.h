@@ -21,3 +21,4 @@ void modificarEmpleado(Employee[], int);
 void borrarEmpleado(Employee[], int);
 void mostrarEmpleado(Employee);
 void mostrarListaEmpleados(Employee[], int);
+void ordenarListaEmpleados(Employee[], int);

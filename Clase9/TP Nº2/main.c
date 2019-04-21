@@ -26,6 +26,7 @@ int main()
                 break;
             case 4:
                 printf("INFORMAR\n");
+                mostrarListaEmpleados(lista,T);
                 break;
             case 5:
                 printf("Saliendo....");
