@@ -1,3 +1,7 @@
+#include <stdio.h>
+#define LIBRE 0
+#define OCUPADO 1
+
 typedef struct
 {
     int id;
@@ -8,4 +12,12 @@ typedef struct
     int isEmpty;
 } Employee;
 
-int pedirEntero(char mensaje[]);
+int pedirEntero(char[]);
+char pedirCaracter(char[]);
+int generarNumeroRandom(void);
+int buscarId(Employee[], int, int);
+void cargarEmpleado(Employee[], int);
+void modificarEmpleado(Employee[], int);
+void borrarEmpleado(Employee[], int);
+void mostrarEmpleado(Employee);
+void mostrarListaEmpleados(Employee[], int);

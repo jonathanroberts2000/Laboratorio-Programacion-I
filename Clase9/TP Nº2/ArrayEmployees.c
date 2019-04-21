@@ -1,3 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include "ArrayEmployees.h"
+
 int pedirEntero(char mensaje[])
 {
     int numeroEntero;
@@ -5,3 +11,143 @@ int pedirEntero(char mensaje[])
     scanf("%d" , &numeroEntero);
     return numeroEntero;
 }
+
+int generarNumeroRandom()
+{
+    int numero;
+    srand(time(NULL));
+    numero = rand();
+    return numero;
+}
+
+void cargarEmpleado(Employee lista[], int tam)
+{
+    int i=0;
+    char respuesta;
+    for(i=0;i<tam;i++)
+    {
+        lista[i].id = generarNumeroRandom();
+        printf("Ingrese nombre: ");
+        fflush(stdin);
+        gets(lista[i].name);
+        printf("Ingrese apellido: ");
+        fflush(stdin);
+        gets(lista[i].lastName);
+        printf("Ingrese sueldo: ");
+        scanf("%f" , &lista[i].salary);
+        printf("Ingrese sector: ");
+        scanf("%d" , &lista[i].sector);
+        lista[i].isEmpty = OCUPADO;
+        respuesta = pedirCaracter("Desea cargar mas empleados? s/n: ");
+        if(respuesta != 's')
+        {
+            break;
+        }
+    }
+}
+
+char pedirCaracter(char mensaje[])
+{
+    char respuesta;
+    printf("%s", mensaje);
+    fflush(stdin);
+    scanf("%c", &respuesta);
+    return respuesta;
+}
+
+int buscarId(Employee lista[], int tam, int id)
+{
+    int indice = -1;
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        if(lista[i].id == id)
+        {
+            indice = i;
+            break;
+        }
+    }
+    return indice;
+}
+
+void modificarEmpleado(Employee lista[], int tam)
+{
+    int id = pedirEntero("Ingrese el Id del empleado a buscar: ");
+    int indice = buscarId(lista, tam, id);
+    int opcion;
+    char respuesta;
+    if(indice == -1)
+    {
+        printf("No se encontro la id solicitada! \n");
+    }else{
+    do{
+        opcion = pedirEntero("1.Modificar nombre\n2.Modificar sexo\n3.Modificar sueldo bruto\n4.Salir del menu\nElija una opcion: ");
+        switch(opcion)
+        {
+            case 1:
+                printf("Ingrese el nuevo nombre: ");
+                fflush(stdin);
+                scanf("%s" , lista[indice].name);
+                break;
+            case 2:
+                printf("Ingrese el nuevo apellido: ");
+                fflush(stdin);
+                scanf("%s" , lista[indice].lastName);
+                break;
+            case 3:
+                printf("Ingrese el nuevo sueldo: ");
+                scanf("%f" , &lista[indice].salary);
+                break;
+            case 4:
+                printf("Ingrese el nuevo sector: ");
+                scanf("%d" , &lista[indice].sector);
+                break;
+            case 5:
+                printf("Saliendo de este menu...");
+                break;
+            default:
+                printf("Error! Reingrese una opcion valida!\n");
+                break;
+        }
+        respuesta = pedirCaracter("Desea modificar otro campo? s/n: ");
+    }while(respuesta == 's');
+    }
+}
+
+void borrarEmpleado(Employee lista[], int tam)
+{
+    int id = pedirEntero("Ingrese el Id del empleado a buscar: ");
+    int indice = buscarId(lista, tam, id);
+    int i;
+    if(indice == -1)
+    {
+        printf("No se encontro la id solicitada! \n");
+    }else
+    {
+        for(i=0;i<tam;i++)
+        {
+            if(lista[i].isEmpty == indice)
+            {
+                lista[i].isEmpty = LIBRE;
+            }
+        }
+    }
+}
+
+void mostrarEmpleado(Employee unEmpleado)
+{
+    printf("%d--%s--%s--%f--%d" , unEmpleado.id, unEmpleado.name, unEmpleado.lastName, unEmpleado.salary, unEmpleado.sector);
+}
+
+void mostrarListaEmpleados(Employee lista[], int tam)
+{
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        mostrarEmpleado(lista[i]);
+    }
+}
+
+
+
+
