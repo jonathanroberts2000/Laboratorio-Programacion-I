@@ -45,7 +45,7 @@ void pedirCadena(char mensaje[] , char cadena[] , int tam)
 {
     printf("%s" , mensaje);
     fflush(stdin);
-    scanf("%[^\n]" , cadena);
+    scanf("%[^\n]" , cadena);      "%[^\n]"
     validarCadena(mensaje , cadena , tam);
 }
 void validarCadena(char mensajeError[] , char cadena [] , int tam)
