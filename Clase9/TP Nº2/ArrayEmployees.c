@@ -29,10 +29,10 @@ void cargarEmpleado(Employee lista[], int tam)
         lista[i].id = generarNumeroRandom();
         printf("Ingrese nombre: ");
         fflush(stdin);
-        gets(lista[i].name);
+        scanf("%[^\n]" , lista[i].name);
         printf("Ingrese apellido: ");
         fflush(stdin);
-        gets(lista[i].lastName);
+        scanf("%[^\n]" , lista[i].lastName);
         printf("Ingrese sueldo: ");
         scanf("%f" , &lista[i].salary);
         printf("Ingrese sector: ");
@@ -87,12 +87,12 @@ void modificarEmpleado(Employee lista[], int tam)
             case 1:
                 printf("Ingrese el nuevo nombre: ");
                 fflush(stdin);
-                scanf("%s" , lista[indice].name);
+                scanf("%[^\n]" , lista[indice].name);
                 break;
             case 2:
                 printf("Ingrese el nuevo apellido: ");
                 fflush(stdin);
-                scanf("%s" , lista[indice].lastName);
+                scanf("%[^\n]" , lista[indice].lastName);
                 break;
             case 3:
                 printf("Ingrese el nuevo sueldo: ");
@@ -216,3 +216,23 @@ void ordenarListaEmpleados(Employee lista[], int tam)
         }
     }
 }
+
+void utilizandoStrings(Employee lista[], char name[], char lastName[], int tam)
+{
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        strlwr(lista[i].name);
+        strlwr(lista[i].lastName);
+    }
+
+}
+
+
+
+
+
+
+
+
+
