@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <ctype.h>
 #include "ArrayEmployees.h"
 
 int pedirEntero(char mensaje[])
@@ -143,6 +144,7 @@ void mostrarListaEmpleados(Employee lista[], int tam)
 {
     int i;
     ordenarListaEmpleados(lista, tam);
+    utilizandoStrings(lista,tam, name[]);
     for(i=0;i<tam;i++)
     {
         mostrarEmpleado(lista[i]);
@@ -217,15 +219,21 @@ void ordenarListaEmpleados(Employee lista[], int tam)
     }
 }
 
-void utilizandoStrings(Employee lista[], char name[], char lastName[], int tam)
+void utilizandoStrings(Employee lista[], int tam, char name[])
 {
-    int i;
+    int i,j;
+    //estandarizados a lower
     for(i=0;i<tam;i++)
     {
         strlwr(lista[i].name);
         strlwr(lista[i].lastName);
     }
-
+    //pasando a mayus el vector en posicion 0
+    for(j=0;j<tam;j++)
+    {
+        toupper(lista[j].name[0]);
+        //toupper(lista[j])
+    }
 }
 
 
