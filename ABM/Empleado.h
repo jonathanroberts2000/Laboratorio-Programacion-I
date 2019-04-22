@@ -35,3 +35,6 @@ int pedirOpcion(char[]);
 void hardcodearDatosSectores(eSectores[], int);
 void mostrarListaSectores(eSectores[], int);
 void mostrarSectorEmpleado(eSectores);
+float buscarMaximo(eEmpleado[], int);
+void buscarMaximoEmpleados(eEmpleado[], int);
+int buscarEmpleado(eEmpleado[], int);

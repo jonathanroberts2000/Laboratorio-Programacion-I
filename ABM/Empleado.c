@@ -72,9 +72,9 @@ void hardcodearDatosEmpleados(eEmpleado lista[], int tam)
 {
     int i;
     int legajos[]={1,8,9,7,2,4};
-    char nombres[][50]={"Maria","Pedro","Jose","Pedro","Pablo","Mateo"};
-    char sexo[]={'F','M','M','M','M','M'};
-    float sueldosBruto[]={1000,2000,3000,4000,5000,6000};
+    char nombres[][50]={"Carlos","Maria","Carlos","Pedro","Carlos","Mateo"};
+    char sexo[]={'M','F','M','M','M','M'};
+    float sueldosBruto[]={22000,22000,15000,4000,21000,6000};
 
     for(i=0; i<tam; i++)
     {
@@ -84,6 +84,7 @@ void hardcodearDatosEmpleados(eEmpleado lista[], int tam)
         lista[i].sueldoBruto = sueldosBruto[i];
         lista[i].sueldoNeto = sueldosBruto[i] * 0.85;
         lista[i].estado = OCUPADO;
+
     }
 }
 int buscarLegajo(eEmpleado lista[], int tam, int valor)
@@ -199,5 +200,54 @@ void mostrarSectorEmpleado(eSectores unEmpleado)
     printf("%d-%s\n", unEmpleado.idSector, unEmpleado.descSector);
 }
 
+float buscarMaximo(eEmpleado lista[], int tam)
+{
+    int i;
+    int flag = 0;
+    int numMax;
+    for(i=0;i<tam;i++)
+    {
+        if(lista[i].estado == OCUPADO)
+        {
+             if(lista[i].sueldoBruto > numMax || flag == 0)
+            {
+                numMax = lista[i].sueldoBruto;
+                flag = 1;
+            }
+        }
+
+    }
+    return numMax;
+}
+
+void buscarMaximoEmpleados(eEmpleado lista[], int tam)
+{
+    int i;
+    float sueldo = buscarMaximo(lista, tam);
+    for(i=0;i<tam;i++)
+    {
+        if(lista[i].estado == OCUPADO)
+        {
+            if(lista[i].sueldoBruto >= sueldo)
+            {
+                mostrarEmpleado(lista[i]);
+            }
+        }
+    }
+}
+
+int buscarEmpleado(eEmpleado lista[], int tam)
+{
+    int i;
+    int cantEmpleados = 0;
+    for(i=0;i<tam;i++)
+    {
+        if(strcmp(lista[i].nombre, "Carlos") == 0 && lista[i].sueldoBruto > 20000)
+        {
+            cantEmpleados++;
+        }
+    }
+    return cantEmpleados;
+}
 
 
