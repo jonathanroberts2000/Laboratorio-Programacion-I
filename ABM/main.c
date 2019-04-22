@@ -1,46 +1,79 @@
+
 #include <stdlib.h>
 #include "Empleado.h"
-#define T 6
+
+#define T 10
+
+
+int menuDeOpciones(char[]);
+
+/*
+Informes:
+
+1- EL/LOS Empleados con mayor sueldo.
+2- Cantidad de empleados que se llamen carlos y ganen mas de 20000
+*/
 
 int main()
 {
+
+    //int indice;
     int opcion;
+
     eEmpleado lista[T];
-    eSectores listaSector[T];
     inicializarEmpleados(lista,T);
-    hardcodearDatosEmpleados(lista,T);
-    hardcodearDatosSectores(listaSector,T);
+
+    eSector sectores[3] = {{0,"Contabilidad",100},{1,"Sistemas",200},{2, "RRHH", 150}};
+
+
+
+
+    hardcodearDatosEmpleados(lista,6, sectores);
     do
     {
-        opcion = pedirOpcion("1.Alta\n2.Baja\n3.Modificar\n4.Mostrar\n5.Informar\n6.Salir\nElija una opcion: ");
+        opcion = menuDeOpciones("1.Alta\n2.Baja\n3.Modificar\n4.Mostrar\n5.Informar\n10.Salir\nElija una opcion: ");
         switch(opcion)
         {
             case 1:
                 cargarEmpleado(lista,  T);
-                break;
+
+            break;
             case 2:
-                borrarDatos(lista, T, 3);
+                borrarEmpleado(lista, T, 3);
                 break;
             case 3:
-                modificarDatos(lista, T);
-                break;
+
+                modificar(lista, T, 3);
+            break;
+
             case 4:
-                mostrarListaEmpleados(lista, T);
-                //mostrarListaSectores(listaSector, T);
+                mostrarListaEmpleados(lista, T, sectores, 3);
                 break;
             case 5:
-                //el o los mayores sueldos y q se llame carlos y gane 20000
-                buscarMaximoEmpleados(lista,T);
-                printf("La cantidad de empleados que se llaman Carlos son: %d \n" ,buscarEmpleado(lista,T));
+
+                mostrarEmpleadosSueldoMaximo(lista,T);
+                printf("La cantidad de carlos es: %d\n", contarCarlos(lista,T));
                 break;
-            case 6:
-                return 0;
-                break;
-            default:
-                opcion = pedirOpcion("Error! Por favor reingrese una opcion valida.");
-                break;
+
+
         }
-    }while(opcion!=6);
+    }while(opcion!=10);
+
+
+
+    //inicializarEmpleados(lista, T);
+
+
+
 
     return 0;
+}
+
+int menuDeOpciones(char mensaje[])
+{
+    int opcion;
+    printf("%s", mensaje);
+    scanf("%d", &opcion);
+
+    return opcion;
 }

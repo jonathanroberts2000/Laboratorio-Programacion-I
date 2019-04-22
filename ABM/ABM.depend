@@ -1,45 +1,22 @@
 # depslib dependency file v1.0
-1555421472 source:c:\users\alumno\desktop\abm\main.c
+1555945588 source:c:\users\alumno\desktop\abm\main.c
 	<stdlib.h>
 	"Empleado.h"
 
-1555422488 c:\users\alumno\desktop\abm\empleado.h
+1555945588 c:\users\alumno\desktop\abm\empleado.h
 	<stdio.h>
 
-1555422734 source:c:\users\alumno\desktop\abm\empleado.c
+1555945237 source:c:\users\alumno\desktop\abm\empleado.c
+	"Empleado.h"
+
+1555958269 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\abm\empleado.c
 	"Empleado.h"
 	<string.h>
 
-1555421472 source:c:\users\alumno\desktop\laboratorio_programacion_i\abm\main.c
-	<stdlib.h>
-	"Empleado.h"
-
-1555422488 c:\users\alumno\desktop\laboratorio_programacion_i\abm\empleado.h
+1555955576 c:\users\jonathan roberts\desktop\laboratorio_programacion_i\abm\empleado.h
 	<stdio.h>
 
-1555426766 source:c:\users\alumno\desktop\laboratorio_programacion_i\abm\empleado.c
-	"Empleado.h"
-	<string.h>
-
-1555817012 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\abm\empleado.c
-	"Empleado.h"
-	<string.h>
-
-1555613797 c:\users\jonathan roberts\desktop\laboratorio_programacion_i\abm\empleado.h
-	<stdio.h>
-
-1555616693 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\abm\main.c
-	<stdlib.h>
-	"Empleado.h"
-
-1555942524 source:c:\users\alumno\desktop\laboratorio_programacion_i-master\abm\empleado.c
-	"Empleado.h"
-	<string.h>
-
-1555940489 c:\users\alumno\desktop\laboratorio_programacion_i-master\abm\empleado.h
-	<stdio.h>
-
-1555942472 source:c:\users\alumno\desktop\laboratorio_programacion_i-master\abm\main.c
+1555957777 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\abm\main.c
 	<stdlib.h>
 	"Empleado.h"
 
