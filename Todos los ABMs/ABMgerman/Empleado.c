@@ -248,7 +248,7 @@ void mostrarListaEmpleadosPorSector(eEmpleado lista[], int tam, eSector sectores
         mostrarEmpleadoPorSector(lista, tam, sectores[i]);
     }
 }
-
+//DER que es...temas de diseño
 void mostrarSector(eSector sectores)
 {
     printf("%s \n" , sectores.descripcion);
@@ -260,5 +260,18 @@ void mostrarListaSectores(eSector sectores[], int ts)
     for (i=0;i<ts;i++)
     {
         mostrarSector(sectores[i]);
+    }
+}
+
+void totalSueldosPorSector(eSector sectores[], int ts, eEmpleado lista[], int tam)
+{
+    int i;
+    float acumuladorSueldos;
+    for(i=0;i<tam;i++)
+    {
+        //if(lista[i].sueldoBruto == sectores.idSector)
+        {
+            acumuladorSueldos += lista[i].sueldoBruto;
+        }
     }
 }

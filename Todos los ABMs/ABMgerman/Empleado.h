@@ -13,6 +13,12 @@ typedef struct
 typedef struct
 {
     int idSector;
+    int cantEmp;
+}sectorAUX;//probar con el ultimo punto de la tarea del txt
+
+typedef struct
+{
+    int idSector;
 
     char descripcion[20];
     float valor;
@@ -45,7 +51,7 @@ void mostrarEmpleadoPorSector(eEmpleado[], int, eSector);
 void mostrarListaEmpleadosPorSector(eEmpleado[], int, eSector[], int ts);
 void mostrarSector(eSector);
 void mostrarListaSectores(eSector[], int);
-
+void totalSueldosPorSector(eSector[], int, eEmpleado[], int);
 
 float buscarSueldoMaximo(eEmpleado[],int);
 void mostrarEmpleadosSueldoMaximo(eEmpleado[],int);
