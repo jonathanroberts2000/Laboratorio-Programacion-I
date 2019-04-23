@@ -17,7 +17,6 @@ Informes:
 int main()
 {
 
-    //int indice;
     int opcion;
 
     eEmpleado lista[T];
