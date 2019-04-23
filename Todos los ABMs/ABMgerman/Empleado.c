@@ -155,8 +155,6 @@ void borrarEmpleado(eEmpleado lista[], int tam, int legajo)
         {
 
             lista[i].estado = LIBRE;
-
-
             loEncontro = 1;
             break;//modifcar
         }
@@ -227,12 +225,12 @@ int buscarLegajo(eEmpleado lista[], int tam, int legajo)
     return 0;
 }
 
-void mostrarEmpleadoPorSector(eEmpleado lista[], int tam, eSector sectores)
+void mostrarEmpleadoPorSector(eEmpleado lista[], int tam, eSector sector)
 {
     int i;
     for(i=0;i<tam;i++)
     {
-        if(lista[i].idSector == sectores.idSector)
+        if(lista[i].idSector == sector.idSector)
         {
             printf("%s \n" , lista[i].nombre);
         }
@@ -244,12 +242,12 @@ void mostrarListaEmpleadosPorSector(eEmpleado lista[], int tam, eSector sectores
     int i;
     for(i=0;i<ts;i++)
     {
-        mostrarSector(sectores[i]);
+        mostrarSector_(sectores[i]);
         mostrarEmpleadoPorSector(lista, tam, sectores[i]);
     }
 }
 //DER que es...temas de diseño
-void mostrarSector(eSector sectores)
+void mostrarSector_(eSector sectores)
 {
     printf("%s \n" , sectores.descripcion);
 }
@@ -259,17 +257,17 @@ void mostrarListaSectores(eSector sectores[], int ts)
     int i;
     for (i=0;i<ts;i++)
     {
-        mostrarSector(sectores[i]);
+        mostrarSector_(sectores[i]);
     }
 }
 
-void totalSueldosPorSector(eSector sectores[], int ts, eEmpleado lista[], int tam)
+void totalSueldosPorSector(eSector sector, int ts, eEmpleado lista[], int tam)
 {
     int i;
     float acumuladorSueldos;
     for(i=0;i<tam;i++)
     {
-        if(lista[i].idSector == sectores[ts].idSector)
+        if(lista[i].idSector == sector.idSector)
         {
             acumuladorSueldos = lista[i].sueldoBruto + acumuladorSueldos;
         }
@@ -277,3 +275,73 @@ void totalSueldosPorSector(eSector sectores[], int ts, eEmpleado lista[], int ta
     printf("%.2f \n" , acumuladorSueldos);
 }
 
+void mostrarSectores(eSector sectores[],int ts,eEmpleado lista[],int tam)//funcion de nico
+{
+    int i;
+    for(i=0;i<ts;i++)
+    {
+        mostrarSector(sectores[i], lista, tam);
+    }
+}
+void mostrarSector(eSector sector, eEmpleado lista[], int tam)//funcion de nico
+{
+    int i;
+    mostrarSector_(sector);
+    for(i=0;i<tam;i++)
+    {
+        if(lista[i].idSector == sector.idSector)
+        {
+            printf("%s \n" , lista[i].nombre);
+        }
+    }
+}
+void mostrarSectorMasEmpleados(eSector sectores[],int ts, eEmpleado lista[], int tam)//funcion de nico
+{
+    int i,j;
+    int empleadosMax;
+    char sectorMax[30];
+    int flag = 0;
+    int cantEmpleados = 0;
+
+    for(i=0;i<tam;i++)
+    {
+        for(j=0;j<tam;j++)
+        {
+            if(lista[j].estado == OCUPADO && lista[j].idSector == sectores[i].idSector)
+            {
+                cantEmpleados++;
+            }
+        }
+        if(flag == 0 || cantEmpleados>empleadosMax)
+        {
+            strcpy(sectorMax,sectores[i].descripcion);
+            empleadosMax = cantEmpleados;
+            flag = 1;
+            cantEmpleados = 0;
+        }
+    }
+    printf("El sector con mayor empleados es: %s \n" , sectorMax);
+}
+void mostrarSueldoSector(eSector sector, eEmpleado lista[], int tam)//funcion de nico
+{
+    int i;
+    float totalSueldos = 0;
+    mostrarSector_(sector);
+    for(i=0;i<tam;i++)
+    {
+        if(lista[i].estado == OCUPADO && lista[i].idSector == sector.idSector)
+        {
+            totalSueldos += lista[i].sueldoBruto;
+        }
+    }
+    printf("El totla de los sueldos es: %.2f \n" , totalSueldos);
+}
+
+void mostrarSueldosSectores(eSector sectores[], int ts, eEmpleado lista[], int tam)//funcion de nico
+{
+    int i;
+    for(i=0;i<ts;i++)
+    {
+        mostrarSueldoSector(sectores[i],lista,tam);
+    }
+}

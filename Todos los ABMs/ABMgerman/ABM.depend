@@ -31,3 +31,14 @@
 	"Empleado.h"
 	<string.h>
 
+1556046319 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\todos los abms\abmgerman\main.c
+	<stdlib.h>
+	"Empleado.h"
+
+1556046152 c:\users\jonathan roberts\desktop\laboratorio_programacion_i\todos los abms\abmgerman\empleado.h
+	<stdio.h>
+
+1556046569 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\todos los abms\abmgerman\empleado.c
+	"Empleado.h"
+	<string.h>
+

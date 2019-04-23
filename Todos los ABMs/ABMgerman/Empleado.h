@@ -47,15 +47,25 @@ void hardcodearDatosEmpleados(eEmpleado[], int, eSector[]);
 void modificar(eEmpleado[], int, int);
 int buscarLegajo(eEmpleado[], int, int);
 void borrarEmpleado(eEmpleado[], int, int);
-void mostrarEmpleadoPorSector(eEmpleado[], int, eSector);
-void mostrarListaEmpleadosPorSector(eEmpleado[], int, eSector[], int ts);
-void mostrarSector(eSector);
-void mostrarListaSectores(eSector[], int);
-void totalSueldosPorSector(eSector[], int, eEmpleado[], int);
 
-float buscarSueldoMaximo(eEmpleado[],int);
-void mostrarEmpleadosSueldoMaximo(eEmpleado[],int);
-int contarCarlos(eEmpleado[],int);
+
+void mostrarEmpleadoPorSector(eEmpleado[], int, eSector);//check
+void mostrarListaEmpleadosPorSector(eEmpleado[], int, eSector[], int ts);//check
+
+void mostrarSector_(eSector);//check
+void mostrarListaSectores(eSector[], int);//check
+
+//void totalSueldosPorSector(eSector[], int, eEmpleado[], int);
+void mostrarSectores(eSector[],int,eEmpleado[],int);//funcion de nico
+void mostrarSector(eSector,eEmpleado[],int);//funcion de nico
+
+void mostrarSectorMasEmpleados(eSector[],int,eEmpleado[],int);//funcion de nico
+void mostrarSueldoSector(eSector,eEmpleado[],int);//funcion de nico
+void mostrarSueldosSectores(eSector[], int, eEmpleado[], int);//funcion de nico
+
+float buscarSueldoMaximo(eEmpleado[],int);//check
+void mostrarEmpleadosSueldoMaximo(eEmpleado[],int);//check
+int contarCarlos(eEmpleado[],int);//check
 
 
 
