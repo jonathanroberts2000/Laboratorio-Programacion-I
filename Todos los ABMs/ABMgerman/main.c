@@ -55,6 +55,7 @@ int main()
                 printf("La cantidad de carlos es: %d\n", contarCarlos(lista,T));
                 //mostrarListaSectores(sectores, 3);
                 mostrarListaEmpleadosPorSector(lista,T,sectores,3);
+                totalSueldosPorSector(sectores,3,lista,T);
                 break;
         }
     }while(opcion!=10);

@@ -269,10 +269,11 @@ void totalSueldosPorSector(eSector sectores[], int ts, eEmpleado lista[], int ta
     float acumuladorSueldos;
     for(i=0;i<tam;i++)
     {
-        //if(lista[i].sueldoBruto == sectores.idSector)
+        if(lista[i].sueldoBruto == sectores.idSector)
         {
-            acumuladorSueldos += lista[i].sueldoBruto;
+            acumuladorSueldos = lista[i].sueldoBruto + acumuladorSueldos;
         }
     }
+    printf("%.2f \n" , acumuladorSueldos);
 }
 
