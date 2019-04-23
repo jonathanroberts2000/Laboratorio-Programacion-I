@@ -275,3 +275,4 @@ void totalSueldosPorSector(eSector sectores[], int ts, eEmpleado lista[], int ta
         }
     }
 }
+
