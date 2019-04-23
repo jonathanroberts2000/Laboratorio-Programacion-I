@@ -43,3 +43,14 @@
 	<stdlib.h>
 	"Empleado.h"
 
+1556020696 source:c:\users\alumno\desktop\laboratorio_programacion_i\todos los abms\abmpersonal\empleado.c
+	"Empleado.h"
+	<string.h>
+
+1556020696 c:\users\alumno\desktop\laboratorio_programacion_i\todos los abms\abmpersonal\empleado.h
+	<stdio.h>
+
+1556020696 source:c:\users\alumno\desktop\laboratorio_programacion_i\todos los abms\abmpersonal\main.c
+	<stdlib.h>
+	"Empleado.h"
+
