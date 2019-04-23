@@ -210,7 +210,7 @@ int contarCarlos(eEmpleado lista[], int tam)
     {
         if(lista[i].estado==OCUPADO)
         {
-            if(stricmp(lista[i].nombre,"carlos")==0 && lista[i].sueldoBruto>20000)
+            if(stricmp(lista[i].nombre,"Carlos")==1 && lista[i].sueldoBruto>20000)
             {
                 contadorCarlos++;
             }
@@ -299,11 +299,11 @@ void mostrarSectorMasEmpleados(eSector sectores[],int ts, eEmpleado lista[], int
 {
     int i,j;
     int empleadosMax;
-    char sectorMax[30];
+    char sectorMax[50];
     int flag = 0;
     int cantEmpleados = 0;
 
-    for(i=0;i<tam;i++)
+    for(i=0;i<ts;i++)
     {
         for(j=0;j<tam;j++)
         {
