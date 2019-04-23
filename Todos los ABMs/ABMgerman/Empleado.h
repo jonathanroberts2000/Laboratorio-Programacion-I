@@ -41,8 +41,11 @@ void hardcodearDatosEmpleados(eEmpleado[], int, eSector[]);
 void modificar(eEmpleado[], int, int);
 int buscarLegajo(eEmpleado[], int, int);
 void borrarEmpleado(eEmpleado[], int, int);
-void mostrarEmpleadoPorSector(eEmpleado[], int, eSector[]);
-void mostrarListaEmpleadosPorSector(eEmpleado[], int, eSector[]);
+void mostrarEmpleadoPorSector(eEmpleado[], int, eSector);
+void mostrarListaEmpleadosPorSector(eEmpleado[], int, eSector[], int ts);
+void mostrarSector(eSector);
+void mostrarListaSectores(eSector[], int);
+
 
 float buscarSueldoMaximo(eEmpleado[],int);
 void mostrarEmpleadosSueldoMaximo(eEmpleado[],int);

@@ -227,7 +227,7 @@ int buscarLegajo(eEmpleado lista[], int tam, int legajo)
     return 0;
 }
 
-void mostrarEmpleadoPorSector(eEmpleado lista[], int tam, eSector sectores[])
+void mostrarEmpleadoPorSector(eEmpleado lista[], int tam, eSector sectores)
 {
     int i;
     for(i=0;i<tam;i++)
@@ -239,11 +239,26 @@ void mostrarEmpleadoPorSector(eEmpleado lista[], int tam, eSector sectores[])
     }
 }
 
-void mostrarListaEmpleadosPorSector(eEmpleado lista[], int tam, eSector sectores[])
+void mostrarListaEmpleadosPorSector(eEmpleado lista[], int tam, eSector sectores[], int ts)
 {
     int i;
-    for(i=0;i<tam;i++)
+    for(i=0;i<ts;i++)
     {
+        mostrarSector(sectores[i]);
         mostrarEmpleadoPorSector(lista, tam, sectores[i]);
+    }
+}
+
+void mostrarSector(eSector sectores)
+{
+    printf("%s \n" , sectores.descripcion);
+}
+
+void mostrarListaSectores(eSector sectores[], int ts)
+{
+    int i;
+    for (i=0;i<ts;i++)
+    {
+        mostrarSector(sectores[i]);
     }
 }

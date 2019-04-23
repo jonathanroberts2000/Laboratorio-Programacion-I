@@ -53,10 +53,9 @@ int main()
 
                 mostrarEmpleadosSueldoMaximo(lista,T);
                 printf("La cantidad de carlos es: %d\n", contarCarlos(lista,T));
-                mostrarListaEmpleadosPorSector(lista,T,sectores);
+                //mostrarListaSectores(sectores, 3);
+                mostrarListaEmpleadosPorSector(lista,T,sectores,3);
                 break;
-
-
         }
     }while(opcion!=10);
 
