@@ -1,17 +1,18 @@
 # depslib dependency file v1.0
-1555821411 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\arrayemployees.c
+1556041849 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\arrayemployees.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<time.h>
+	<ctype.h>
 	"ArrayEmployees.h"
 
-1555820901 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\main.c
+1556041849 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"ArrayEmployees.h"
 
-1555821449 c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\arrayemployees.h
+1556489985 c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\arrayemployees.h
 	<stdio.h>
 
 1555885712 source:e:\laboratorio_programacion_i\clase9\tp nº2\arrayemployees.c

@@ -144,7 +144,8 @@ void mostrarListaEmpleados(Employee lista[], int tam)
 {
     int i;
     ordenarListaEmpleados(lista, tam);
-    utilizandoStrings(lista,tam, name[]);
+    ordenarAlfabeticamente(lista,tam);
+    //utilizandoStrings(lista,tam, name[]);
     for(i=0;i<tam;i++)
     {
         mostrarEmpleado(lista[i]);
@@ -160,35 +161,6 @@ void ordenarListaEmpleados(Employee lista[], int tam)
     int auxEnteroId;
     char auxCadenaName[51];
     float auxFlotanteSalary;
-    /*for(i=0;i<tam-1;i++)
-    {
-        for(j=i+1;j<tam;j++)
-        {
-            if(lista[i].lastName<lista[j].lastName && lista[i].sector>lista[j].sector)
-            {
-                strcpy(auxCadenaLastName, lista[i].lastName);
-                strcpy(lista[i].lastName, lista[j].lastName);
-                strcpy(lista[j].lastName, auxCadenaLastName);
-
-                auxEnteroSector = lista[i].sector;
-                lista[i].sector = lista[j].sector;
-                lista[j].sector = auxEnteroSector;
-
-                auxEnteroId = lista[i].id;
-                lista[i].id = lista[j].id;
-                lista[j].id = auxEnteroId;
-
-                strcpy(auxCadenaName, lista[i].name);
-                strcpy(lista[i].name, lista[j].name);
-                strcpy(lista[j].name, auxCadenaName);
-
-                auxFlotanteSalary = lista[i].salary;
-                lista[i].salary = lista[j].salary;
-                lista[j].salary = auxFlotanteSalary;
-            }
-        }
-    }*/
-    //i = 0;
     for(i=0;i<tam-1;i++)
     {
         for(j=i+1;j<tam;j++)
@@ -221,7 +193,7 @@ void ordenarListaEmpleados(Employee lista[], int tam)
 
 void utilizandoStrings(Employee lista[], int tam, char name[])
 {
-    int i,j;
+    int i/*,j*/;
     //estandarizados a lower
     for(i=0;i<tam;i++)
     {
@@ -229,14 +201,51 @@ void utilizandoStrings(Employee lista[], int tam, char name[])
         strlwr(lista[i].lastName);
     }
     //pasando a mayus el vector en posicion 0
-    for(j=0;j<tam;j++)
+    /*for(j=0;j<tam;j++)
     {
         toupper(lista[j].name[0]);
         //toupper(lista[j])
-    }
+    }*/
 }
 
+void ordenarAlfabeticamente(Employee lista[], int tam)
+{
+    int i,j;
 
+    int auxEnteroId;
+    int auxEnteroSector;
+    float auxFlotanteSalary;
+    char auxCadenaLastName[100];
+    char auxCadenaName[100];
+    for(i=0;i<tam-1;i++)
+    {
+        for(j=i+1;j<tam;j++)
+        {
+            if(strcmp(lista[i].lastName,lista[j].lastName)>0)
+            {
+                strcpy(auxCadenaLastName, lista[i].lastName);
+                strcpy(lista[i].lastName, lista[j].lastName);
+                strcpy(lista[j].lastName, auxCadenaLastName);
+
+                strcpy(auxCadenaName, lista[i].name);
+                strcpy(lista[i].name, lista[j].name);
+                strcpy(lista[j].name, auxCadenaName);
+
+                auxEnteroSector = lista[i].sector;
+                lista[i].sector = lista[j].sector;
+                lista[j].sector = auxEnteroSector;
+
+                auxEnteroId = lista[i].id;
+                lista[i].id = lista[j].id;
+                lista[j].id = auxEnteroId;
+
+                auxFlotanteSalary = lista[i].salary;
+                lista[i].salary = lista[j].salary;
+                lista[j].salary = auxFlotanteSalary;
+            }
+        }
+    }
+}
 
 
 

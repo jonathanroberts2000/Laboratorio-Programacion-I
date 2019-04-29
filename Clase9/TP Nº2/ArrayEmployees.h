@@ -23,3 +23,4 @@ void mostrarEmpleado(Employee);
 void mostrarListaEmpleados(Employee[], int);
 void ordenarListaEmpleados(Employee[], int);
 void utilizandoStrings(Employee[], int, char[]);
+void ordenarAlfabeticamente(Employee[], int);
