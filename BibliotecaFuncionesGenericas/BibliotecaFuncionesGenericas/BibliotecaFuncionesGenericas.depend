@@ -1,9 +1,16 @@
 # depslib dependency file v1.0
-1556575867 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\bibliotecafuncionesgenericas\bibliotecafuncionesgenericas\main.c
+1556635961 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\bibliotecafuncionesgenericas\bibliotecafuncionesgenericas\main.c
 	<stdio.h>
 	<stdlib.h>
+	"BibliotecaFuncionesGenericas.h"
 
-1556591507 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\bibliotecafuncionesgenericas\bibliotecafuncionesgenericas\bibliotecafuncionesgenericas.c
+1556635134 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\bibliotecafuncionesgenericas\bibliotecafuncionesgenericas\bibliotecafuncionesgenericas.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"BibliotecaFuncionesGenericas.h"
+
+1556637250 c:\users\jonathan roberts\desktop\laboratorio_programacion_i\bibliotecafuncionesgenericas\bibliotecafuncionesgenericas\bibliotecafuncionesgenericas.h
 	<stdio.h>
 	<stdlib.h>
 	<time.h>

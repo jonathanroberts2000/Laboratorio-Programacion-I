@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+#include <string.h>
+#include "BibliotecaFuncionesGenericas.h"
 int pedirEntero(char mensaje[])
 {
     int numeroEntero;
@@ -43,7 +44,7 @@ int generarNumeroRandom()
     return numero;
 }
 
-void buscarMaximo(int vector_1[], int tam)
+int buscarMaximo(int vector_1[], int tam)
 {
     int i;
     int maximo;
@@ -56,7 +57,7 @@ void buscarMaximo(int vector_1[], int tam)
             flag = 1;
         }
     }
-    printf("%d" , maximo);
+    return maximo;
 }
 
 float sumaNumeros(float num1, float num2)
@@ -98,5 +99,20 @@ int factorialNumero(int num1)
         resultado = num1 * factorialNumero(num1 -1);
     }
     return resultado;
+}
+
+int buscarEntero(int vector_1[], int tam, int numero)
+{
+    int i;
+    int index = -1;
+    numero = pedirEntero("Ingrese el numero que desea buscar: ");
+    for(i=0;i<tam;i++)
+    {
+        if(vector_1[i] == index)
+        {
+            index = i;
+        }
+    }
+    return index;
 }
 
