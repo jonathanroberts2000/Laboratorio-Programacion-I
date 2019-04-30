@@ -22,6 +22,6 @@ void borrarEmpleado(Employee[], int);
 void mostrarEmpleado(Employee);
 void mostrarListaEmpleados(Employee[], int);
 void ordenarListaEmpleados(Employee[], int);
-void utilizandoStrings(Employee[], int, char[]);
+void utilizandoStrings(Employee[], int);
 void ordenarAlfabeticamente(Employee[], int);
 void pasarMayusculas(Employee[], int);

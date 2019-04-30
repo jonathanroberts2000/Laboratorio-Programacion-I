@@ -145,7 +145,7 @@ void mostrarListaEmpleados(Employee lista[], int tam)
     int i;
     ordenarListaEmpleados(lista, tam);
     ordenarAlfabeticamente(lista,tam);
-    //utilizandoStrings(lista,tam, name[]);
+    utilizandoStrings(lista,tam);
     for(i=0;i<tam;i++)
     {
         mostrarEmpleado(lista[i]);
@@ -191,22 +191,15 @@ void ordenarListaEmpleados(Employee lista[], int tam)
     }
 }
 
-void utilizandoStrings(Employee lista[], int tam, char name[])
+void utilizandoStrings(Employee lista[], int tam)
 {
-    int i,j;
-    //estandarizados a lower
+    int i;
     for(i=0;i<tam;i++)
     {
         strlwr(lista[i].name);
         strlwr(lista[i].lastName);
     }
-    //pasando a mayus el vector en posicion 0
-    for(j=0;j<tam;j++)
-    {
-        //toupper(lista[j].name[0]);
-        //toupper(lista[j])
-        pasarMayusculas(lista, tam);
-    }
+    pasarMayusculas(lista, tam);
 }
 
 void ordenarAlfabeticamente(Employee lista[], int tam)
@@ -254,12 +247,12 @@ void pasarMayusculas(Employee lista[], int tam)
     int j;
     for(i=0;i<tam;i++)
     {
-
         for(j=0;j<tam;j++)
         {
             if(j==0)
             {
                 lista[i].name[j] = toupper(lista[i].name[j]);
+                lista[i].lastName[j] = toupper(lista[i].lastName[j]);
             }
         }
     }
