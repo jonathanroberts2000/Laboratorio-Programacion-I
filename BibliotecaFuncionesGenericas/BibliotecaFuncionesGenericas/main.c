@@ -3,7 +3,7 @@
 #include "BibliotecaFuncionesGenericas.h"
 int main()
 {
-    int opcion;
+    /*int opcion;
     char respuesta = 's';
     do{
         opcion = pedirEntero("1.ALTAS\n2.BAJAS\n3.MODIFICACIONES\n4.MOSTRAR\n5.INFORMAR\n6.SALIR\nIngrese una opcion: ");
@@ -35,7 +35,9 @@ int main()
         system("pause");
         system("cls");
         fflush(stdin);
-    }while(respuesta == 's');
-
+    }while(respuesta == 's');*/
+    char nombre[21];
+    pedirCadena("Ingrese cadena: ", nombre, 21);
+    printf("%s", nombre);
     return 0;
 }

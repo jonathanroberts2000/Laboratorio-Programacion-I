@@ -24,3 +24,5 @@ float restaNumeros(float num1, float num2);
 float divisionNumeros(float num1, float num2);
 float multiplicacionNumeros(float num1, float num2);
 int buscarEntero(int vector_1[], int tam, int numero);
+void pedirCadena(char mensaje[] , char cadena[] , int tamCadena);
+void validarCadena(char mensajeError[] , char cadena [] , int tamCadena);

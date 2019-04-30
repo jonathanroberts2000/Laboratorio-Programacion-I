@@ -23,6 +23,7 @@ char pedirCaracter(char mensaje[])
 {
     char caracter;
     printf("%s" , mensaje);
+    fflush(stdin);
     scanf("%c" , &caracter);
     return caracter;
 }
@@ -114,5 +115,26 @@ int buscarEntero(int vector_1[], int tam, int numero)
         }
     }
     return index;
+}
+
+void pedirCadena(char mensaje[] , char cadena[] , int tamCadena)
+{
+    printf("%s" , mensaje);
+    fflush(stdin);
+    scanf("%[^\n]" , cadena);
+    validarCadena("cadena: " , cadena , tamCadena);
+}
+
+void validarCadena(char mensajeError[] , char cadena[] , int tamCadena)
+{
+    char auxCadena[1000];
+    strcpy(auxCadena, cadena);
+    while(strlen(auxCadena)>tamCadena)
+    {
+        printf("Reingrese %s" , mensajeError);
+        fflush(stdin);
+        scanf("%[^\n]" , auxCadena);
+    }
+    strcpy(cadena, auxCadena);
 }
 
