@@ -138,10 +138,64 @@ void validarCadena(char mensajeError[] , char cadena[] , int tamCadena)
     strcpy(cadena, auxCadena);
 }
 
+void cargarEstructura(eEmpleados lista[], int tam)
+{
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        pedirCadena("Ingrese apellido: ", lista[i].apellido, 51);
+        pedirCadena("Ingrese nombre: ", lista[i].nombre, 51);
+        lista[i].estado = OCUPADO;
+        lista[i].idSector = pedirEntero("Ingrese Id: ");
+        lista[i].sueldoBruto = pedirFlotante("Ingrese sueldo bruto: ");
+        lista[i].sueldoNeto = lista[i].sueldoBruto * 0.85;
+    }
+}
 
+void ordenarMenorMayor(eEmpleados lista[], int tam)
+{
+    int i,j;
+    char auxNombre[51];
+    char auxApellido[51];
+    int auxEstado;
+    int auxIdSector;
+    float auxSueldoBruto;
+    float auxSueldoNeto;
+    for(i=0;i<tam-1;i++)
+    {
+        for(j=i+1;j<tam;j++)
+        {
+            if(lista[i].idSector > lista[j].idSector)
+            {
+                strcpy(auxApellido, lista[i].apellido);
+                strcpy(lista[i].apellido, lista[j].apellido);
+                strcpy(lista[j].apellido, auxApellido);
 
+                strcpy(auxNombre, lista[i].nombre);
+                strcpy(lista[i].nombre, lista[j].nombre);
+                strcpy(lista[j].nombre, auxNombre);
 
+                auxEstado = lista[i].estado;
+                lista[i].estado = lista[j].estado;
+                lista[j].estado = auxEstado;
 
+                auxIdSector = lista[i].idSector;
+                lista[i].idSector = lista[j].idSector;
+                lista[j].idSector = auxIdSector;
 
+                auxSueldoBruto = lista[i].sueldoBruto;
+                lista[i].sueldoBruto = lista[j].sueldoBruto;
+                lista[j].sueldoBruto = auxSueldoBruto;
 
+                auxSueldoNeto = lista[i].sueldoNeto;
+                lista[i].sueldoNeto = lista[j].sueldoNeto;
+                lista[j].sueldoNeto = auxSueldoNeto;
+            }
+        }
+    }
+}
 
+void mostrarEmpleado(eEmpleados unEmpleado)
+{
+    printf("%s--%s--%d--%d--%.2f--%.2f", unEmpleado.nombre, unEmpleado.apellido, unEmpleado.estado, unEmpleado.idSector, unEmpleado.sueldoBruto, unEmpleado.sueldoNeto);
+}

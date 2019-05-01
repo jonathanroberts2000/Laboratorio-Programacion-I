@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "BibliotecaFuncionesGenericas.h"
+#define T 3
 int main()
 {
-    /*int opcion;
+    int opcion;
+    eEmpleados lista[T];
     char respuesta = 's';
     do{
         opcion = pedirEntero("1.ALTAS\n2.BAJAS\n3.MODIFICACIONES\n4.MOSTRAR\n5.INFORMAR\n6.SALIR\nIngrese una opcion: ");
@@ -11,6 +13,7 @@ int main()
         {
             case 1:
                 puts("ALTAS");
+                cargarEstructura(lista,T);
                 break;
             case 2:
                 puts("BAJAS");
@@ -35,9 +38,6 @@ int main()
         system("pause");
         system("cls");
         fflush(stdin);
-    }while(respuesta == 's');*/
-    char nombre[21];
-    pedirCadena("Ingrese cadena: ", nombre, 21);
-    printf("%s", nombre);
+    }while(respuesta == 's');
     return 0;
 }
