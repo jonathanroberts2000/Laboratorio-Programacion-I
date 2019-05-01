@@ -7,6 +7,8 @@ typedef struct
 {
     char nombre[51];
     char apellido[51];
+    //char sexo;
+    int legajo;
     int estado;
     int idSector;
     float sueldoBruto;
@@ -15,6 +17,8 @@ typedef struct
 
 int pedirEntero(char mensaje[]);
 float pedirFlotante(char mensaje[]);
+int validacionDeEnterosPositivos(int num1);
+float validacionDeFlotantesPositivos(float num1);
 char pedirCaracter(char mensaje[]);
 void recorrerVector(int vector_1[], int tam);
 int generarNumeroRandom(void);
@@ -34,3 +38,4 @@ int buscarLibre(eEmpleados lista[], int tam);
 void inicializarEmpleados(eEmpleados lista[], int tam);
 void hardcodearDatos(eEmpleados lista[], int tam);
 void borrarEmpleado(eEmpleados lista[], int tam);
+char validacionDeCaracter(char caracter);

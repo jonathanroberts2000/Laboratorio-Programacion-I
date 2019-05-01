@@ -2,12 +2,14 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <ctype.h>
 #include "BibliotecaFuncionesGenericas.h"
 int pedirEntero(char mensaje[])
 {
     int numeroEntero;
     printf("%s" , mensaje);
     scanf("%d" , &numeroEntero);
+    numeroEntero = validacionDeEnterosPositivos(numeroEntero);
     return numeroEntero;
 }
 
@@ -16,6 +18,7 @@ float pedirFlotante(char mensaje[])
     float numeroFlotante;
     printf("%s" , mensaje);
     scanf("%f" , &numeroFlotante);
+    numeroFlotante = validacionDeFlotantesPositivos(numeroFlotante);
     return numeroFlotante;
 }
 
@@ -25,6 +28,7 @@ char pedirCaracter(char mensaje[])
     printf("%s" , mensaje);
     fflush(stdin);
     scanf("%c" , &caracter);
+    caracter = validacionDeCaracter(caracter);
     return caracter;
 }
 
@@ -109,7 +113,7 @@ int buscarEntero(eEmpleados lista[], int tam)
     int numero = pedirEntero("Ingrese el numero que desea buscar: ");
     for(i=0;i<tam;i++)
     {
-        if(lista[i].idSector == numero)
+        if(lista[i].legajo == numero)
         {
             indice = i;
             break;
@@ -147,6 +151,7 @@ void cargarEstructura(eEmpleados lista[], int tam)
         pedirCadena("Ingrese apellido: ", lista[i].apellido, 51);
         pedirCadena("Ingrese nombre: ", lista[i].nombre, 51);
         lista[i].estado = OCUPADO;
+        lista[i].legajo = pedirEntero("Ingrese legajo: ");
         lista[i].idSector = pedirEntero("Ingrese Id: ");
         lista[i].sueldoBruto = pedirFlotante("Ingrese sueldo bruto: ");
         lista[i].sueldoNeto = lista[i].sueldoBruto * 0.85;
@@ -159,6 +164,7 @@ void ordenarMenorMayor(eEmpleados lista[], int tam)
     char auxNombre[51];
     char auxApellido[51];
     int auxEstado;
+    int auxLegajo;
     int auxIdSector;
     float auxSueldoBruto;
     float auxSueldoNeto;
@@ -166,8 +172,12 @@ void ordenarMenorMayor(eEmpleados lista[], int tam)
     {
         for(j=i+1;j<tam;j++)
         {
-            if(lista[i].idSector > lista[j].idSector)
+            if(lista[i].legajo > lista[j].legajo)
             {
+                auxLegajo = lista[i].legajo;
+                lista[i].legajo = lista[j].legajo;
+                lista[j].legajo = auxLegajo;
+
                 strcpy(auxApellido, lista[i].apellido);
                 strcpy(lista[i].apellido, lista[j].apellido);
                 strcpy(lista[j].apellido, auxApellido);
@@ -198,7 +208,7 @@ void ordenarMenorMayor(eEmpleados lista[], int tam)
 
 void mostrarEmpleado(eEmpleados unEmpleado)
 {
-    printf("%s--%s--%d--%d--%.2f--%.2f", unEmpleado.nombre, unEmpleado.apellido, unEmpleado.estado, unEmpleado.idSector, unEmpleado.sueldoBruto, unEmpleado.sueldoNeto);
+    printf("%s--%s--%d--%d--%d--%.2f--%.2f \n", unEmpleado.nombre, unEmpleado.apellido, unEmpleado.estado, unEmpleado.idSector, unEmpleado.legajo, unEmpleado.sueldoBruto, unEmpleado.sueldoNeto);
 }
 
 void mostrarListaEmpleados(eEmpleados lista[], int tam)
@@ -222,6 +232,7 @@ int buscarLibre(eEmpleados lista[], int tam)
         if(lista[i].estado == LIBRE)
         {
             indice = i;
+            break;
         }
     }
     return indice;
@@ -241,6 +252,7 @@ void hardcodearDatos(eEmpleados lista[], int tam)
     char nombre[][51] = {"Matias","Jonathan","Martina"};
     char apellido[][51] = {"Perez","Di Martino","Roberts"};
     int idSector[] = {1,3,5};
+    int legajo[] = {10,21,32};
     float sueldoBruto[] = {1000,2000,3000};
     int i;
     for(i=0;i<tam;i++)
@@ -249,6 +261,7 @@ void hardcodearDatos(eEmpleados lista[], int tam)
         strcpy(lista[i].apellido, apellido[i]);
         lista[i].estado = OCUPADO;
         lista[i].idSector = idSector[i];
+        lista[i].legajo = legajo[i];
         lista[i].sueldoBruto = sueldoBruto[i];
         lista[i].sueldoNeto = lista[i].sueldoBruto * 0.85;
     }
@@ -256,16 +269,48 @@ void hardcodearDatos(eEmpleados lista[], int tam)
 
 void borrarEmpleado(eEmpleados lista[], int tam)
 {
-    int i;
     int indice = buscarEntero(lista,tam);
-    for(i=0;i<tam;i++)
+    if(indice == -1)
     {
-        if(lista[i].idSector == indice)
-        {
-            lista[i].estado = LIBRE;
-            strcpy(lista[i].nombre, "");
-
-        }
+        printf("No se encontro el legajo ingresado! \n");
+    }else{
+        lista[indice].estado = LIBRE;
+        strcpy(lista[indice].nombre, "");
+        strcpy(lista[indice].apellido, "");
+        lista[indice].legajo = -1;
+        lista[indice].idSector = -1;
+        lista[indice].sueldoBruto = 0;
+        lista[indice].sueldoNeto = 0;
     }
 }
 
+int validacionDeEnterosPositivos(int num1)
+{
+    int auxNum = num1;
+    while(auxNum < 0)
+    {
+        auxNum = pedirEntero("Error! Reingrese un numero positivo: ");
+    }
+    return auxNum;
+}
+
+float validacionDeFlotantesPositivos(float num1)
+{
+    float auxNum = num1;
+    while(auxNum < 0)
+    {
+        auxNum = pedirFlotante("Error! Reingrese un numero positivo: ");
+    }
+    return auxNum;
+}
+
+char validacionDeCaracter(char caracter)
+{
+    char auxCaracter = caracter;
+    auxCaracter = tolower(auxCaracter);
+    while(auxCaracter != 'm' || auxCaracter != 'f')
+    {
+
+    }
+    return auxCaracter;
+}
