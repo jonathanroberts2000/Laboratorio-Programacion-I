@@ -264,6 +264,7 @@ void borrarEmpleado(eEmpleados lista[], int tam)
         {
             lista[i].estado = LIBRE;
             strcpy(lista[i].nombre, "");
+
         }
     }
 }
