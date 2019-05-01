@@ -23,10 +23,14 @@ float sumaNumeros(float num1, float num2);
 float restaNumeros(float num1, float num2);
 float divisionNumeros(float num1, float num2);
 float multiplicacionNumeros(float num1, float num2);
-int buscarEntero(int vector_1[], int tam, int numero);
+int buscarEntero(eEmpleados lista[], int tam);
 void pedirCadena(char mensaje[] , char cadena[] , int tamCadena);//a veces anda, a veces no
 void validarCadena(char mensajeError[] , char cadena [] , int tamCadena);// a veces anda, a veces no
 void cargarEstructura(eEmpleados lista[], int tam);
 void ordenarMenorMayor(eEmpleados lista[], int tam);
 void mostrarEmpleado(eEmpleados unEmpleado);
 void mostrarListaEmpleados(eEmpleados lista[], int tam);
+int buscarLibre(eEmpleados lista[], int tam);
+void inicializarEmpleados(eEmpleados lista[], int tam);
+void hardcodearDatos(eEmpleados lista[], int tam);
+void borrarEmpleado(eEmpleados lista[], int tam);

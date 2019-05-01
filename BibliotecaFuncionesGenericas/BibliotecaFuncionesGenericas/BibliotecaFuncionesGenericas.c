@@ -102,19 +102,20 @@ int factorialNumero(int num1)
     return resultado;
 }
 
-int buscarEntero(int vector_1[], int tam, int numero)
+int buscarEntero(eEmpleados lista[], int tam)
 {
     int i;
-    int index = -1;
-    numero = pedirEntero("Ingrese el numero que desea buscar: ");
+    int indice = -1;
+    int numero = pedirEntero("Ingrese el numero que desea buscar: ");
     for(i=0;i<tam;i++)
     {
-        if(vector_1[i] == index)
+        if(lista[i].idSector == numero)
         {
-            index = i;
+            indice = i;
+            break;
         }
     }
-    return index;
+    return indice;
 }
 
 void pedirCadena(char mensaje[] , char cadena[] , int tamCadena)
@@ -205,6 +206,65 @@ void mostrarListaEmpleados(eEmpleados lista[], int tam)
     int i;
     for(i=0;i<tam;i++)
     {
-        mostrarEmpleado(lista[i]);
+        if(lista[i].estado == OCUPADO)
+        {
+            mostrarEmpleado(lista[i]);
+        }
     }
 }
+
+int buscarLibre(eEmpleados lista[], int tam)
+{
+    int indice = -1;
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        if(lista[i].estado == LIBRE)
+        {
+            indice = i;
+        }
+    }
+    return indice;
+}
+
+void inicializarEmpleados(eEmpleados lista[], int tam)
+{
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        lista[i].estado = LIBRE;
+    }
+}
+
+void hardcodearDatos(eEmpleados lista[], int tam)
+{
+    char nombre[][51] = {"Matias","Jonathan","Martina"};
+    char apellido[][51] = {"Perez","Di Martino","Roberts"};
+    int idSector[] = {1,3,5};
+    float sueldoBruto[] = {1000,2000,3000};
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        strcpy(lista[i].nombre, nombre[i]);
+        strcpy(lista[i].apellido, apellido[i]);
+        lista[i].estado = OCUPADO;
+        lista[i].idSector = idSector[i];
+        lista[i].sueldoBruto = sueldoBruto[i];
+        lista[i].sueldoNeto = lista[i].sueldoBruto * 0.85;
+    }
+}
+
+void borrarEmpleado(eEmpleados lista[], int tam)
+{
+    int i;
+    int indice = buscarEntero(lista,tam);
+    for(i=0;i<tam;i++)
+    {
+        if(lista[i].idSector == indice)
+        {
+            lista[i].estado = LIBRE;
+            strcpy(lista[i].nombre, "");
+        }
+    }
+}
+

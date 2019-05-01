@@ -4,7 +4,7 @@
 #define T 3
 int main()
 {
-    int opcion;
+    /*int opcion;
     eEmpleados lista[T];
     char respuesta = 's';
     do{
@@ -38,6 +38,10 @@ int main()
         system("pause");
         system("cls");
         fflush(stdin);
-    }while(respuesta == 's');
+    }while(respuesta == 's');*/
+
+    char nombre[21];
+    pedirCadena("Ingrese cadena: ", nombre, 21);
+    printf("%s", nombre);
     return 0;
 }
