@@ -199,3 +199,12 @@ void mostrarEmpleado(eEmpleados unEmpleado)
 {
     printf("%s--%s--%d--%d--%.2f--%.2f", unEmpleado.nombre, unEmpleado.apellido, unEmpleado.estado, unEmpleado.idSector, unEmpleado.sueldoBruto, unEmpleado.sueldoNeto);
 }
+
+void mostrarListaEmpleados(eEmpleados lista[], int tam)
+{
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        mostrarEmpleado(lista[i]);
+    }
+}

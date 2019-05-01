@@ -29,3 +29,4 @@ void validarCadena(char mensajeError[] , char cadena [] , int tamCadena);// a ve
 void cargarEstructura(eEmpleados lista[], int tam);
 void ordenarMenorMayor(eEmpleados lista[], int tam);
 void mostrarEmpleado(eEmpleados unEmpleado);
+void mostrarListaEmpleados(eEmpleados lista[], int tam);
