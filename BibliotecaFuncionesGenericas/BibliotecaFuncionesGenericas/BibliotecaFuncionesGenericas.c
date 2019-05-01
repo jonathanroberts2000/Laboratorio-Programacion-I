@@ -127,7 +127,7 @@ void pedirCadena(char mensaje[] , char cadena[] , int tamCadena)
 
 void validarCadena(char mensajeError[] , char cadena[] , int tamCadena)
 {
-    char auxCadena[1000];
+    char auxCadena[100];
     strcpy(auxCadena, cadena);
     while(strlen(auxCadena)>tamCadena)
     {
@@ -137,4 +137,11 @@ void validarCadena(char mensajeError[] , char cadena[] , int tamCadena)
     }
     strcpy(cadena, auxCadena);
 }
+
+
+
+
+
+
+
 
