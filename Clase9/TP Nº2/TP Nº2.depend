@@ -1,19 +1,21 @@
 # depslib dependency file v1.0
-1556579109 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\arrayemployees.c
+1556853397 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\arrayemployees.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
-	<time.h>
 	<ctype.h>
 	"ArrayEmployees.h"
+	"ValidationFunctions.h"
 
-1556575867 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\main.c
+1556819681 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"ArrayEmployees.h"
 
-1556576237 c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\arrayemployees.h
+1556854012 c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\arrayemployees.h
 	<stdio.h>
+	<stdlib.h>
+	<time.h>
 
 1555885712 source:e:\laboratorio_programacion_i\clase9\tp nº2\arrayemployees.c
 	<stdio.h>
@@ -38,4 +40,18 @@
 
 1556546878 c:\users\alumno\desktop\laboratorio_programacion_i-master\clase9\tp nº2\arrayemployees.h
 	<stdio.h>
+
+1556854101 c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\validationfunctions.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"ArrayEmployees.h"
+
+1556854048 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\validationfunctions.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<ctype.h>
+	<string.h>
+	"ValidationFunctions.h"
 

@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #define LIBRE 0
 #define OCUPADO 1
+//#include "ValidationFunctions.h"
 
 typedef struct
 {
@@ -12,9 +15,6 @@ typedef struct
     int isEmpty;
 } Employee;
 
-int pedirEntero(char[]);
-char pedirCaracter(char[]);
-int generarNumeroRandom(void);
 int buscarId(Employee[], int, int);
 void cargarEmpleado(Employee[], int);
 void modificarEmpleado(Employee[], int);
@@ -22,6 +22,3 @@ void borrarEmpleado(Employee[], int);
 void mostrarEmpleado(Employee);
 void mostrarListaEmpleados(Employee[], int);
 void ordenarListaEmpleados(Employee[], int);
-void utilizandoStrings(Employee[], int);
-void ordenarAlfabeticamente(Employee[], int);
-void pasarMayusculas(Employee[], int);
