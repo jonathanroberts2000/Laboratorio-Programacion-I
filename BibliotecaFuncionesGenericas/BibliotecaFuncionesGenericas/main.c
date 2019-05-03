@@ -2,10 +2,12 @@
 #include <stdlib.h>
 #include "BibliotecaFuncionesGenericas.h"
 #define T 3
+#define TS 3
 int main()
 {
-    /*int opcion;
+    int opcion;
     eEmpleados lista[T];
+    eSectores listaSectores[TS] = {{0,"Contabilidad",100},{1,"Sistemas",200},{2, "RRHH", 150}};
     char respuesta = 's';
     hardcodearDatos(lista,T);
     do{
@@ -41,13 +43,12 @@ int main()
         system("pause");
         system("cls");
         fflush(stdin);
-    }while(respuesta == 's');*/
+    }while(respuesta == 's');
 
     /*char nombre[21];
     pedirCadena("Ingrese cadena: ", nombre, 21);
     printf("%s", nombre);*/
-    int numero;
-    numero = pedirEntero("Ingrese un numero: ");
-    printf("%d", numero);
+
     return 0;
 }
+

@@ -28,7 +28,7 @@ char pedirCaracter(char mensaje[])
     printf("%s" , mensaje);
     fflush(stdin);
     scanf("%c" , &caracter);
-    caracter = validacionDeCaracter(caracter);
+    caracter = validacionCaracterSexo(caracter);
     return caracter;
 }
 
@@ -136,25 +136,30 @@ void validarCadena(char mensajeError[] , char cadena[] , int tamCadena)
     strcpy(auxCadena, cadena);
     while(strlen(auxCadena)>tamCadena)
     {
-        printf("Reingrese %s" , mensajeError);
-        fflush(stdin);
-        scanf("%[^\n]" , auxCadena);
+        //printf("Reingrese %s" , mensajeError);
+        //fflush(stdin);
+        //scanf("%[^\n]" , auxCadena);
+        pedirCadena("Reingrese nombre: ", auxCadena, 21);
     }
     strcpy(cadena, auxCadena);
 }
 
-void cargarEstructura(eEmpleados lista[], int tam)
+void cargarEmpleado(eEmpleados lista[], int tam)
 {
-    int i;
-    for(i=0;i<tam;i++)
+    int indice = buscarLibre(lista, tam);
+    if(indice == -1)
     {
-        pedirCadena("Ingrese apellido: ", lista[i].apellido, 51);
-        pedirCadena("Ingrese nombre: ", lista[i].nombre, 51);
-        lista[i].estado = OCUPADO;
-        lista[i].legajo = pedirEntero("Ingrese legajo: ");
-        lista[i].idSector = pedirEntero("Ingrese Id: ");
-        lista[i].sueldoBruto = pedirFlotante("Ingrese sueldo bruto: ");
-        lista[i].sueldoNeto = lista[i].sueldoBruto * 0.85;
+        printf("No hay espacio para ingresar mas empleados! \n");
+    }else
+    {
+        pedirCadena("Ingrese apellido: ", lista[indice].apellido, 51);
+        pedirCadena("Ingrese nombre: ", lista[indice].nombre, 51);
+        lista[indice].sexo = pedirCaracter("Ingrese sexo: ");
+        lista[indice].estado = OCUPADO;
+        lista[indice].legajo = pedirEntero("Ingrese legajo: ");
+        lista[indice].idSector = pedirEntero("Ingrese Id: ");
+        lista[indice].sueldoBruto = pedirFlotante("Ingrese sueldo bruto: ");
+        lista[indice].sueldoNeto = multiplicacionNumeros(lista[indice].sueldoBruto, 0.85);
     }
 }
 
@@ -208,7 +213,7 @@ void ordenarMenorMayor(eEmpleados lista[], int tam)
 
 void mostrarEmpleado(eEmpleados unEmpleado)
 {
-    printf("%s--%s--%d--%d--%d--%.2f--%.2f \n", unEmpleado.nombre, unEmpleado.apellido, unEmpleado.estado, unEmpleado.idSector, unEmpleado.legajo, unEmpleado.sueldoBruto, unEmpleado.sueldoNeto);
+    printf("%s--%s--%c--%d--%d--%d--%.2f--%.2f \n", unEmpleado.nombre, unEmpleado.apellido, unEmpleado.sexo, unEmpleado.estado, unEmpleado.idSector, unEmpleado.legajo, unEmpleado.sueldoBruto, unEmpleado.sueldoNeto);
 }
 
 void mostrarListaEmpleados(eEmpleados lista[], int tam)
@@ -251,6 +256,7 @@ void hardcodearDatos(eEmpleados lista[], int tam)
 {
     char nombre[][51] = {"Matias","Jonathan","Martina"};
     char apellido[][51] = {"Perez","Di Martino","Roberts"};
+    char sexo[] = {'M','M','F'};
     int idSector[] = {1,3,5};
     int legajo[] = {10,21,32};
     float sueldoBruto[] = {1000,2000,3000};
@@ -259,6 +265,7 @@ void hardcodearDatos(eEmpleados lista[], int tam)
     {
         strcpy(lista[i].nombre, nombre[i]);
         strcpy(lista[i].apellido, apellido[i]);
+        lista[i].sexo = sexo[i];
         lista[i].estado = OCUPADO;
         lista[i].idSector = idSector[i];
         lista[i].legajo = legajo[i];
@@ -272,15 +279,17 @@ void borrarEmpleado(eEmpleados lista[], int tam)
     int indice = buscarEntero(lista,tam);
     if(indice == -1)
     {
-        printf("No se encontro el legajo ingresado! \n");
+        printf("Error! El legajo ingresado no esta registrado en el sistema! \n");
     }else{
         lista[indice].estado = LIBRE;
         strcpy(lista[indice].nombre, "");
         strcpy(lista[indice].apellido, "");
+        lista[indice].sexo = ' ';
         lista[indice].legajo = -1;
         lista[indice].idSector = -1;
         lista[indice].sueldoBruto = 0;
         lista[indice].sueldoNeto = 0;
+        printf("El empleado ha sido borrado del sistema exitosamente. \n");
     }
 }
 
@@ -304,13 +313,88 @@ float validacionDeFlotantesPositivos(float num1)
     return auxNum;
 }
 
-char validacionDeCaracter(char caracter)
+char validacionCaracterSexo(char caracter)
 {
     char auxCaracter = caracter;
     auxCaracter = tolower(auxCaracter);
-    while(auxCaracter != 'm' || auxCaracter != 'f')
+    while(auxCaracter != 'm' && auxCaracter != 'f')
     {
-
+        auxCaracter = pedirCaracter("Error! Reingrese un sexo valido: ");
     }
     return auxCaracter;
 }
+
+void modificarEmpleado(eEmpleados lista[], int tam) //complementar funcion preguntando al usuario si cuando ingresa mal el legajo desea ver los empleados
+{
+    int legajo = pedirEntero("Ingrese el legajo a buscar: ");
+    int indice = buscarEmpleadoPorLegajo(lista, tam, legajo);
+    int opcion;
+    if(indice == -1)
+    {
+        printf("Error! El legajo solicitado no esta ingresado en el sistema! \n");
+        //desea ver los empleados para comrpobar sus legajos?
+    }else{
+        do{
+            opcion = pedirEntero("1.Modificar nombre\n2.Modificar apellido\n3.Modificar id sector\n4.Modificar sueldo bruto\n5.Salir del menu modificaciones\nElija una opcion: ");
+            switch(opcion)
+            {
+                case 1:
+                    pedirCadena("Ingrese el nuevo nombre del empleado: ", lista[indice].nombre, 51);
+                    break;
+                case 2:
+                    pedirCadena("Ingrese el nuevo apellido del empleado: ", lista[indice].apellido, 51);
+                    break;
+                case 3:
+                    lista[indice].idSector = pedirEntero("Ingrese el nuevo sector del empleado: ");
+                    break;
+                case 4:
+                    lista[indice].sueldoBruto = pedirFlotante("Ingrese el nuevo sueldo bruto del empleado: ");
+                    lista[indice].sueldoNeto =  multiplicacionNumeros(lista[indice].sueldoBruto, 0.85);
+                    break;
+                case 5:
+                    printf("Saliendo...\n");
+                    break;
+                default:
+                    printf("Error! No ha ingresado una opcion correcta! \n");
+                    break;
+            }
+        system("pause");
+        system("cls");
+        fflush(stdin);
+        }while(opcion !=5);
+    }
+}
+
+int buscarEmpleadoPorLegajo(eEmpleados lista[], int tam, int legajo)
+{
+    int indice = -1;
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        if(lista[i].legajo == legajo)
+        {
+            indice = i;
+            break;
+        }
+    }
+    return indice;
+}
+
+int buscarEmpleadoEspecifico(eEmpleados lista[], int tam)
+{
+    int i;
+    int cantEmpleados = 0;
+    char nombre[51];
+    float sueldoBruto = pedirFlotante("Ingrese el parametro con el que desea comparar a el/los empleado/s: ");
+    pedirCadena("Ingrese el nombre del/los empleado/s a buscar: ", nombre, 51);
+    for(i=0;i<tam;i++)
+    {
+        if(stricmp(lista[i].nombre, nombre) == 0 && lista[i].sueldoBruto > sueldoBruto)
+        {
+            cantEmpleados++;
+        }
+    }
+    return cantEmpleados;
+}
+
+
