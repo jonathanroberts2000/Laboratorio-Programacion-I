@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "Empleado.h"
 #include <string.h>
 void cargarEmpleado(eEmpleado lista[], int tam)
@@ -112,32 +114,35 @@ void modificarDatos(eEmpleado lista[], int tam)
         printf("No se encontro el valor solicitado! \n");
     }else{
         do{
-        opcion = pedirOpcion("1.Modificar nombre\n2.Modificar sexo\n3.Modificar sueldo bruto\n4.Salir del menu\nElija una opcion: ");
-    switch(opcion)
-    {
-        case 1:
-            printf("Ingrese el nuevo nombre: ");
-            fflush(stdin);
-            scanf("%s" , lista[index].nombre);
+            opcion = pedirOpcion("1.Modificar nombre\n2.Modificar sexo\n3.Modificar sueldo bruto\n4.Salir del menu\nElija una opcion: ");
+            switch(opcion)
+            {
+                case 1:
+                    printf("Ingrese el nuevo nombre: ");
+                    fflush(stdin);
+                    scanf("%s" , lista[index].nombre);
+                    break;
+                case 2:
+                    printf("Ingrese el nuevo sexo: ");
+                    fflush(stdin);
+                    scanf("%s" , &lista[index].sexo);
+                    break;
+                case 3:
+                    printf("Modificar sueldo bruto: ");
+                    scanf("%f" , &lista[index].sueldoBruto);
+                    lista[index].sueldoNeto = lista[index].sueldoBruto * 0.85;
+                    break;
+                case 4:
+                    printf("Saliendo...\n");
+                    break;
+                default:
+                    printf("Error! No ha ingresado una opcion correcta! \n");//opcion = pedirOpcion("Error! Reingrese una opcion valida: ");
             break;
-        case 2:
-            printf("Ingrese el nuevo sexo: ");
-            fflush(stdin);
-            scanf("%s" , &lista[index].sexo);
-            break;
-        case 3:
-            printf("Modificar sueldo bruto: ");
-            scanf("%f" , &lista[index].sueldoBruto);
-            lista[index].sueldoNeto = lista[index].sueldoBruto * 0.85;
-            break;
-        case 4:
-            printf("Saliendo...\n");
-            break;
-        default:
-            opcion = pedirOpcion("Error! Reingrese una opcion valida: ");
-            break;
-        }
-    }while(opcion !=4);
+            }
+        system("pause");
+        system("cls");
+        fflush(stdin);
+        }while(opcion !=4);
     }
 }
 
