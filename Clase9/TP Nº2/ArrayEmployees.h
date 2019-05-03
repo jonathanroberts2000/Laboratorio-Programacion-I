@@ -1,10 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#define LIBRE 0
+#include "ValidationFunctions.h"
 #define OCUPADO 1
-//#include "ValidationFunctions.h"
-
+#define LIBRE 0
 typedef struct
 {
     int id;
@@ -13,7 +9,7 @@ typedef struct
     float salary;
     int sector;
     int isEmpty;
-} Employee;
+}Employee;
 
 int buscarId(Employee[], int, int);
 void cargarEmpleado(Employee[], int);

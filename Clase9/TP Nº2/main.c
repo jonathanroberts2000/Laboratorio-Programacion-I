@@ -1,15 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ValidationFunctions.h>
-#include <ArrayEmployees.h>
+#include "ArrayEmployees.h"
+//#include "ValidationFunctions.h"
 #define T 3
 int main()
 {
     int opcion;
     char seguir = 's';
     Employee lista[T];
-     do
-    {
+     do{
         opcion = pedirEntero("1.Alta\n2.Modificar\n3.Baja\n4.Informar\n5.Salir\nElija una opcion: \n");
         switch(opcion)
         {
