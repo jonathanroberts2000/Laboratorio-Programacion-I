@@ -1,4 +1,3 @@
-#include "ValidationFunctions.h"
 #define OCUPADO 1
 #define LIBRE 0
 typedef struct
@@ -18,3 +17,14 @@ void borrarEmpleado(Employee[], int);
 void mostrarEmpleado(Employee);
 void mostrarListaEmpleados(Employee[], int);
 void ordenarListaEmpleados(Employee[], int);
+
+
+void utilizandoStrings(Employee[], int);
+void ordenarAlfabeticamente(Employee[], int);
+void pasarMayusculas(Employee[], int);
+
+
+
+int pedirEntero(char[]);
+char pedirCaracter(char[]);
+int generarNumeroRandom(void);
