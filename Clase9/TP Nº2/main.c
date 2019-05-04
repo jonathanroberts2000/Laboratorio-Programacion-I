@@ -8,6 +8,8 @@ int main()
     int opcion;
     char seguir = 's';
     Employee lista[T];
+    float totalSalario = totalSalarios(lista,T);
+
     inicializarEmpleados(lista, T);
      do{
         opcion = pedirEntero("1.Alta\n2.Modificar\n3.Baja\n4.Informar\n5.Salir\nElija una opcion: \n");
@@ -27,7 +29,12 @@ int main()
                 break;
             case 4:
                 printf("INFORMAR\n");
+                ordenarListaEmpleados(lista,T);
+                ordenarAlfabeticamente(lista,T);
                 mostrarListaEmpleados(lista,T);
+
+                printf("El total de los salarios es de: %f \n", totalSalario);
+                printf("El promedio de los salarios es de: %f \n", promedioSalarios(lista,T,totalSalario));
                 break;
             case 5:
                 printf("Saliendo....");

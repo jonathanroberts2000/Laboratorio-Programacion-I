@@ -13,6 +13,7 @@ typedef struct
 
 void inicializarEmpleados(Employee[], int);
 int buscarId(Employee[], int, int);
+int buscarLibre(Employee[], int);
 void cargarEmpleado(Employee[], int);
 void modificarEmpleado(Employee[], int);
 void borrarEmpleado(Employee[], int);
@@ -26,11 +27,15 @@ void mostrarListaSectores(Employee[], int);
 
 
 
+float totalSalarios(Employee[], int);
+float promedioSalarios(Employee[], int, float);
+
+
 //funciones pedir datos
 int pedirEntero(char[]);
 char pedirCaracter(char[]);
 int generarNumeroRandom(void);
 
 
-
-void mostrarSectorEmpleados(Employee, Employee[], int);
+//revisar funcion para que no se repita el printf
+void mostrarSectorEmpleados(Employee);
