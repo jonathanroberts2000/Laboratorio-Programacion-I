@@ -151,6 +151,8 @@ void mostrarListaEmpleados(Employee lista[], int tam)
 {
     int i;
     utilizandoStrings(lista,tam);
+    ordenarListaEmpleados(lista,tam);
+    ordenarAlfabeticamente(lista,tam);
     for(i=0;i<tam;i++)
     {
         if(lista[i].isEmpty == OCUPADO)

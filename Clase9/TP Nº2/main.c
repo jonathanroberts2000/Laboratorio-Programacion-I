@@ -6,10 +6,9 @@
 int main()
 {
     int opcion;
+    int flag = 0;
     char seguir = 's';
     Employee lista[T];
-    float totalSalario = totalSalarios(lista,T);
-
     inicializarEmpleados(lista, T);
      do{
         opcion = pedirEntero("1.Alta\n2.Modificar\n3.Baja\n4.Informar\n5.Salir\nElija una opcion: \n");
@@ -18,24 +17,37 @@ int main()
             case 1:
                 printf("ALTAS\n");
                 cargarEmpleado(lista,T);
+                flag = 1;
                 break;
             case 2:
-                printf("MODIFICAR\n");
-                modificarEmpleado(lista,T);
-                break;
+                if(flag == 1)
+                {
+                    printf("MODIFICAR\n");
+                    modificarEmpleado(lista,T);
+                    break;
+                }else{
+                    printf("Error! Para acceder a esta funcion debe cargar un empleado! \n");
+                }
             case 3:
-                printf("BAJA\n");
-                borrarEmpleado(lista,T);
-                break;
+                if(flag == 1)
+                {
+                    printf("BAJA\n");
+                    borrarEmpleado(lista,T);
+                    break;
+                }else{
+                    printf("Error! Para acceder a esta funcion debe cargar un empleado! \n");
+                }
             case 4:
-                printf("INFORMAR\n");
-                ordenarListaEmpleados(lista,T);
-                ordenarAlfabeticamente(lista,T);
-                mostrarListaEmpleados(lista,T);
-
-                printf("El total de los salarios es de: %f \n", totalSalario);
-                printf("El promedio de los salarios es de: %f \n", promedioSalarios(lista,T,totalSalario));
-                break;
+                if(flag == 1)
+                {
+                    printf("INFORMAR\n");
+                    mostrarListaEmpleados(lista,T);
+                    printf("El total de los salarios es de: %f \n", totalSalarios(lista,T));
+                    printf("El promedio de los salarios es de: %f \n", promedioSalarios(lista,T,totalSalarios(lista,T)));
+                    break;
+                }else{
+                    printf("Error! Para acceder a esta funcion debe cargar un empleado! \n");
+                }
             case 5:
                 printf("Saliendo....");
                 return 0;

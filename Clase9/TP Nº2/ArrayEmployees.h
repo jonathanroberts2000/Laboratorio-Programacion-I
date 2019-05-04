@@ -1,3 +1,4 @@
+#include <stdio.h>
 #define OCUPADO 1
 #define LIBRE 0
 
@@ -26,7 +27,7 @@ void pasarMayusculas(Employee[], int);
 void mostrarListaSectores(Employee[], int);
 
 
-
+//informes
 float totalSalarios(Employee[], int);
 float promedioSalarios(Employee[], int, float);
 
