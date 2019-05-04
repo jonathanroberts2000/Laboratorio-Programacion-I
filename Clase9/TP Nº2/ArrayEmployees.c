@@ -41,7 +41,7 @@ void cargarEmpleado(Employee lista[], int tam)
             printf("No hay espacio para ingresar mas empleados! \n");
         }else
         {
-            lista[indice].id = generarNumeroRandom();
+            lista[indice].id = generarNumeroRandom(lista,tam);
             printf("Ingrese nombre: ");
             fflush(stdin);
             scanf("%[^\n]" , lista[indice].name);
@@ -89,7 +89,7 @@ void modificarEmpleado(Employee lista[], int tam)
         printf("No se encontro la id solicitada! \n");
     }else{
     do{
-        opcion = pedirEntero("1.Modificar nombre\n2.Modificar sexo\n3.Modificar sueldo bruto\n4.Salir del menu\nElija una opcion: ");
+        opcion = pedirEntero("1.Modificar nombre\n2.Modificar apellido\n3.Modificar salario\n4.Modificar sector\n5.Salir del menu\nElija una opcion: ");
         switch(opcion)
         {
             case 1:
@@ -103,7 +103,7 @@ void modificarEmpleado(Employee lista[], int tam)
                 scanf("%[^\n]" , lista[indice].lastName);
                 break;
             case 3:
-                printf("Ingrese el nuevo sueldo: ");
+                printf("Ingrese el nuevo salario: ");
                 scanf("%f" , &lista[indice].salary);
                 break;
             case 4:
@@ -117,7 +117,10 @@ void modificarEmpleado(Employee lista[], int tam)
                 printf("Error! Reingrese una opcion valida!\n");
                 break;
         }
-        respuesta = pedirCaracter("Desea modificar otro campo? s/n: ");
+        respuesta = pedirCaracter("Desea modificar algun campo? s/n: ");
+    system("pause");
+    system("cls");
+    fflush(stdin);
     }while(respuesta == 's');
     }
 }
@@ -129,7 +132,7 @@ void borrarEmpleado(Employee lista[], int tam)
     int i;
     if(indice == -1)
     {
-        printf("No se encontro la id solicitada! \n");
+        printf("No se encontro el id solicitado! \n");
     }else
     {
         for(i=0;i<tam;i++)
@@ -285,6 +288,7 @@ int pedirEntero(char mensaje[])
     int numeroEntero;
     printf("%s" , mensaje);
     scanf("%d" , &numeroEntero);
+    numeroEntero = validacionDeEnterosPositivos(numeroEntero);
     return numeroEntero;
 }
 char pedirCaracter(char mensaje[])
@@ -293,13 +297,15 @@ char pedirCaracter(char mensaje[])
     printf("%s", mensaje);
     fflush(stdin);
     scanf("%c", &respuesta);
+    respuesta = validacionCaracterSN(respuesta);
     return respuesta;
 }
-int generarNumeroRandom(void)
+int generarNumeroRandom(Employee lista[], int tam)
 {
     int numero;
     srand(time(NULL));
     numero = rand();
+    numero = validacionNumeroRandom(lista, tam, numero);
     return numero;
 }
 
@@ -308,7 +314,7 @@ int generarNumeroRandom(void)
 
 void mostrarSectorEmpleados(Employee unEmpleado)
 {
-    printf("Sector: %d \n" , unEmpleado.sector);
+    printf("Sector: %d \n", unEmpleado.sector);
 }
 
 
@@ -354,6 +360,97 @@ float promedioSalarios(Employee lista[], int tam, float totalSalario)
     }
     printf("La cantidad de empleados que superan el promedio de salario son: %d \n", cantidadEmpleadosMayorPromedio);
     return promedioSalario;
+}
+
+char validacionCaracterSN(char caracter)
+{
+    char auxCaracter = caracter;
+    auxCaracter = tolower(auxCaracter);
+    while(auxCaracter != 's' && auxCaracter != 'n')
+    {
+        auxCaracter = pedirCaracter("Error! Reingrese una opcion valida: ");
+    }
+    return auxCaracter;
+}
+
+
+void pedirCadena(char mensaje[] , char cadena[] , int tamCadena)
+{
+    printf("%s" , mensaje);
+    fflush(stdin);
+    scanf("%[^\n]" , cadena);
+    validarCadena("cadena: " , cadena , tamCadena);
+}
+
+void validarCadena(char mensajeError[] , char cadena[] , int tamCadena)
+{
+    char auxCadena[100];
+    strcpy(auxCadena, cadena);
+    while(strlen(auxCadena)>tamCadena)
+    {
+        fflush(stdin);
+        pedirCadena("Reingrese: ", auxCadena, 21);
+    }
+    strcpy(cadena, auxCadena);
+}
+
+
+int validacionDeEnterosPositivos(int num1)
+{
+    int auxNum = num1;
+    while(auxNum < 0)
+    {
+        auxNum = pedirEntero("Error! Reingrese un valor positivo: ");
+    }
+    return auxNum;
+}
+
+
+float pedirFlotante(char mensaje[])
+{
+    float numeroFlotante;
+    printf("%s" , mensaje);
+    scanf("%f" , &numeroFlotante);
+    numeroFlotante = validacionDeFlotantesPositivos(numeroFlotante);
+    return numeroFlotante;
+}
+
+
+float validacionDeFlotantesPositivos(float num1)
+{
+    float auxNum = num1;
+    while(auxNum < 0)
+    {
+        auxNum = pedirFlotante("Error! Reingrese un valor positivo: ");
+    }
+    return auxNum;
+}
+
+
+
+int validacionNumeroRandom(Employee lista[], int tam, int num1)
+{
+    int auxNum = num1;
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        while(auxNum == lista[i].id)
+        {
+            auxNum = generarNumeroRandom(lista, tam);
+        }
+    }
+    return auxNum;
+}
+
+
+int validarFlag(char mensaje[], int flag)
+{
+    while(flag == 0)
+    {
+        printf("%s \n", mensaje);
+        return -1;
+    }
+    return 0;
 }
 
 

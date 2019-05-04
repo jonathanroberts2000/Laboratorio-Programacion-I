@@ -7,6 +7,7 @@ int main()
 {
     int opcion;
     int flag = 0;
+    int verificar;
     char seguir = 's';
     Employee lista[T];
     inicializarEmpleados(lista, T);
@@ -20,14 +21,16 @@ int main()
                 flag = 1;
                 break;
             case 2:
-                if(flag == 1)
-                {
+                verificar = validarFlag("Error! Para acceder a esta funcion debe cargar un empleado!", flag);
+                //if(flag == 1)
+                //{
                     printf("MODIFICAR\n");
                     modificarEmpleado(lista,T);
                     break;
-                }else{
-                    printf("Error! Para acceder a esta funcion debe cargar un empleado! \n");
-                }
+                //}else{
+                    //printf("Error! Para acceder a esta funcion debe cargar un empleado! \n");
+                    //break;
+                //}
             case 3:
                 if(flag == 1)
                 {
@@ -36,6 +39,7 @@ int main()
                     break;
                 }else{
                     printf("Error! Para acceder a esta funcion debe cargar un empleado! \n");
+                    break;
                 }
             case 4:
                 if(flag == 1)
@@ -47,6 +51,7 @@ int main()
                     break;
                 }else{
                     printf("Error! Para acceder a esta funcion debe cargar un empleado! \n");
+                    break;
                 }
             case 5:
                 printf("Saliendo....");

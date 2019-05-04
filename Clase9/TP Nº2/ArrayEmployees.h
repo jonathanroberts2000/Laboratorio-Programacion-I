@@ -1,4 +1,3 @@
-#include <stdio.h>
 #define OCUPADO 1
 #define LIBRE 0
 
@@ -34,9 +33,23 @@ float promedioSalarios(Employee[], int, float);
 
 //funciones pedir datos
 int pedirEntero(char[]);
+float pedirFlotante(char[]);
 char pedirCaracter(char[]);
-int generarNumeroRandom(void);
+int generarNumeroRandom(Employee[], int tam);
 
 
 //revisar funcion para que no se repita el printf
 void mostrarSectorEmpleados(Employee);
+
+//arrancan validaciones
+char validacionCaracterSN(char);//listo
+void pedirCadena(char mensaje[], char[], int);//agregada
+void validarCadena(char[], char[], int);//agregada
+int validacionDeEnterosPositivos(int);//agregada
+float validacionDeFlotantesPositivos(float);//agregado
+int validacionNumeroRandom(Employee[], int, int);
+
+
+int validarFlag(char mensaje[], int flag);
+
+
