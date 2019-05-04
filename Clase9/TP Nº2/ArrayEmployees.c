@@ -5,6 +5,14 @@
 #include <string.h>
 #include "ArrayEmployees.h"
 
+void inicializarEmpleados(Employee lista[], int tam)
+{
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        lista[i].isEmpty = LIBRE;
+    }
+}
 
 void cargarEmpleado(Employee lista[], int tam)
 {
@@ -120,12 +128,15 @@ void mostrarListaEmpleados(Employee lista[], int tam)
 {
     int i;
     ordenarListaEmpleados(lista, tam);
-    ordenarAlfabeticamente(lista,tam);
+    //ordenarAlfabeticamente(lista,tam);
+    //mostrarListaSectores(lista, tam);
     utilizandoStrings(lista,tam);
     for(i=0;i<tam;i++)
     {
         if(lista[i].isEmpty == OCUPADO)
         {
+            mostrarSectorEmpleados(lista[i],lista, tam);
+            //mostrarListaSectores(lista, tam);
              mostrarEmpleado(lista[i]);
         }
     }
@@ -165,6 +176,7 @@ void ordenarListaEmpleados(Employee lista[], int tam)
                 auxFlotanteSalary = lista[i].salary;
                 lista[i].salary = lista[j].salary;
                 lista[j].salary = auxFlotanteSalary;
+                ordenarAlfabeticamente(lista, tam);
             }
         }
     }
@@ -269,4 +281,39 @@ int generarNumeroRandom(void)
     numero = rand();
     return numero;
 }
+
+void mostrarListaSectores(Employee lista[], int tam)
+{
+    int i;
+
+    for(i=0;i<tam;i++)
+    {
+//        if(lista[i].sector >)
+    }
+}
+
+
+void mostrarSectorEmpleados(Employee unEmpleado, Employee lista[], int tam)
+{
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        if(unEmpleado.sector == lista[i].sector && lista[i].isEmpty == OCUPADO)
+        {
+            printf("Sector: %d \n" , lista[i].sector);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 

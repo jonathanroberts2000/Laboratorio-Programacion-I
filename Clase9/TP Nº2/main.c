@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "ArrayEmployees.h"
-#define T 3
+#define T 6
+
 int main()
 {
     int opcion;
     char seguir = 's';
     Employee lista[T];
+    inicializarEmpleados(lista, T);
      do{
         opcion = pedirEntero("1.Alta\n2.Modificar\n3.Baja\n4.Informar\n5.Salir\nElija una opcion: \n");
         switch(opcion)
