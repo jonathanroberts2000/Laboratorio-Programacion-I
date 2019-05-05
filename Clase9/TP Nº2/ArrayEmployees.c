@@ -42,16 +42,10 @@ void cargarEmpleado(Employee lista[], int tam)
         }else
         {
             lista[indice].id = generarNumeroRandom(lista,tam);
-            printf("Ingrese nombre: ");
-            fflush(stdin);
-            scanf("%[^\n]" , lista[indice].name);
-            printf("Ingrese apellido: ");
-            fflush(stdin);
-            scanf("%[^\n]" , lista[indice].lastName);
-            printf("Ingrese sueldo: ");
-            scanf("%f" , &lista[indice].salary);
-            printf("Ingrese sector: ");
-            scanf("%d" , &lista[indice].sector);
+            pedirCadena("Ingrese nombre: ", lista[indice].name, 51);
+            pedirCadena("Ingrese apellido: ", lista[indice].lastName, 51);
+            lista[indice].salary = pedirFlotante("Ingrese sueldo: ");
+            lista[indice].sector = pedirEntero("Ingrese sector: ");
             lista[indice].isEmpty = OCUPADO;
             respuesta = pedirCaracter("Desea cargar mas empleados? s/n: ");
             if(respuesta != 's')
@@ -82,46 +76,46 @@ void modificarEmpleado(Employee lista[], int tam)
 {
     int id = pedirEntero("Ingrese el Id del empleado a buscar: ");
     int indice = buscarId(lista, tam, id);
+    char respLista;
     int opcion;
     char respuesta;
     if(indice == -1)
     {
-        printf("No se encontro la id solicitada! \n");
-    }else{
-    do{
-        opcion = pedirEntero("1.Modificar nombre\n2.Modificar apellido\n3.Modificar salario\n4.Modificar sector\n5.Salir del menu\nElija una opcion: ");
-        switch(opcion)
+        printf("No se encontro el id solicitado! \n");
+        respLista = pedirCaracter("Desea ver los empleados ingresados antes de completar esta operacion? \n");
+        if(respLista == 's')
         {
-            case 1:
-                printf("Ingrese el nuevo nombre: ");
-                fflush(stdin);
-                scanf("%[^\n]" , lista[indice].name);
-                break;
-            case 2:
-                printf("Ingrese el nuevo apellido: ");
-                fflush(stdin);
-                scanf("%[^\n]" , lista[indice].lastName);
-                break;
-            case 3:
-                printf("Ingrese el nuevo salario: ");
-                scanf("%f" , &lista[indice].salary);
-                break;
-            case 4:
-                printf("Ingrese el nuevo sector: ");
-                scanf("%d" , &lista[indice].sector);
-                break;
-            case 5:
-                printf("Saliendo de este menu...");
-                break;
-            default:
-                printf("Error! Reingrese una opcion valida!\n");
-                break;
+            mostrarListaEmpleados(lista, tam);
         }
-        respuesta = pedirCaracter("Desea modificar algun campo? s/n: ");
-    system("pause");
-    system("cls");
-    fflush(stdin);
-    }while(respuesta == 's');
+    }else{
+        do{
+            opcion = pedirEntero("1.Modificar nombre\n2.Modificar apellido\n3.Modificar salario\n4.Modificar sector\n5.Salir del menu\nElija una opcion: ");
+            switch(opcion)
+            {
+                case 1:
+                    pedirCadena("Ingrese el nuevo nombre: ", lista[indice].name, 51);
+                    break;
+                case 2:
+                    pedirCadena("Ingrese el nuevo apellido: ", lista[indice].lastName, 51);
+                    break;
+                case 3:
+                    lista[indice].salary = pedirFlotante("Ingrese el nuevo salario: ");
+                    break;
+                case 4:
+                    lista[indice].sector = pedirEntero("Ingrese el nuevo sector: ");
+                    break;
+                case 5:
+                    printf("Saliendo de este menu...");
+                    break;
+                default:
+                    printf("Error! Reingrese una opcion valida!\n");
+                    break;
+            }
+            respuesta = pedirCaracter("Desea modificar algun campo? s/n: ");
+        system("pause");
+        system("cls");
+        fflush(stdin);
+        }while(respuesta == 's');
     }
 }
 
@@ -130,9 +124,15 @@ void borrarEmpleado(Employee lista[], int tam)
     int id = pedirEntero("Ingrese el Id del empleado a buscar: ");
     int indice = buscarId(lista, tam, id);
     int i;
+    char respuesta;
     if(indice == -1)
     {
         printf("No se encontro el id solicitado! \n");
+        respuesta = pedirCaracter("Desea ver los empleados ingresados antes de completar esta operacion? \n");
+        if(respuesta == 's')
+        {
+            mostrarListaEmpleados(lista, tam);
+        }
     }else
     {
         for(i=0;i<tam;i++)
@@ -154,13 +154,12 @@ void mostrarListaEmpleados(Employee lista[], int tam)
 {
     int i;
     utilizandoStrings(lista,tam);
-    ordenarListaEmpleados(lista,tam);
-    ordenarAlfabeticamente(lista,tam);
+
     for(i=0;i<tam;i++)
     {
         if(lista[i].isEmpty == OCUPADO)
         {
-            mostrarSectorEmpleados(lista[i]);
+            //mostrarSectorEmpleados(lista[i]);
             mostrarEmpleado(lista[i]);
         }
     }
@@ -208,18 +207,18 @@ void ordenarListaEmpleados(Employee lista[], int tam)
 
 
 
-void utilizandoStrings(Employee lista[], int tamEmployees)
+void utilizandoStrings(Employee lista[], int tam)
 {
     int i;
-    for(i=0;i<tamEmployees;i++)
+    for(i=0;i<tam;i++)
     {
         strlwr(lista[i].name);
         strlwr(lista[i].lastName);
     }
-    pasarMayusculas(lista, tamEmployees);
+    pasarMayusculas(lista, tam);
 }
 
-void ordenarAlfabeticamente(Employee lista[], int tamEmployees)
+void ordenarAlfabeticamente(Employee lista[], int tam)
 {
     int i,j;
     int auxEnteroId;
@@ -227,11 +226,11 @@ void ordenarAlfabeticamente(Employee lista[], int tamEmployees)
     float auxFlotanteSalary;
     char auxCadenaLastName[100];
     char auxCadenaName[100];
-    for(i=0;i<tamEmployees-1;i++)
+    for(i=0;i<tam-1;i++)
     {
-        for(j=i+1;j<tamEmployees;j++)
+        for(j=i+1;j<tam;j++)
         {
-            if(lista[tamEmployees].isEmpty == OCUPADO && lista[i].sector == lista[j].sector)
+            if(lista[tam].isEmpty == OCUPADO && lista[i].sector == lista[j].sector)
             {
                 if(strcmp(lista[i].lastName,lista[j].lastName)>0)
                 {
@@ -254,19 +253,19 @@ void ordenarAlfabeticamente(Employee lista[], int tamEmployees)
                     auxFlotanteSalary = lista[i].salary;
                     lista[i].salary = lista[j].salary;
                     lista[j].salary = auxFlotanteSalary;
-                    ordenarListaEmpleados(lista, tamEmployees);
+                    ordenarListaEmpleados(lista, tam);
                 }
             }
         }
     }
 }
-void pasarMayusculas(Employee lista[], int tamEmployees)
+void pasarMayusculas(Employee lista[], int tam)
 {
     int i;
     int j;
-    for(i=0;i<tamEmployees;i++)
+    for(i=0;i<tam;i++)
     {
-        for(j=0;j<tamEmployees;j++)
+        for(j=0;j<tam;j++)
         {
             if(j==0)
             {
@@ -441,18 +440,6 @@ int validacionNumeroRandom(Employee lista[], int tam, int num1)
     }
     return auxNum;
 }
-
-
-int validarFlag(char mensaje[], int flag)
-{
-    while(flag == 0)
-    {
-        printf("%s \n", mensaje);
-        return -1;
-    }
-    return 0;
-}
-
 
 
 

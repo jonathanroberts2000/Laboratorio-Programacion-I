@@ -50,6 +50,6 @@ float validacionDeFlotantesPositivos(float);//agregado
 int validacionNumeroRandom(Employee[], int, int);
 
 
-int validarFlag(char mensaje[], int flag);
+
 
 

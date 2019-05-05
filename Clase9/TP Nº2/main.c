@@ -7,8 +7,8 @@ int main()
 {
     int opcion;
     int flag = 0;
-    int verificar;
     char seguir = 's';
+    char mensaje[] = "Error! Para acceder a esta funcion debe cargar un empleado! \n";
     Employee lista[T];
     inicializarEmpleados(lista, T);
      do{
@@ -21,16 +21,17 @@ int main()
                 flag = 1;
                 break;
             case 2:
-                verificar = validarFlag("Error! Para acceder a esta funcion debe cargar un empleado!", flag);
-                //if(flag == 1)
-                //{
+                if(flag == 1)
+                {
                     printf("MODIFICAR\n");
                     modificarEmpleado(lista,T);
                     break;
-                //}else{
-                    //printf("Error! Para acceder a esta funcion debe cargar un empleado! \n");
-                    //break;
-                //}
+                }else{
+                    printf("%s", mensaje);
+                    break;
+                }
+
+
             case 3:
                 if(flag == 1)
                 {
@@ -38,19 +39,21 @@ int main()
                     borrarEmpleado(lista,T);
                     break;
                 }else{
-                    printf("Error! Para acceder a esta funcion debe cargar un empleado! \n");
+                    printf("%s", mensaje);
                     break;
                 }
             case 4:
                 if(flag == 1)
                 {
                     printf("INFORMAR\n");
+                    ordenarListaEmpleados(lista,T);
+                    ordenarAlfabeticamente(lista,T);
                     mostrarListaEmpleados(lista,T);
                     printf("El total de los salarios es de: %f \n", totalSalarios(lista,T));
                     printf("El promedio de los salarios es de: %f \n", promedioSalarios(lista,T,totalSalarios(lista,T)));
                     break;
                 }else{
-                    printf("Error! Para acceder a esta funcion debe cargar un empleado! \n");
+                    printf("%s", mensaje);
                     break;
                 }
             case 5:
