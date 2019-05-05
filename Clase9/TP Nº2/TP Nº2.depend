@@ -1,18 +1,20 @@
 # depslib dependency file v1.0
-1557022639 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\arrayemployees.c
+1557027683 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\arrayemployees.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<ctype.h>
 	<string.h>
 	"ArrayEmployees.h"
+	"AskForData.h"
 
-1557018278 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\main.c
+1557027154 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\main.c
 	<stdio.h>
 	<stdlib.h>
 	"ArrayEmployees.h"
+	"AskForData.h"
 
-1557018341 c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\arrayemployees.h
+1557030338 c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\arrayemployees.h
 
 1555885712 source:e:\laboratorio_programacion_i\clase9\tp nº2\arrayemployees.c
 	<stdio.h>
@@ -43,4 +45,13 @@
 
 1557003246 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\validationfunctions.c
 	"ValidationFunctions.h"
+
+1557026262 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\askfordata.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"AskForData.h"
+
+1557030334 c:\users\jonathan roberts\desktop\laboratorio_programacion_i\clase9\tp nº2\askfordata.h
 

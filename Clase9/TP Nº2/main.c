@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "ArrayEmployees.h"
-#define T 6
+#include "AskForData.h"
+#define T 1000
 
 int main()
 {
@@ -30,8 +31,6 @@ int main()
                     printf("%s", mensaje);
                     break;
                 }
-
-
             case 3:
                 if(flag == 1)
                 {
@@ -49,8 +48,8 @@ int main()
                     ordenarListaEmpleados(lista,T);
                     ordenarAlfabeticamente(lista,T);
                     mostrarListaEmpleados(lista,T);
-                    printf("El total de los salarios es de: %f \n", totalSalarios(lista,T));
-                    printf("El promedio de los salarios es de: %f \n", promedioSalarios(lista,T,totalSalarios(lista,T)));
+                    printf("El total de los salarios es de: %.2f \n", totalSalarios(lista,T));
+                    printf("El promedio de los salarios es de: %.2f \n", promedioSalarios(lista,T,totalSalarios(lista,T)));
                     break;
                 }else{
                     printf("%s", mensaje);
