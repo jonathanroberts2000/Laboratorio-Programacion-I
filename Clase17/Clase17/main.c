@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#define T 5
 
 
 int main()
 {
     int* pNumeros;
+    int* pAux;
     /*pNumero = (int*) malloc(sizeof(int));
     *pNumero = 99;
     printf("Heap-> pNumero: %p\n", pNumero);//direccion de memoria del heap
@@ -25,21 +26,43 @@ int main()
         printf("Valor-> *pNumero: %d\n", *pNumero);
     }*/
     int i,j;
-    pNumeros = (int*) malloc(sizeof(int) * 5);
+    pNumeros = (int*) malloc(sizeof(int) * T);
 
     if(pNumeros != NULL)
     {
-        for(i=0;i<5;i++)
+        for(i=0;i<T;i++)
         {
             printf("Ingrese un numero: ");
             scanf("%d", pNumeros+i);
             //*(pNumeros+i) = i+1; hardcodeo
         }
-        for(j=0;j<5;j++)
+        for(j=0;j<T;j++)
         {
             printf("%d\n", *(pNumeros+j));
         }
     }
 
+
+    pAux = (int*) realloc(pNumeros, sizeof(int) * T+5);
+    pAux = NULL;
+
+    if(pAux != NULL)
+    {
+        for(i=T;i<T+5;i++)
+        {
+            printf("Ingrese mas numeros: ");
+            scanf("%d", pNumeros+i);
+        }
+        for(j=0;j<T+5;j++)
+        {
+            printf("%d\n", *(pNumeros+j));
+        }
+    }else
+    {
+        printf("No hay mas espacio");
+    }
+
+
     return 0;
 }
+
