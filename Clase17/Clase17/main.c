@@ -40,14 +40,14 @@ int main()
         {
             printf("%d\n", *(pNumeros+j));
         }
-    }
+    //}
 
 
     pAux = (int*) realloc(pNumeros, sizeof(int) * T+5);
     pAux = NULL;
 
-    if(pAux != NULL)
-    {
+   // if(pAux != NULL)
+    //{
         for(i=T;i<T+5;i++)
         {
             printf("Ingrese mas numeros: ");
@@ -62,7 +62,7 @@ int main()
         printf("No hay mas espacio");
     }
 
-
+    }
     return 0;
 }
 
