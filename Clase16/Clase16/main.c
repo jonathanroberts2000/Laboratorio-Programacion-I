@@ -17,7 +17,7 @@ int main()
     eDato* pUnDato=NULL;
 
 
-    /*pUnDato=muchosDatos;
+    pUnDato=muchosDatos;
     if(ordenarDatos(pUnDato,3)==0)
     {
         printf("Puntero nulo");
@@ -25,7 +25,7 @@ int main()
     if(mostrarDatos(pUnDato,3)==0)
     {
         printf("Puntero nulo");
-    }*/
+    }
 
     //printf("%d---%c",pUnDato->numero,pUnDato->letra);//printf("%d---%c",(*pUnDato).numero,(*pUnDato).letra);
 
