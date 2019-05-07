@@ -14,10 +14,8 @@ int ordenarDatos(eDato*,int);
 int main()
 {
     eDato muchosDatos[3]= {{1,'C'},{1,'B'},{1,'A'}};
-    eDato* pUnDato=NULL;
-
-
-    pUnDato=muchosDatos;
+    eDato* pUnDato = muchosDatos;
+    int i;
     if(ordenarDatos(pUnDato,3)==0)
     {
         printf("Puntero nulo");
@@ -26,10 +24,13 @@ int main()
     {
         printf("Puntero nulo");
     }
+    //operador flecha u operador punto
+    printf("%d---%c\n",pUnDato->numero,pUnDato->letra);//printf("%d---%c",(*pUnDato).numero,(*pUnDato).letra);
 
-    //printf("%d---%c",pUnDato->numero,pUnDato->letra);//printf("%d---%c",(*pUnDato).numero,(*pUnDato).letra);
-
-
+    for(i=0;i<3;i++)
+    {
+        printf("%d---%c\n",(pUnDato+i)->numero,(pUnDato+i)->letra);//printf("%d---%c",(*pUnDato).numero,(*pUnDato).letra);
+    }
 
     return 0;
 }
