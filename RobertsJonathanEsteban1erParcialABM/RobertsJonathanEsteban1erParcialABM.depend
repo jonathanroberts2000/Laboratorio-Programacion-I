@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1557709100 source:d:\robertsjonathanesteban1erparcialabm\main.c
+	<stdio.h>
+	<stdlib.h>
+	"eStructs.h"
+	"askForData.h"
+
+1557710436 d:\robertsjonathanesteban1erparcialabm\estructs.h
+
+1557710856 d:\robertsjonathanesteban1erparcialabm\askfordata.h
+
+1557709412 source:d:\robertsjonathanesteban1erparcialabm\askfordata.c
+	<stdlib.h>
+	<stdio.h>
+	<time.h>
+	<string.h>
+	"askForData.h"
+
+1557709404 source:d:\robertsjonathanesteban1erparcialabm\estructs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"eStructs.h"
+	"askForData.h"
+
