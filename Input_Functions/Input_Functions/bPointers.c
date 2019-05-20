@@ -87,6 +87,11 @@ int loadVector(int* inputArray, char message[], char eMessage[], int tam)
         {
             printf("%s", message);
             scanf("%d", (inputArray+i));
+            while(inputArray[i] == 0)
+            {
+                printf("Reingrese un numero distinto de 0: ");
+                scanf("%d", (inputArray+i));
+            }
         }
         return 0;
     }else
@@ -104,7 +109,11 @@ int showVector(int* inputArray, char message[], char eMessage[], int tam)
         printf("%s\n", message);
         for(i=0;i<tam;i++)
         {
-            printf("%d\n", *(inputArray+i));
+            if(*(inputArray+i) != 0)
+            {
+                printf("%d\n", *(inputArray+i));
+            }
+
         }
         return 0;
     }else
@@ -129,7 +138,7 @@ int searchMax(int* inputArray, char message[], char eMessage[], int tam)
                 flag = 1;
             }
         }
-        printf("El numero maximo es: %d", numMax);
+        printf("El numero maximo es: %d\n", numMax);
         return 0;
     }else
     {
@@ -153,7 +162,7 @@ int searchMin(int* inputArray, char message[], char eMessage[], int tam)
                 flag = 1;
             }
         }
-        printf("El numero minimo es: %d", numMin);
+        printf("El numero minimo es: %d\n", numMin);
         return 0;
     }else
     {
@@ -195,35 +204,23 @@ int sortArray(int* inputArray, char message[], char eMessage[], int tam)
     }
 }
 
-int searchNumber(int* inputVector, char message[], char eMessage[], int tam)
-{
-    int i;
-    int num;
-    int estadoNum;
-    int indice;
-    if(inputVector != NULL)
-    {
-        estadoNum= getInt(&num, "Ingrese el numero a buscar", "No se ha podido encontrar el numero!", 1, 10000000);
-        for(i=0;i<tam;i++)
-        {
-            if(*(inputVector+i) == num)
-            {
-                indice = inputVector+i;
-            }
-        }
-    }
-    return indice;
-}
-
 int deleteNum(int* inputArray, char message[], char eMessage[], int tam, int numeric_limits)
 {
     int i;
+    int num;
     if(inputArray != NULL)
     {
+        printf("Ingrese el numero a buscar: ");
+        scanf("%d", &num);
         for(i=0;i<tam;i++)
         {
-
+            if(inputArray[i] == num)
+            {
+                inputArray[i] = 0;
+                break;
+            }
         }
+        //printf("El numero se encuentra en la posicion: %d", num);
         return 0;
     }else
     {
