@@ -16,6 +16,9 @@ int main()
     int estadoString;*/
     int estadoVec_0;
     int estadoVec_1;
+    int estadoVec_2;
+    int estadoVec_3;
+    int estadoVec_4;
     /*estadoEntero = getInt(&numInt, "Ingrese un numero: ", "No se ha podido cargar el numero!", 0, 100);
     printf("Numero: %d\nEstado: %d\n", numInt, estadoEntero);
     estadoFloat = getFloat(&numFloat, "Ingrese un numero: ", "No se ha podido cargar el numero!", 0, 100);
@@ -27,6 +30,11 @@ int main()
     estadoVec_0 = loadVector(pVector, "Ingrese un numero: ", "No se ha podido cargar el vector!", T);
     estadoVec_1 = showVector(pVector, "Los datos cargados son: ", "No se ha podido mostrar el vector!", T);
     printf("Estado carga: %d\nEstado muestra: %d\n", estadoVec_0, estadoVec_1);
-
+    estadoVec_2 = sortArray(pVector, "Los numeros ordenados son: ", "No se ha podido mostrar!", T);
+    printf("Estado sort: %d\n", estadoVec_2);
+    estadoVec_3 = searchMax(pVector, "Mayor", "No se ha podido mostrar!", T);
+    printf("Estado busqueda maximo: %d", estadoVec_3);
+    estadoVec_4 = searchMin(pVector, "Minimo", "No se ha podido mostrar!", T);
+    printf("Estado busqueda minimo: %d", estadoVec_4);
     return 0;
 }

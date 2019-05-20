@@ -12,15 +12,15 @@
 	<stdlib.h>
 	"bPointers.h"
 
-1558290217 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\input_functions\input_functions\bpointers.c
+1558314720 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\input_functions\input_functions\bpointers.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"bPointers.h"
 
-1558290744 c:\users\jonathan roberts\desktop\laboratorio_programacion_i\input_functions\input_functions\bpointers.h
+1558314779 c:\users\jonathan roberts\desktop\laboratorio_programacion_i\input_functions\input_functions\bpointers.h
 
-1558290187 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\input_functions\input_functions\main.c
+1558314576 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\input_functions\input_functions\main.c
 	<stdio.h>
 	<stdlib.h>
 	"bPointers.h"

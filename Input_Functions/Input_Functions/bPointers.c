@@ -86,7 +86,7 @@ int loadVector(int* inputArray, char message[], char eMessage[], int tam)
         for(i=0;i<tam;i++)
         {
             printf("%s", message);
-            scanf("%d", inputArray+i);
+            scanf("%d", (inputArray+i));
         }
         return 0;
     }else
@@ -104,7 +104,7 @@ int showVector(int* inputArray, char message[], char eMessage[], int tam)
         printf("%s\n", message);
         for(i=0;i<tam;i++)
         {
-            printf("%d\n", *inputArray+i);
+            printf("%d\n", *(inputArray+i));
         }
         return 0;
     }else
@@ -117,12 +117,19 @@ int showVector(int* inputArray, char message[], char eMessage[], int tam)
 int searchMax(int* inputArray, char message[], char eMessage[], int tam)
 {
     int i;
+    int flag = 0;
+    int numMax;
     if(inputArray != NULL)
     {
         for(i=0;i<tam;i++)
         {
-
+            if(*(inputArray+i)> numMax || flag == 0)
+            {
+                numMax = inputArray[i];
+                flag = 1;
+            }
         }
+        printf("El numero maximo es: %d", numMax);
         return 0;
     }else
     {
@@ -130,15 +137,23 @@ int searchMax(int* inputArray, char message[], char eMessage[], int tam)
         return 1;
     }
 }
+
 int searchMin(int* inputArray, char message[], char eMessage[], int tam)
 {
     int i;
+    int flag = 0;
+    int numMin;
     if(inputArray != NULL)
     {
         for(i=0;i<tam;i++)
         {
-
+            if(*(inputArray+i) < numMin || flag == 0)
+            {
+                numMin = inputArray[i];
+                flag = 1;
+            }
         }
+        printf("El numero minimo es: %d", numMin);
         return 0;
     }else
     {
@@ -146,14 +161,31 @@ int searchMin(int* inputArray, char message[], char eMessage[], int tam)
         return 1;
     }
 }
+
 int sortArray(int* inputArray, char message[], char eMessage[], int tam)
 {
     int i;
+    int j;
+    int aux;
+    int status;
     if(inputArray != NULL)
     {
-        for(i=0;i<tam;i++)
+        for(i=0;i<tam-1;i++)
         {
-
+            for(j=i+1;j<tam;j++)
+            {
+                if(inputArray[i] > inputArray[j])
+                {
+                    aux = inputArray[i];
+                    inputArray[i] = inputArray[j];
+                    inputArray[j] = aux;
+                }
+            }
+        }
+        status = showVector(inputArray, "El vector ordenado es: ", "No se pudo mostrar el vector!", tam);
+        if(status == 0)
+        {
+            printf("Orden exitoso!");
         }
         return 0;
     }else
