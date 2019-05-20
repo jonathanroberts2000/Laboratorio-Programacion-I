@@ -194,6 +194,27 @@ int sortArray(int* inputArray, char message[], char eMessage[], int tam)
         return 1;
     }
 }
+
+int searchNumber(int* inputVector, char message[], char eMessage[], int tam)
+{
+    int i;
+    int num;
+    int estadoNum;
+    int indice;
+    if(inputVector != NULL)
+    {
+        estadoNum= getInt(&num, "Ingrese el numero a buscar", "No se ha podido encontrar el numero!", 1, 10000000);
+        for(i=0;i<tam;i++)
+        {
+            if(*(inputVector+i) == num)
+            {
+                indice = inputVector+i;
+            }
+        }
+    }
+    return indice;
+}
+
 int deleteNum(int* inputArray, char message[], char eMessage[], int tam, int numeric_limits)
 {
     int i;
