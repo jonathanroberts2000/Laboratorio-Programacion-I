@@ -1,0 +1,10 @@
+int getInt(int*, char[], char[], int, int);
+int getFloat(float*, char[], char[], float, float);
+int getChar(char*, char[], char[], char, char);
+int getString(char*, char[], char[], int);
+int loadVector(int*, char[], char[], int);
+int showVector(int*, char[], char[], int);
+int searchMax(int*, char[], char[], int);
+int searchMin(int*, char[], char[], int);
+int sortArray(int*, char[], char[], int);
+int deleteNum(int*, char[], char[], int, int);

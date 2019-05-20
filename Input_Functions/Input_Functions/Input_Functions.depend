@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1558226226 source:d:\laboratorio_programacion_i\input_functions\input_functions\bpointers.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"bPointers.h"
+
+1558225700 d:\laboratorio_programacion_i\input_functions\input_functions\bpointers.h
+
+1558226242 source:d:\laboratorio_programacion_i\input_functions\input_functions\main.c
+	<stdio.h>
+	<stdlib.h>
+	"bPointers.h"
+
+1558290217 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\input_functions\input_functions\bpointers.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"bPointers.h"
+
+1558290744 c:\users\jonathan roberts\desktop\laboratorio_programacion_i\input_functions\input_functions\bpointers.h
+
+1558290187 source:c:\users\jonathan roberts\desktop\laboratorio_programacion_i\input_functions\input_functions\main.c
+	<stdio.h>
+	<stdlib.h>
+	"bPointers.h"
+
