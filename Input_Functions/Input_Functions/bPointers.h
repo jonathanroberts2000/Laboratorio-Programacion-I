@@ -7,4 +7,4 @@ int showVector(int*, char[], char[], int);
 int searchMax(int*, char[], char[], int);
 int searchMin(int*, char[], char[], int);
 int sortArray(int*, char[], char[], int);
-int deleteNum(int*, char[], char[], int, int);
+int deleteNum(int*, char[], char[], int);

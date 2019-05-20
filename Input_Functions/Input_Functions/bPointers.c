@@ -66,16 +66,16 @@ int getString(char* inputString, char message[], char eMessage[], int limit)
         scanf("%s", inputString);
         while(strlen(inputString) > limit)
         {
-            estado = getString(inputString, message, eMessage, limit);
-            return estado;
+            printf("%s", eMessage);
+            fflush(stdin);
+            scanf("%s", inputString);
         }
-        return estado;
     }else
     {
         printf("%s", eMessage);
         estado = 1;
-        return estado;
     }
+    return estado;
 }
 
 int loadVector(int* inputArray, char message[], char eMessage[], int tam)
@@ -86,6 +86,7 @@ int loadVector(int* inputArray, char message[], char eMessage[], int tam)
         for(i=0;i<tam;i++)
         {
             printf("%s", message);
+            fflush(stdin);
             scanf("%d", (inputArray+i));
             while(inputArray[i] == 0)
             {
@@ -179,6 +180,7 @@ int sortArray(int* inputArray, char message[], char eMessage[], int tam)
     int status;
     if(inputArray != NULL)
     {
+        printf("%s\n", message);
         for(i=0;i<tam-1;i++)
         {
             for(j=i+1;j<tam;j++)
@@ -204,23 +206,28 @@ int sortArray(int* inputArray, char message[], char eMessage[], int tam)
     }
 }
 
-int deleteNum(int* inputArray, char message[], char eMessage[], int tam, int numeric_limits)
+int deleteNum(int* inputArray, char message[], char eMessage[], int tam)
 {
     int i;
     int num;
+    int flag = 0;
     if(inputArray != NULL)
     {
-        printf("Ingrese el numero a buscar: ");
+        printf("%s\n", message);
         scanf("%d", &num);
         for(i=0;i<tam;i++)
         {
             if(inputArray[i] == num)
             {
                 inputArray[i] = 0;
+                flag = 1;
                 break;
             }
         }
-        //printf("El numero se encuentra en la posicion: %d", num);
+        if(flag == 0)
+        {
+            printf("%s\n", eMessage);
+        }
         return 0;
     }else
     {
