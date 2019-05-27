@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct{
+    int legajo;
+    char nombre[60];
+    float sueldo;
+}eEmpleado;
+//4 funciones
 int main()
 {
     /*FILE* miArchivo;
