@@ -18,10 +18,14 @@ int main()
     FILE* miArchivo;
     char nombre[20];
     miArchivo = fopen("D:\\misdatos.txt", "r");
-    fgets(nombre, 30, miArchivo);
-    fgets(nombre, 30, miArchivo);
+    while(!feof(miArchivo))
+    {
+        fgets(nombre, 30, miArchivo);
+        printf("%s", nombre);
+    }
+    //fgets(nombre, 30, miArchivo);
+    //fgets(nombre, 30, miArchivo);
     fclose(miArchivo);
-    printf("%s", nombre);
     //fgets lee la primer linea
     return 0;
 }
