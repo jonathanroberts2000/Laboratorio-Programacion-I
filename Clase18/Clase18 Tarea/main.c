@@ -8,13 +8,13 @@ typedef struct{
     float sueldo;
 }eEmpleado;
 
+eEmpleado* constructorEmpleado();
+eEmpleado* cargaEmpleado(eEmpleado*);
 
 int main()
 {
-    eEmpleado* unEmpleado = (eEmpleado*) malloc(sizeof(eEmpleado));
-    unEmpleado->legajo = 15;
-    strcpy(unEmpleado->nombre, "Jonathan");
-    unEmpleado->sueldo = 15.00;
+    eEmpleado* unEmpleado;
+    unEmpleado = cargaEmpleado(unEmpleado);
     FILE* miArchivo_1;
     FILE* miArchivo_2;
     miArchivo_1 = fopen("miArchivo_1.txt", "w");
@@ -26,6 +26,22 @@ int main()
     fgets(unEmpleado->nombre, 10, miArchivo_2);
     fclose(miArchivo_2);
     return 0;
+}
+
+eEmpleado* constructorEmpleado()
+{
+    eEmpleado* unEmpleado;
+    unEmpleado = (eEmpleado*) malloc(sizeof(eEmpleado));
+    return unEmpleado;
+}
+
+eEmpleado* cargaEmpleado(eEmpleado* unEmpleado)
+{
+    unEmpleado = constructorEmpleado();
+    unEmpleado->legajo = 15;
+    strcpy(unEmpleado->nombre, "Jonathan");
+    unEmpleado->sueldo = 15100.14;
+    return unEmpleado;
 }
 
 
