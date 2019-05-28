@@ -14,13 +14,17 @@ eEmpleado* cargaEmpleado(eEmpleado*);
 int main()
 {
     eEmpleado* unEmpleado;
+    char todo[500];
     unEmpleado = cargaEmpleado(unEmpleado);
     FILE* miArchivo_1;
     FILE* miArchivo_2;
     miArchivo_1 = fopen("miArchivo_1.txt", "w");
     fprintf(miArchivo_1, "%d--%s--%f",unEmpleado->legajo, unEmpleado->nombre, unEmpleado->sueldo);
+    fscanf(miArchivo_1,  todo);
+    fgets(todo, 500, miArchivo_1);
+    printf("%s",todo);
     fclose(miArchivo_1);
-    miArchivo_2 = fopen("miArchivo_2", "rb");
+    miArchivo_2 = fopen("miArchivo_2.csv", "wb");
     fwrite(unEmpleado->nombre, sizeof(eEmpleado), 1, miArchivo_2);
     fread(unEmpleado, sizeof(eEmpleado), 1, miArchivo_2);
     fgets(unEmpleado->nombre, 10, miArchivo_2);
@@ -39,8 +43,8 @@ eEmpleado* cargaEmpleado(eEmpleado* unEmpleado)
 {
     unEmpleado = constructorEmpleado();
     unEmpleado->legajo = 15;
-    strcpy(unEmpleado->nombre, "Jonathan");
     unEmpleado->sueldo = 15100.14;
+    strcpy(unEmpleado->nombre, "Jonathan");
     return unEmpleado;
 }
 
