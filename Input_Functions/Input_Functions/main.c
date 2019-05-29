@@ -40,5 +40,6 @@ int main()
     estadoVec_5 = deleteNum(pVector, "Ingrese el numero que desea borrar: ", "No se pudo borrar el numero!", T);
     printf("Estado elimado: %d\n", estadoVec_5);
     estadoVec_1 = showVector(pVector, "Los datos cargados son: ", "No se ha podido mostrar el vector!", T);
+    pointer_error(estadoVec_1, "No se puede pasar una no direccion de memoria", "Se ha mostrado el vector correctamente", "Ha ocurrido un error, no se puede mostrar el vector");
     return 0;
 }

@@ -236,3 +236,15 @@ int deleteNum(int* inputArray, char message[], char eMessage[], int tam)
     }
 }
 
+void pointer_error(int retorno, char null[], char exito[], char eCondicion[])
+{
+    if(retorno == 0)
+    {
+        printf("%s\n", null);
+    }else if(retorno == 1)
+    {
+        printf("%s\n", exito);
+    }else{
+        printf("%s\n", eCondicion);
+    }
+}

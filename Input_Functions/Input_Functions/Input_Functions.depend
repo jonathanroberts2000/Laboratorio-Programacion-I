@@ -38,3 +38,16 @@
 	<stdlib.h>
 	"bPointers.h"
 
+1559066435 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\input_functions\input_functions\main.c
+	<stdio.h>
+	<stdlib.h>
+	"bPointers.h"
+
+1559132922 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\input_functions\input_functions\bpointers.h
+
+1559132922 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\input_functions\input_functions\bpointers.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"bPointers.h"
+
