@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 //caracter delimitador...siempre el mismo , ; - / un split para leer datos
-//linkedlist
+//linkedlist, funciones listas, ll_remove();etc
 
 
 
