@@ -3,7 +3,8 @@
 #include <string.h>
 #include "LinkedList.h"
 #include "Employee.h"
-
+#include "parser.h"
+#include "pInput.h"
 
 /** \brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
  *
@@ -14,7 +15,10 @@
  */
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
 {
-
+    FILE* miArchivoT;
+    miArchivoT = fopen(path, "r");
+    parser_EmployeeFromText(miArchivoT, pArrayListEmployee);
+    fclose(miArchivoT);
     return 1;
 }
 
@@ -27,6 +31,10 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
  */
 int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
 {
+    FILE* miArchivoB;
+    miArchivoB = fopen("data.dat", "rb");
+    parser_EmployeeFromBinary(miArchivoB, pArrayListEmployee);
+    fclose(miArchivoB);
     return 1;
 }
 
@@ -39,11 +47,25 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
  */
 int controller_addEmployee(LinkedList* pArrayListEmployee)
 {
+    int id;
+    char nombre[128];
+    int horasTrabajadas;
+    int sueldo;
     Employee* e1 = employee_new();
-    e1->horasTrabajadas = 15;
-    e1->id = 1001;
-    strcpy(e1->nombre, "Jonathan");
-    e1->sueldo = 150000;
+    printf("Ingrese id: ");
+    scanf("%d", &id);
+    printf("Ingrese nombre: ");
+    scanf("%s", nombre);
+    printf("Ingrese cantidad de horas trabajadas: ");
+    scanf("%d", &horasTrabajadas);
+    printf("Ingrese sueldo: ");
+    scanf("%d", &sueldo);
+
+    employee_setId(e1, id);
+    employee_setNombre(e1, nombre);
+    employee_setHorasTrabajadas(e1, horasTrabajadas);
+    employee_setSueldo(e1, sueldo);
+
     ll_add(pArrayListEmployee, e1);
     return 1;
 }

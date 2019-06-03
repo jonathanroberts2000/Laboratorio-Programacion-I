@@ -25,7 +25,11 @@ int main()
     int option;
     char seguir = 's';
     LinkedList* listaEmpleados = ll_newLinkedList();
-    FILE* miArchivo;
+
+
+    Employee* aux1;//creado para el case 3
+    Employee* aux;//creadp para el case 2
+    int i;
 
 
     do{
@@ -34,15 +38,20 @@ int main()
         switch(option)
         {
             case 1:
-                miArchivo = fopen("data.csv", "r");
-                parser_EmployeeFromText(miArchivo, listaEmpleados);
-                fclose(miArchivo);
+                controller_loadFromText("data.csv", listaEmpleados);
                 break;
             case 2:
-
+                controller_loadFromBinary("data", listaEmpleados);
+                //aux = ll_get(listaEmpleados, 52);
+                //printf("%d--%s--%d--%d", aux->id, aux->nombre, aux->horasTrabajadas, aux->sueldo);
                 break;
             case 3:
                 controller_addEmployee(listaEmpleados);
+                for(i=0;i<ll_len(listaEmpleados);i++)
+                {
+                    aux1 = ll_get(listaEmpleados, i);
+                    printf("%d--%s--%d--%d\n", aux1->id, aux1->nombre, aux1->horasTrabajadas, aux1->sueldo);
+                }
                 break;
             case 4:
 
@@ -63,8 +72,8 @@ int main()
 
                 break;
             case 10:
-                fclose(miArchivo);
                 ll_deleteLinkedList(listaEmpleados);
+                return 0;
                 break;
             default:
 

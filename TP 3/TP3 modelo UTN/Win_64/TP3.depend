@@ -53,21 +53,29 @@
 	"LinkedList.h"
 	"Employee.h"
 
-1533133026 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\controller.c
+1559596159 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\controller.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 	"LinkedList.h"
 	"Employee.h"
+	"parser.h"
+	"pInput.h"
 
-1533133022 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\linkedlist.h
+1559583252 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\linkedlist.h
 
-1533133022 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\employee.h
+1559583252 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\employee.h
 
-1533133022 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\employee.c
-
-1533133022 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\parser.c
+1559583252 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\employee.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
+	"Employee.h"
+
+1559595693 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
 	"LinkedList.h"
 	"Employee.h"
 
@@ -105,4 +113,24 @@
 1559161329 c:\users\alumno\desktop\laboratorio_programacion_i-master\tp 3\tp3 modelo utn\win_64\controller.h
 
 1559161329 c:\users\alumno\desktop\laboratorio_programacion_i-master\tp 3\tp3 modelo utn\win_64\parser.h
+
+1559595724 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"parser.h"
+
+1559583252 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\controller.h
+
+1559583252 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\parser.h
+
+1559584701 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\pinput.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pInput.h"
+
+1559584701 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\pinput.h
 
