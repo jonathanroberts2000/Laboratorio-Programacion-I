@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "LinkedList.h"
 #include "Employee.h"
 
@@ -13,6 +14,7 @@
  */
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
 {
+
     return 1;
 }
 
@@ -37,6 +39,12 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
  */
 int controller_addEmployee(LinkedList* pArrayListEmployee)
 {
+    Employee* e1 = employee_new();
+    e1->horasTrabajadas = 15;
+    e1->id = 1001;
+    strcpy(e1->nombre, "Jonathan");
+    e1->sueldo = 150000;
+    ll_add(pArrayListEmployee, e1);
     return 1;
 }
 

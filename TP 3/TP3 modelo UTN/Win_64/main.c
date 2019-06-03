@@ -3,6 +3,7 @@
 #include "LinkedList.h"
 #include "Controller.h"
 #include "Employee.h"
+#include "parser.h"
 
 /****************************************************
     Menu:
@@ -24,17 +25,24 @@ int main()
     int option;
     char seguir = 's';
     LinkedList* listaEmpleados = ll_newLinkedList();
+    FILE* miArchivo;
+
+
     do{
+        printf("Ingrese opcion: ");
+        scanf("%d", &option);
         switch(option)
         {
             case 1:
-                controller_loadFromText("data.csv",listaEmpleados);
+                miArchivo = fopen("data.csv", "r");
+                parser_EmployeeFromText(miArchivo, listaEmpleados);
+                fclose(miArchivo);
                 break;
             case 2:
 
                 break;
             case 3:
-
+                controller_addEmployee(listaEmpleados);
                 break;
             case 4:
 
@@ -55,7 +63,8 @@ int main()
 
                 break;
             case 10:
-
+                fclose(miArchivo);
+                ll_deleteLinkedList(listaEmpleados);
                 break;
             default:
 
