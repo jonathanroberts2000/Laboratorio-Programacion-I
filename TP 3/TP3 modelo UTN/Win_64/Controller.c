@@ -115,6 +115,9 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
+    int (*pFunc) (Employee*, Employee*);
+    pFunc = employee_compareByName;
+    ll_sort(pArrayListEmployee, pFunc,1);
     return 1;
 }
 
