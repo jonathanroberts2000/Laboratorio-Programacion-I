@@ -72,6 +72,13 @@ int main()
                 break;
             case 7:
                 controller_sortEmployee(listaEmpleados);
+                int k;
+                for(k=0;k<ll_len(listaEmpleados);k++)
+                {
+                    Employee* aux = (Employee*)malloc(sizeof(Employee));
+                    aux = ll_get(listaEmpleados,k);
+                    printf("%d--%s--%d--%d\n", aux->id, aux->nombre, aux->horasTrabajadas, aux->sueldo);
+                }
                 break;
             case 8:
                 controller_saveAsText(PATHT, listaEmpleados);

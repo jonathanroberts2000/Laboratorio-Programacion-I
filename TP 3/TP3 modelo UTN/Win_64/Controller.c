@@ -98,6 +98,49 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_editEmployee(LinkedList* pArrayListEmployee)
 {
+    int id;
+    int option;
+    char seguir = 's';
+    Employee* aux;
+    printf("Ingrese el id del empleado que desea modificar: ");
+    scanf("%d", &id);
+    aux = ll_get(pArrayListEmployee, id);
+    if(aux != NULL)
+    {
+        do
+        {
+            printf("1.Nombre\n2.Horas trabajadas\n3.Sueldo\n4.Salir\nIngrese una opcion: ");
+            scanf("%d",&option);
+
+            switch(option)
+            {
+            case 1:
+                printf("Ingrese el nuevo nombre: ");
+                fflush(stdin);
+                scanf("%s", aux->nombre);
+                break;
+            case 2:
+                printf("Ingrese la nueva cantidad de horas trabajadas: ");
+                scanf("%d", &(aux->horasTrabajadas));
+                break;
+
+            case 3:
+                printf("Ingrese el nuevo sueldo: ");
+                scanf("%d", &(aux->sueldo));
+                break;
+            case 4:
+                return 1;
+                break;
+            default:
+                printf("Opcion invalida! Reingrese\n");
+                break;
+            }
+        }
+        while(seguir == 's');
+    }
+    else{
+        printf("Id no registrado en el sistema!\n");
+    }
     return 1;
 }
 
@@ -110,6 +153,12 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_removeEmployee(LinkedList* pArrayListEmployee)
 {
+    int id;
+    printf("Ingrese el id del empleado que desea borrar: ");
+    scanf("%d", &id);
+    ll_remove(pArrayListEmployee, id);
+    //antes de borrar mostrar los datos del empleado a borrar y preguntar si es ese el que quiere borrar!
+    printf("Operacion exitosa!\n");
     return 1;
 }
 
@@ -122,6 +171,13 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_ListEmployee(LinkedList* pArrayListEmployee)
 {
+    int i;
+    Employee* aux = employee_new();
+    for(i=0;i<ll_len(pArrayListEmployee);i++)
+    {
+        aux = ll_get(pArrayListEmployee, i);
+        printf("%d--%s--%d--%d\n", aux->id, aux->nombre, aux->horasTrabajadas, aux->sueldo);
+    }
     return 1;
 }
 
@@ -134,9 +190,9 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
-    int (*pFunc) (Employee*, Employee*);
+    int (*pFunc)(Employee*,Employee*);
     pFunc = employee_compareByName;
-    ll_sort(pArrayListEmployee, pFunc,1);
+    ll_sort(pArrayListEmployee, pFunc, 1);
     return 1;
 }
 
@@ -149,6 +205,19 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
  */
 int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
 {
+    int i;
+    Employee* aux;
+    FILE* miArchivoT;
+
+    miArchivoT = fopen(path, "w");
+    fprintf(miArchivoT,"id,nombre,horasTrabajadas,sueldo\n");
+    for(i=0;i<ll_len(pArrayListEmployee);i++)
+    {
+        aux=ll_get(pArrayListEmployee,i);
+
+        fprintf(miArchivoT,"%d,%s,%d,%d\n",aux->id,aux->nombre,aux->horasTrabajadas,aux->sueldo);
+    }
+    fclose(miArchivoT);
     return 1;
 }
 
@@ -161,6 +230,15 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
  */
 int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
 {
+    int i;
+    Employee* aux;
+    FILE* miArchivoB;
+    miArchivoB = fopen(path, "wb");
+    for(i=0;i<ll_len(pArrayListEmployee);i++)
+    {
+        aux = ll_get(pArrayListEmployee, i);
+        fwrite(aux, sizeof(Employee), 1, miArchivoB);
+    }
     return 1;
 }
 

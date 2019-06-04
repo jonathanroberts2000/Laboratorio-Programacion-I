@@ -43,46 +43,13 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
  */
 int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee)
 {
-    /*int i,j;
-    for(j=1;j<ll_len(pArrayListEmployee);j++)
-    {
-        Employee* aux = (Employee*)malloc(sizeof(Employee));
-        aux = ll_get(pArrayListEmployee, j);
-        fwrite(aux,sizeof(Employee), 1, pFile);
-    }
-    fclose(pFile);
 
-    pFile = fopen(PATHB, "rb");
-    for(i=1;i<ll_len(pArrayListEmployee);i++)
-    {
-        Employee* aux1 = (Employee*)malloc(sizeof(Employee));
-        aux1 = ll_get(pArrayListEmployee, i);
-        char text[10000];
-        fread(text, sizeof(Employee), 1, pFile);
-        //printf("%d--%s--%d--%d", aux1->id, aux1->nombre, aux1->horasTrabajadas, aux1->sueldo);
-        printf("%s\n", text);
-        //ll_add(pArrayListEmployee, aux1);
-    }*/
-    /*char text[10000];
-    fread(text, sizeof(Employee), 1, pFile);
-    printf("%s\n", text);*/
-
-    //char id[100], nombre[100], horasTrabajadas[100], sueldo[100];
-    while(!feof(pFile))
+    while(!feof(pFile)-1)
     {
         Employee* aux = (Employee*)malloc(sizeof(Employee));
         fread(aux, sizeof(Employee), 1, pFile);
         //printf("%d---%s---%d---%d\n", (aux+i)->id, (aux+i)->nombre, (aux+i)->horasTrabajadas, (aux+i)->sueldo);
         ll_add(pArrayListEmployee, aux);
-
     }
-
-
-    /*Employee* aux = (Employee*)malloc(sizeof(Employee));
-    fread(aux, sizeof(Employee), 1, pFile);
-    printf("%d---%s---%d---%d\n", aux->id, aux->nombre, aux->horasTrabajadas, aux->sueldo);*/
-
-
-
     return 1;
 }
