@@ -5,6 +5,8 @@
 #include "Employee.h"
 #include "parser.h"
 #include "pInput.h"
+#define PATHT "data.csv"
+#define PATHB "data.dat"
 
 /** \brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
  *
@@ -32,7 +34,24 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
 int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
 {
     FILE* miArchivoB;
-    miArchivoB = fopen("data.dat", "rb");
+    FILE* miArchivoT;
+    miArchivoT = fopen("data.csv", "r");
+    parser_EmployeeFromText(miArchivoT, pArrayListEmployee);
+
+    fclose(miArchivoT);
+    int i;
+    miArchivoB = fopen("data.dat", "wb");
+    for(i=0;i<ll_len(pArrayListEmployee);i++)
+    {
+        Employee* aux = (Employee*)malloc(sizeof(Employee));
+        aux = ll_get(pArrayListEmployee, i);
+        fwrite(aux, sizeof(Employee),1,miArchivoB);
+    }
+    fclose(miArchivoB);
+
+
+
+    miArchivoB = fopen(PATHB, "rb");
     parser_EmployeeFromBinary(miArchivoB, pArrayListEmployee);
     fclose(miArchivoB);
     return 1;
