@@ -32,7 +32,7 @@ int main()
     //Employee* aux;//creadp para el case 2
     int i;
 
-    Employee* e1;
+    /*Employee* e1;
     Employee* e2;
     Employee* e3;
     e1->id = 10;
@@ -48,7 +48,7 @@ int main()
     e3->id = 12;
     strcpy(e3->nombre, "Pedro");
     e3->horasTrabajadas = 30;
-    e3->sueldo = 30000;
+    e3->sueldo = 30000;*/
 
 
     do{

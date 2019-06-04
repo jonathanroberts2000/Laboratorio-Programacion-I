@@ -39,17 +39,16 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
  */
 int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee)
 {
-    char id[100], nombre[100], horasTrabajadas[100], sueldo[100];
-    int i = ll_len(pArrayListEmployee);
-    int r = 0;
-    while(i<=r)
+   /* char id[100], nombre[100], horasTrabajadas[100], sueldo[100];
+    int i = 0;
+    while(i<ll_len(pArrayListEmployee))
     {
         Employee* aux = (Employee*)malloc(sizeof(Employee));
 
-        r = fread(id,sizeof(Employee), 1, pFile);
-        r = fread(nombre, sizeof(Employee), 1, pFile);
-        r = fread(horasTrabajadas, sizeof(Employee), 1, pFile);
-        r = fread(sueldo, sizeof(Employee), 1, pFile);
+        fread(aux->id,sizeof(Employee), 1, pFile);
+        fread(nombre, sizeof(Employee), 1, pFile);
+        fread(aux->horasTrabajadas, sizeof(Employee), 1, pFile);
+        fread(aux->sueldo, sizeof(Employee), 1, pFile);
 
         aux->id = atoi(id);
         strcpy(aux->nombre, nombre);
@@ -57,7 +56,8 @@ int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee)
         aux->sueldo = atoi(sueldo);
 
         ll_add(pArrayListEmployee, aux);
-    }
+        i++;
+    }*/
 
 
     return 1;
