@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "LinkedList.h"
 #include "Controller.h"
 #include "Employee.h"
@@ -28,8 +29,26 @@ int main()
 
 
     Employee* aux1;//creado para el case 3
-    Employee* aux;//creadp para el case 2
+    //Employee* aux;//creadp para el case 2
     int i;
+
+    Employee* e1;
+    Employee* e2;
+    Employee* e3;
+    e1->id = 10;
+    strcpy(e1->nombre, "German");
+    e1->horasTrabajadas = 10;
+    e1->sueldo = 10000;
+
+    e2->id = 11;
+    strcpy(e2->nombre, "Matias");
+    e2->horasTrabajadas = 20;
+    e2->sueldo = 20000;
+
+    e3->id = 12;
+    strcpy(e3->nombre, "Pedro");
+    e3->horasTrabajadas = 30;
+    e3->sueldo = 30000;
 
 
     do{
