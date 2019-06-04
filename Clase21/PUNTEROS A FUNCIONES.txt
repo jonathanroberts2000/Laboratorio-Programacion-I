@@ -1,0 +1,2 @@
+int (*pFunc) void
+dependiendo de que devuelve y que parametros recibe la funcion.
