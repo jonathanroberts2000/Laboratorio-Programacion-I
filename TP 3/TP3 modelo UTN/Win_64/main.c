@@ -5,6 +5,7 @@
 #include "Controller.h"
 #include "Employee.h"
 #include "parser.h"
+#include "pInput.h"
 #define PATHT "data.csv"
 #define PATHB "data.dat"
 
@@ -18,83 +19,60 @@
      6. Listar empleados
      7. Ordenar empleados
      8. Guardar los datos de los empleados en el archivo data.csv (modo texto).
-     9. Guardar los datos de los empleados en el archivo data.csv (modo binario).
+     9. Guardar los datos de los empleados en el archivo data.dat (modo binario).
     10. Salir
 *****************************************************/
 
 
 int main()
 {
+    char c;
+    get_Char(&c, "Ingresar char: ");
     int option;
     char seguir = 's';
     LinkedList* listaEmpleados = ll_newLinkedList();
-
-
-    Employee* aux1;//creado para el case 3
-    Employee* aux;//creadp para el case 2
-    int i;
-
-
     do{
-        printf("Ingrese opcion: ");
-        scanf("%d", &option);
+        get_Int(&option, "1. Cargar los datos de los empleados desde el archivo data.csv (modo texto)\n2. Cargar los datos de los empleados desde el archivo data.dat (modo binario)\n3. Alta de empleado\n4. Modificar datos de empleado\n5. Baja de empleado\n6. Listar empleados\n7. Ordenar empleados\n8. Guardar los datos de los empleados en el archivo data.csv (modo texto)\n9. Guardar los datos de los empleados en el archivo data.dat (modo binario)\n10. Salir\nIngrese una opcion: ");
         switch(option)
         {
             case 1:
-                controller_loadFromText(PATHT, listaEmpleados);
+                pointer_error(controller_loadFromText(PATHT, listaEmpleados), "\nNo se ha podido completar la operacion solicitada\n", "\nDatos cargados correctamente\n", "");
                 break;
             case 2:
-                controller_loadFromBinary(PATHB, listaEmpleados);
-                int j;
-                for(j=0;j<ll_len(listaEmpleados);j++)
-                {
-                    aux = ll_get(listaEmpleados, j);
-                printf("%d--%s--%d--%d\n", aux->id, aux->nombre, aux->horasTrabajadas, aux->sueldo);
-                }
-
+                pointer_error(controller_loadFromBinary(PATHB, listaEmpleados), "\nNo se ha podido completar la operacion solicitada\n", "\nDatos cargados correctamente\n", "");
                 break;
             case 3:
-                controller_addEmployee(listaEmpleados);
-                for(i=0;i<ll_len(listaEmpleados);i++)
-                {
-                    aux1 = ll_get(listaEmpleados, i);
-                    printf("%d--%s--%d--%d\n", aux1->id, aux1->nombre, aux1->horasTrabajadas, aux1->sueldo);
-                }
+                pointer_error(controller_addEmployee(listaEmpleados), "\nNo se ha podido dar de alta al empleado solicitado\n", "\nEmpleado correctamente ingresado\n", "");
                 break;
             case 4:
-                controller_editEmployee(listaEmpleados);
+                pointer_error(controller_editEmployee(listaEmpleados), "\nNo se ha podido modificar el empleado correctamente\n", "\nSe ha modificado el empleado correctamente\n", "\nEl id ingresado no corresponde a ningun empleado en el sistema\n");
                 break;
             case 5:
-                controller_removeEmployee(listaEmpleados);
+                pointer_error(controller_removeEmployee(listaEmpleados), "\nNo se ha podido dar de baja al empleado correctamente\n", "\nSe ha dado de baja al empleado correctamente\n", "\nOperacion de baja cancelada correctamente\n");
                 break;
             case 6:
-                controller_ListEmployee(listaEmpleados);
+                pointer_error(controller_ListEmployee(listaEmpleados), "\nNo se ha podido listar los empleados\n", "\nEl listado ha sido mostrado correctamente\n", "");
                 break;
             case 7:
-                controller_sortEmployee(listaEmpleados);
-                int k;
-                for(k=0;k<ll_len(listaEmpleados);k++)
-                {
-                    Employee* aux = (Employee*)malloc(sizeof(Employee));
-                    aux = ll_get(listaEmpleados,k);
-                    printf("%d--%s--%d--%d\n", aux->id, aux->nombre, aux->horasTrabajadas, aux->sueldo);
-                }
+                pointer_error(controller_sortEmployee(listaEmpleados), "\nNo se ha podido ordenar los empleados correctamente\n", "\nOrdenamiento alfabetico de empleados correctamente ejecutado\n", "");
                 break;
             case 8:
-                controller_saveAsText(PATHT, listaEmpleados);
+                pointer_error(controller_saveAsText(PATHT, listaEmpleados), "\nNo se ha podido guardar los cambios en el archivo data.csv (modo texto)\n", "\nSe han guardado correctamente todos los cambios en el archivo data.csv (modo texto)\n", "");
                 break;
             case 9:
-                //controller_saveAsBinary(PATHB, listaEmpleados);
-                aux = ll_get(listaEmpleados, 1);
-                printf("%d---%s---%d---%d\n", aux->id, aux->nombre, aux->horasTrabajadas, aux->sueldo);
+                pointer_error(controller_saveAsBinary(PATHB, listaEmpleados), "\nNo se ha podido guardar los cambios en el archivo data.dat (modo binario)\n", "\nSe han guardado correctamente todos los cambios en el archivo data.dat (modo binario)\n", "");
                 break;
             case 10:
                 ll_deleteLinkedList(listaEmpleados);
+                puts("\nLa lista de empleados ha sido eliminada correctamente...saliendo del programa!\n");
                 return 0;
                 break;
             default:
-
+                puts("Error! No ha ingresado una opcion correcta. Por favor reingrese...");
                 break;
+        system("pause");
+        system("cls");
+        fflush(stdin);
         }
     }while(seguir == 's');
     return 0;

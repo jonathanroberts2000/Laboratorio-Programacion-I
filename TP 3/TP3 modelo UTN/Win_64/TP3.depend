@@ -53,7 +53,7 @@
 	"LinkedList.h"
 	"Employee.h"
 
-1559685374 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\controller.c
+1559774407 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\controller.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -62,17 +62,17 @@
 	"parser.h"
 	"pInput.h"
 
-1559673579 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\linkedlist.h
+1559770709 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\linkedlist.h
 
-1559673579 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\employee.h
+1559770563 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\employee.h
 
-1559684429 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\employee.c
+1559769577 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\employee.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"Employee.h"
 
-1559685330 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\parser.c
+1559774005 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\parser.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -114,7 +114,7 @@
 
 1559161329 c:\users\alumno\desktop\laboratorio_programacion_i-master\tp 3\tp3 modelo utn\win_64\parser.h
 
-1559685379 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\main.c
+1559777675 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -122,14 +122,16 @@
 	"Controller.h"
 	"Employee.h"
 	"parser.h"
+	"pInput.h"
 
-1559673579 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\controller.h
+1559770898 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\controller.h
 
-1559673579 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\parser.h
+1559770484 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\parser.h
 
-1559673579 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\pinput.c
+1559777644 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp 3\tp3 modelo utn\win_64\pinput.c
 	<stdio.h>
 	<stdlib.h>
+	<ctype.h>
 	<string.h>
 	"pInput.h"
 

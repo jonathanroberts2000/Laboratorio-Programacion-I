@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include <string.h>
 #include "pInput.h"
 
@@ -35,6 +36,14 @@ int get_Char(char* pCarac, char mUser[])
         printf("%s", mUser);
         fflush(stdin);
         scanf("%c", pCarac);
+        *pCarac = tolower(*pCarac);
+        while(*pCarac != 's' && *pCarac != 'n')
+        {
+            printf("Error! Reingrese un caracter valido por favor (s/n): ");
+            fflush(stdin);
+            scanf("%c", pCarac);
+            *pCarac = tolower(*pCarac);
+        }
         status = 1;
     }
     return status;
@@ -65,3 +74,4 @@ void pointer_error(int retorno, char null[], char exito[], char eCondicion[])
         printf("%s\n", eCondicion);
     }
 }
+

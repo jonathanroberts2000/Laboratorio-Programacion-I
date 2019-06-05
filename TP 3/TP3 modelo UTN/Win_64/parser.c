@@ -15,23 +15,26 @@
  */
 int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
 {
+    int status = 0;
     char id[100], nombre[100], horasTrabajadas[100], sueldo[100];
-    fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", id, nombre, horasTrabajadas, sueldo);
-    printf("%s--%s--%s--%s\n", id, nombre, horasTrabajadas, sueldo);
-    while(!feof(pFile))
+    if(pFile != NULL && pArrayListEmployee != NULL)
     {
-        Employee* aux = (Employee*)malloc(sizeof(Employee));
-
         fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", id, nombre, horasTrabajadas, sueldo);
+        while(!feof(pFile))
+        {
+            Employee* aux = employee_new();
+            fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", id, nombre, horasTrabajadas, sueldo);
 
-        aux->id = atoi(id);
-        strcpy(aux->nombre, nombre);
-        aux->horasTrabajadas = atoi(horasTrabajadas);
-        aux->sueldo = atoi(sueldo);
+            aux->id = atoi(id);
+            strcpy(aux->nombre, nombre);
+            aux->horasTrabajadas = atoi(horasTrabajadas);
+            aux->sueldo = atoi(sueldo);
 
-        ll_add(pArrayListEmployee, aux);
+            ll_add(pArrayListEmployee, aux);
+        }
+        status = 1;
     }
-    return 1;
+    return status;
 }
 
 /** \brief Parsea los datos los datos de los empleados desde el archivo data.csv (modo binario).
@@ -43,13 +46,17 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
  */
 int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee)
 {
-
-    while(!feof(pFile)-1)
+    int status = 0;
+    if(pFile != NULL && pArrayListEmployee != NULL)
     {
-        Employee* aux = (Employee*)malloc(sizeof(Employee));
-        fread(aux, sizeof(Employee), 1, pFile);
-        //printf("%d---%s---%d---%d\n", (aux+i)->id, (aux+i)->nombre, (aux+i)->horasTrabajadas, (aux+i)->sueldo);
-        ll_add(pArrayListEmployee, aux);
+        while(!feof(pFile)-1)
+        {
+            Employee* aux = employee_new();
+            fread(aux, sizeof(Employee), 1, pFile);
+            ll_add(pArrayListEmployee, aux);
+        }
+        status = 1;
     }
-    return 1;
+    return status;
 }
+
