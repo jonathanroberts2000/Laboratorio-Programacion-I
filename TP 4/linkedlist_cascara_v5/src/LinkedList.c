@@ -83,9 +83,15 @@ Node* test_getNode(LinkedList* this, int nodeIndex)
 static int addNode(LinkedList* this, int nodeIndex,void* pElement)
 {
     int returnAux = -1;
-    if(this != NULL && pElement != NULL && nodeIndex > 0)
+    int i;
+    Node* node = (Node*) malloc(sizeof(Node));
+    if(this != NULL && (nodeIndex > 0 && nodeIndex <= ll_len(this)))
     {
 
+        for(i=0;i<=ll_len(this);i++)
+        {
+
+        }
         returnAux = 0;
     }
     return returnAux;
@@ -136,10 +142,17 @@ int ll_add(LinkedList* this, void* pElement)
 void* ll_get(LinkedList* this, int index)
 {
     void* returnAux = NULL;
-    if(this != NULL && (index > 0 && index <= ll_len(this)))
+    /*if(this != NULL && (index > 0 && index <= ll_len(this)))
     {
+        Node* aux;
+        aux = (Node*) malloc(sizeof(Node));
+        aux = this->pFirstNode;
+        int i;
+        for(i=0;i<=ll_len(this);i++)
+        {
 
-    }
+        }
+    }*/
     return returnAux;
 }
 
@@ -156,7 +169,10 @@ void* ll_get(LinkedList* this, int index)
 int ll_set(LinkedList* this, int index,void* pElement)
 {
     int returnAux = -1;
+    if(this != NULL && (index > 0 && index <= ll_len(this)))
+    {
 
+    }
     return returnAux;
 }
 
