@@ -84,8 +84,8 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
     Employee* e1 = employee_new();
     if(pArrayListEmployee != NULL)
     {
-        printf("Ingrese id: ");
-        scanf("%d", &id);
+        printf("Id generado correctamente!\n");
+        id = (ll_len(pArrayListEmployee) + 1);
         printf("Ingrese nombre: ");
         fflush(stdin);
         scanf("%s", nombre);
