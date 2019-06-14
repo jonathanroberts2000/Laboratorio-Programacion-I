@@ -35,8 +35,9 @@ int get_String(char*, char[]);
  * \param int Es el entero retornado por cada funcion como status
  * \param char[] Mensaje Nº1 que le indica al usuario el estado de la funcion que intenta ejecutar
  * \param char[] Mensaje Nº2 que le indica al usuario el estado de la funcion que intenta ejecutar
- * \param char[] Mebsaje Nº3 que le indica al usuario el estado de la funcion que intenta ejecutar
+ * \param char[] Mensaje Nº3 que le indica al usuario el estado de la funcion que intenta ejecutar
+ * \param char[] Mensaje Nº4 que le indica al usuario el estado de la funcion que intenta ejecutar
  * \return void (Sin retorno)
  *
  */
-void pointer_error(int, char[], char[], char[]);
+void pointer_error(int, char[], char[], char[], char[]);

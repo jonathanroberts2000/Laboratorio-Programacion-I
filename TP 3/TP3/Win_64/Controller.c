@@ -10,13 +10,6 @@
 #define MAT miArchivoT
 #define MAB miArchivoB
 
-/** \brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int controller_loadFromText(char* path, LinkedList* pArrayListEmployee)
 {
     int status = 0;
@@ -31,13 +24,6 @@ int controller_loadFromText(char* path, LinkedList* pArrayListEmployee)
     return status;
 }
 
-/** \brief Carga los datos de los empleados desde el archivo data.csv (modo binario).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
 {
     int status = 0;
@@ -67,13 +53,6 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
     return status;
 }
 
-/** \brief Alta de empleados
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int controller_addEmployee(LinkedList* pArrayListEmployee)
 {
     int status = 0;
@@ -84,16 +63,11 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
     Employee* e1 = employee_new();
     if(pArrayListEmployee != NULL)
     {
-        printf("Id generado correctamente!\n");
+        puts("Id generado correctamente!");
         id = (ll_len(pArrayListEmployee) + 1);
-        printf("Ingrese nombre: ");
-        fflush(stdin);
-        scanf("%s", nombre);
-        printf("Ingrese cantidad de horas trabajadas: ");
-        scanf("%d", &horasTrabajadas);
-        printf("Ingrese sueldo: ");
-        scanf("%d", &sueldo);
-
+        get_String(nombre, "Ingrese nombre: ");
+        get_Int(&horasTrabajadas, "Ingrese cantidad de horas trabajadas: ");
+        get_Int(&sueldo, "Ingrese sueldo: ");
         employee_setId(e1, id);
         employee_setNombre(e1, nombre);
         employee_setHorasTrabajadas(e1, horasTrabajadas);
@@ -104,13 +78,6 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
     return status;
 }
 
-/** \brief Modificar datos de empleado
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int controller_editEmployee(LinkedList* pArrayListEmployee)
 {
     int status = 0;
@@ -118,37 +85,29 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
     int option;
     char seguir = 's';
     Employee* aux;
-    printf("Ingrese el id del empleado que desea modificar: ");
-    scanf("%d", &id);
-    aux = ll_get(pArrayListEmployee, id);
+    get_Int(&id, "Ingrese el id del empleado que desea modificar: ");
+    aux = ll_get(pArrayListEmployee, (id-1));
     if(aux != NULL && pArrayListEmployee != NULL)
     {
         do
         {
-            printf("1.Nombre\n2.Horas trabajadas\n3.Sueldo\n4.Salir\nIngrese una opcion: ");
-            scanf("%d", &option);
-
+            get_Int(&option, "1.Nombre\n2.Horas trabajadas\n3.Sueldo\n4.Salir\nIngrese una opcion: ");
             switch(option)
             {
             case 1:
-                printf("Ingrese el nuevo nombre: ");
-                fflush(stdin);
-                scanf("%s", aux->nombre);
+                get_String(aux->nombre, "Ingrese el nuevo nombre: ");
                 break;
             case 2:
-                printf("Ingrese la nueva cantidad de horas trabajadas: ");
-                scanf("%d", &(aux->horasTrabajadas));
+                get_Int(&(aux->horasTrabajadas), "Ingrese la nueva cantidad de horas trabajadas: ");
                 break;
-
             case 3:
-                printf("Ingrese el nuevo sueldo: ");
-                scanf("%d", &(aux->sueldo));
+                get_Int(&(aux->sueldo), "Ingrese el nuevo sueldo: ");
                 break;
             case 4:
                 return 1;
                 break;
             default:
-                printf("Opcion invalida! Reingrese\n");
+                puts("Opcion invalida! Reingrese");
                 break;
             }
         }
@@ -161,36 +120,37 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
     return status;
 }
 
-/** \brief Baja de empleado
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int controller_removeEmployee(LinkedList* pArrayListEmployee)
 {
     int status = 0;
     int id;
+    char respuesta;
+    Employee* aux;
     if(pArrayListEmployee != NULL)
     {
-        printf("Ingrese el id del empleado que desea borrar: ");
-        scanf("%d", &id);
-        ll_remove(pArrayListEmployee, id);
-        //antes de borrar mostrar los datos del empleado a borrar y preguntar si es ese el que quiere borrar!
-        printf("Operacion exitosa!\n");
-        status = 1;
+        get_Int(&id, "Ingrese el id del empleado que desea borrar: ");
+        aux = ll_get(pArrayListEmployee, (id-1));
+        if(aux != NULL)
+        {
+            printf("%d--%s--%d--%d\n", aux->id, aux->nombre, aux->horasTrabajadas, aux->sueldo);
+            get_Char(&respuesta, "Desea eliminar el empleado mostrado anteriormente?");
+            if(respuesta == 's')
+            {
+                ll_remove(pArrayListEmployee, (id-1));
+                status = 1;
+            }else
+            {
+                status = 2;
+            }
+        }else
+        {
+            status = 3;
+        }
+
     }
     return status;
 }
 
-/** \brief Listar empleados
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int controller_ListEmployee(LinkedList* pArrayListEmployee)
 {
     int status = 0;
@@ -208,13 +168,6 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
     return status;
 }
 
-/** \brief Ordenar empleados
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int controller_sortEmployee(LinkedList* pArrayListEmployee)
 {
     int status = 0;
@@ -228,13 +181,6 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
     return status;
 }
 
-/** \brief Guarda los datos de los empleados en el archivo data.csv (modo texto).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
 {
     int status = 0;
@@ -256,13 +202,6 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
     return status;
 }
 
-/** \brief Guarda los datos de los empleados en el archivo data.csv (modo binario).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
 {
     int status = 0;

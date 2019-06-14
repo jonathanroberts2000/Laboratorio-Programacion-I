@@ -6,13 +6,6 @@
 #define PATHT "data.csv"
 #define PATHB "data.dat"
 
-/** \brief Parsea los datos los datos de los empleados desde el archivo data.csv (modo texto).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
 {
     int status = 0;
@@ -24,13 +17,7 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
         {
             Employee* aux = employee_new();
             fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", id, nombre, horasTrabajadas, sueldo);
-
-            /*aux->id = atoi(id);
-            strcpy(aux->nombre, nombre);
-            aux->horasTrabajadas = atoi(horasTrabajadas);
-            aux->sueldo = atoi(sueldo);*/
             aux = employee_newParametros(id, nombre, horasTrabajadas, sueldo);
-
             ll_add(pArrayListEmployee, aux);
         }
         status = 1;
@@ -38,13 +25,6 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
     return status;
 }
 
-/** \brief Parsea los datos los datos de los empleados desde el archivo data.csv (modo binario).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
 int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee)
 {
     int status = 0;

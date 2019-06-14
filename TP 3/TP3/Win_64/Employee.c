@@ -12,11 +12,17 @@ Employee* employee_new()
 Employee* employee_newParametros(char* idStr, char* nombreStr, char* horasTrabajadasStr, char* sueldoStr)
 {
     Employee* empleado = employee_new();
-    empleado->id = atoi(idStr);
-    strcpy(empleado->nombre, nombreStr);
-    empleado->horasTrabajadas = atoi(horasTrabajadasStr);
-    empleado->sueldo = atoi(sueldoStr);
-    return empleado;
+    if(idStr != NULL && nombreStr != NULL && horasTrabajadasStr != NULL && sueldoStr != NULL && empleado != NULL)
+    {
+        empleado->id = atoi(idStr);
+        strcpy(empleado->nombre, nombreStr);
+        empleado->horasTrabajadas = atoi(horasTrabajadasStr);
+        empleado->sueldo = atoi(sueldoStr);
+        return empleado;
+    }else
+    {
+        return NULL;
+    }
 }
 
 int employee_setId(Employee* this, int id)

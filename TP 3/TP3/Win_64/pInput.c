@@ -62,7 +62,7 @@ int get_String(char* pString, char mUser[])
     return status;
 }
 
-void pointer_error(int retorno, char null[], char exito[], char eCondicion[])
+void pointer_error(int retorno, char null[], char exito[], char eCondicion[], char mErrorId[])
 {
     if(retorno == 0)
     {
@@ -70,8 +70,11 @@ void pointer_error(int retorno, char null[], char exito[], char eCondicion[])
     }else if(retorno == 1)
     {
         printf("%s\n", exito);
-    }else{
+    }else if(retorno == 2){
         printf("%s\n", eCondicion);
+    }else
+    {
+        printf("%s\n", mErrorId);
     }
 }
 
