@@ -114,7 +114,6 @@ static int addNode(LinkedList* this, int nodeIndex,void* pElement)
     return returnAux;
 }
 
-
 /** \brief Permite realizar el test de la funcion addNode la cual es privada
  *
  * \param this LinkedList* Puntero a la lista
