@@ -30,7 +30,7 @@ int main(void)
          //startTesting(2);  // ll_len        100%
          //startTesting(3);  // getNode - test_getNode        100%
          //startTesting(4);  // addNode - test_addNode        100%
-         startTesting(5);  // ll_add        100%
+         //startTesting(5);  // ll_add        100%
          //startTesting(6);  // ll_get     100%
          //startTesting(7);  // ll_set        100%
          //startTesting(8);  // ll_remove     100%
@@ -45,7 +45,6 @@ int main(void)
          //startTesting(17); // ll_subList        100%
          //startTesting(18); // ll_clone          100%
          //startTesting(19); // ll_sort           100%
-
     return 0;
 }
 
