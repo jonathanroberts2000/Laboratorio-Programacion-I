@@ -53,3 +53,57 @@
 
 1561381715 c:\users\alumno\desktop\laboratorio_programacion_i-master\#lab 2 parcial\parcial #2\parcial2lab\parser.h
 
+1561397858 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"eEmpleado.h"
+	"Controller.h"
+	"parser.h"
+	"pInput.h"
+
+1561414692 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab\linkedlist.h
+
+1561414713 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab\eempleado.h
+
+1561397858 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab\controller.h
+
+1561397858 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab\parser.h
+
+1561397858 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab\pinput.h
+
+1561414692 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab\eempleado.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"eEmpleado.h"
+
+1561415134 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"eEmpleado.h"
+	"pInput.h"
+	"Controller.h"
+
+1561397858 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab\parser.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"LinkedList.h"
+	"eEmpleado.h"
+
+1561397858 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab\pinput.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"pInput.h"
+
+1561414883 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+

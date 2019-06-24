@@ -79,6 +79,17 @@ int employee_setHorasTrabajadas(eEmpleado* this, int horasTrabajadas)
     return status;
 }
 
+int employee_setSueldo(eEmpleado* this, int sueldo)
+{
+    int status = 0;
+    if(this != NULL)
+    {
+        this->sueldo = sueldo;
+        status = 1;
+    }
+    return status;
+}
+
 int employee_getHorasTrabajadas(eEmpleado* this)
 {
     int returnAux;
@@ -136,12 +147,14 @@ int employee_getEdad(eEmpleado* this)
     return returnAux;
 }
 
-int laQueMapea(void* pElement)
+int laQueMapea(eEmpleado* unEmpleado)
 {
     int returnAux = -1;
-    if(pElement != NULL)
+    int sueldo;
+    if(unEmpleado != NULL)
     {
-        returnAux = employee_getHorasTrabajadas(pElement) * 300;
+        sueldo = employee_getHorasTrabajadas(unEmpleado) * 300;
+        returnAux = employee_setSueldo(unEmpleado, sueldo);
     }
     return returnAux;
 }
@@ -152,6 +165,20 @@ int employee_getSueldo(eEmpleado* this)
     if(this != NULL)
     {
         returnAux = (this->sueldo);
+        employee_setSueldo(this, returnAux);
+    }
+    return returnAux;
+}
+
+int laQuefiltra(eEmpleado* unEmpleado)
+{
+    int returnAux = -1;
+    if(unEmpleado != NULL)
+    {
+        if(stricmp(employee_getEmpleo(unEmpleado), "programador") == 0 && employee_getEdad(unEmpleado) > 20)
+        {
+            returnAux = 1;
+        }
     }
     return returnAux;
 }

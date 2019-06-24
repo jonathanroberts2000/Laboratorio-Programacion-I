@@ -10,7 +10,9 @@ int main()
 {
     int option;
     char seguir = 's';
+    int i;
     LinkedList* listaEmpleados = ll_newLinkedList();
+    LinkedList* newlist;
     do{
         get_Int(&option, "1. Cargar los datos de los empleados desde el archivo data.csv (modo texto)\n2. Listar empleados\n3. Calcular sueldos\n4. Listar empleados con sueldos\n5. Salir\nIngrese una opcion: ");
         switch(option)
@@ -29,16 +31,18 @@ int main()
             case 4:
                 pointer_error(controller_ListEmployeeSueldos(listaEmpleados), "\nNo se ha podido listar los empleados\n", "\nEl listado ha sido mostrado correctamente\n", "", "");
                 break;
-            /*case 5:
-                pointer_error(controller_ListEmployee(listaEmpleados), "\nNo se ha podido listar los empleados\n", "\nEl listado ha sido mostrado correctamente\n", "", "");
+            case 5:
+                //pointer_error(controller_ListEmployee(listaEmpleados), "\nNo se ha podido listar los empleados\n", "\nEl listado ha sido mostrado correctamente\n", "", "");
+                newlist=ll_filter(listaEmpleados, &laQuefiltra);
+                controller_ListEmployee(newlist);
                 break;
-            case 6:
+            /*case 6:
                 pointer_error(controller_sortEmployee(listaEmpleados), "\nNo se ha podido ordenar los empleados correctamente\n", "\nOrdenamiento alfabetico de empleados correctamente ejecutado\n", "", "");
                 break;
             case 7:
                 pointer_error(controller_saveAsText(PATHT, listaEmpleados), "\nNo se ha podido guardar los cambios en el archivo data.csv (modo texto)\n", "\nSe han guardado correctamente todos los cambios en el archivo data.csv (modo texto)\n", "", "\nSe ha cancelado el guardado de los cambios\n");
                 break;*/
-            case 5:
+            case 6:
                 ll_deleteLinkedList(listaEmpleados);
                 puts("\nLa lista de empleados ha sido eliminada correctamente...saliendo del programa!\n");
                 system("pause");

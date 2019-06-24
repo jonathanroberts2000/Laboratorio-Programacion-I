@@ -101,4 +101,5 @@ int employee_setEdad(eEmpleado* this, int edad);
 int employee_getEdad(eEmpleado* this);
 int employee_setEmpleo(eEmpleado* this, char* empleo);
 char* employee_getEmpleo(eEmpleado* this);
-int laQueMapea(void* pElement);
+int laQueMapea(eEmpleado* unEmpleado);
+int laQuefiltra(eEmpleado*);

@@ -512,13 +512,25 @@ int ll_map(LinkedList* this, int (*pFunc)(void*))
         for(i=0;i<ll_len(this);i++)
         {
             element = ll_get(this, i);
-            if(pFunc(element) > 0)
-            {
-                ll_set(this, i, element);
-            }
+            pFunc(element);
         }
         returnAux = 0;
     }
     return returnAux;
 }
 
+LinkedList* ll_filter(LinkedList* listIn, int (*pFunc)(void*))
+{
+    int i;
+    Node* element;
+    LinkedList* newLinkedList = ll_newLinkedList();
+    for(i=0;i<ll_len(listIn);i++)
+    {
+        element = ll_get(listIn, i);
+        if(pFunc(element)== 1)
+        {
+            ll_add(newLinkedList, element);
+        }
+    }
+    return newLinkedList;
+}
