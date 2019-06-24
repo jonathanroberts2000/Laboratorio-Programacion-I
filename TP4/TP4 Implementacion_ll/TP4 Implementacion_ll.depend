@@ -1,0 +1,56 @@
+# depslib dependency file v1.0
+1561346077 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp4\tp4 implementacion_ll\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"pInput.h"
+
+1560264085 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp4\tp4 implementacion_ll\linkedlist.h
+
+1561346077 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp4\tp4 implementacion_ll\employee.h
+
+1561346077 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp4\tp4 implementacion_ll\parser.h
+
+1560473848 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp4\tp4 implementacion_ll\pinput.h
+
+1561346077 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp4\tp4 implementacion_ll\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+
+1561346077 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp4\tp4 implementacion_ll\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"parser.h"
+	"pInput.h"
+
+1561346077 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp4\tp4 implementacion_ll\controller.h
+
+1561346077 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp4\tp4 implementacion_ll\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1560543777 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp4\tp4 implementacion_ll\pinput.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"pInput.h"
+
+1561346097 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\tp4\tp4 implementacion_ll\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
