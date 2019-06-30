@@ -1,0 +1,73 @@
+# depslib dependency file v1.0
+1558099658 source:d:\abm-parcial#1 finalizado\abm-parcial#1 finalizado\askfordata.c
+	<stdlib.h>
+	<stdio.h>
+	<time.h>
+	<string.h>
+	"askForData.h"
+
+1558200750 source:d:\abm-parcial#1 finalizado\abm-parcial#1 finalizado\estruct.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"eStruct.h"
+	"askForData.h"
+
+1558096722 source:d:\abm-parcial#1 finalizado\abm-parcial#1 finalizado\main.c
+	<stdio.h>
+	<stdlib.h>
+	"eStruct.h"
+	"askForData.h"
+
+1558211376 d:\abm-parcial#1 finalizado\abm-parcial#1 finalizado\estruct.h
+
+1558097444 d:\abm-parcial#1 finalizado\abm-parcial#1 finalizado\askfordata.h
+
+1561683032 source:d:\input 01 jr-utnfra\abm-parcial#1 finalizado\abm-parcial#1 finalizado\estruct.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"eStruct.h"
+	"askForData.h"
+
+1561683092 d:\input 01 jr-utnfra\abm-parcial#1 finalizado\abm-parcial#1 finalizado\estruct.h
+
+1558097444 d:\input 01 jr-utnfra\abm-parcial#1 finalizado\abm-parcial#1 finalizado\askfordata.h
+
+1561684300 source:d:\input 01 jr-utnfra\abm-parcial#1 finalizado\abm-parcial#1 finalizado\main.c
+	<stdio.h>
+	<stdlib.h>
+	"eStruct.h"
+	"askForData.h"
+
+1561673564 source:d:\input 01 jr-utnfra\abm-parcial#1 finalizado\abm-parcial#1 finalizado\askfordata.c
+	<stdlib.h>
+	<stdio.h>
+	<time.h>
+	<string.h>
+	"askForData.h"
+
+1561931219 source:c:\users\jonathan roberts\desktop\abm-parcial#1 finalizado\abm-parcial#1 finalizado\askfordata.c
+	<stdlib.h>
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"askForData.h"
+
+1561931209 c:\users\jonathan roberts\desktop\abm-parcial#1 finalizado\abm-parcial#1 finalizado\askfordata.h
+
+1561925478 source:c:\users\jonathan roberts\desktop\abm-parcial#1 finalizado\abm-parcial#1 finalizado\main.c
+	<stdio.h>
+	<stdlib.h>
+	"eStruct.h"
+	"askForData.h"
+
+1561929990 c:\users\jonathan roberts\desktop\abm-parcial#1 finalizado\abm-parcial#1 finalizado\estruct.h
+
+1561931233 source:c:\users\jonathan roberts\desktop\abm-parcial#1 finalizado\abm-parcial#1 finalizado\estruct.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"eStruct.h"
+	"askForData.h"
+
