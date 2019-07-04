@@ -1,4 +1,3 @@
-
 typedef struct{
     int id;
     char nombre[128];

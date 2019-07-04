@@ -1,0 +1,59 @@
+# depslib dependency file v1.0
+1514140574 source:c:\users\jonathan roberts\desktop\#lab 2 parcial\parcial2lab #finalizado\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1562277233 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"eEmpleado.h"
+	"pInput.h"
+	"Controller.h"
+
+1562278290 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\eempleado.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"eEmpleado.h"
+
+1562278290 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1562277233 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"eEmpleado.h"
+
+1562277233 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\pinput.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"pInput.h"
+
+1562278326 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"eEmpleado.h"
+	"Controller.h"
+	"Parser.h"
+	"pInput.h"
+
+1562278290 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\linkedlist.h
+
+1562278290 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\eempleado.h
+
+1562277388 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\controller.h
+
+1562277233 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\parser.h
+
+1562277233 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\pinput.h
+
