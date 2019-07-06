@@ -527,7 +527,7 @@ LinkedList* ll_filter(LinkedList* listIn, int (*pFunc)(void*))
     for(i=0;i<ll_len(listIn);i++)
     {
         element = ll_get(listIn, i);
-        if(pFunc(element)== 1)
+        if(pFunc(element) == 1)
         {
             ll_add(newLinkedList, element);
         }

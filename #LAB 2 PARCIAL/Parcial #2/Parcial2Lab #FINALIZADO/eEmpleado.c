@@ -29,7 +29,7 @@ eEmpleado* employee_newParametros(char* idStr, char* nombreStr, char* empleo, ch
 int employee_setId(eEmpleado* this, int id)
 {
     int status = 0;
-    if(this != NULL)
+    if(this != NULL && id > 0)
     {
         this->id = id;
         status = 1;
@@ -39,7 +39,7 @@ int employee_setId(eEmpleado* this, int id)
 
 int employee_getId(eEmpleado* this)
 {
-    int returnAux;
+    int returnAux = -1;
     if(this != NULL)
     {
         returnAux = (this->id);
@@ -79,7 +79,7 @@ int employee_setHorasTrabajadas(eEmpleado* this, int horasTrabajadas)
     return status;
 }
 
-int employee_setSueldo(eEmpleado* this, int sueldo)
+int employee_setSueldo(eEmpleado* this, float sueldo)
 {
     int status = 0;
     if(this != NULL)
@@ -149,8 +149,8 @@ int employee_getEdad(eEmpleado* this)
 
 int laQueMapea(eEmpleado* unEmpleado)
 {
-    int returnAux = -1;
-    int sueldo;
+    int returnAux;
+    float sueldo;
     if(unEmpleado != NULL)
     {
         sueldo = employee_getHorasTrabajadas(unEmpleado) * 300;
@@ -159,13 +159,12 @@ int laQueMapea(eEmpleado* unEmpleado)
     return returnAux;
 }
 
-int employee_getSueldo(eEmpleado* this)
+float employee_getSueldo(eEmpleado* this)
 {
-    int returnAux;
+    float returnAux = -1;
     if(this != NULL)
     {
         returnAux = (this->sueldo);
-        employee_setSueldo(this, returnAux);
     }
     return returnAux;
 }

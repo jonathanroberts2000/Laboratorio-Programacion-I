@@ -4,7 +4,7 @@ typedef struct{
     char empleo[128];
     int edad;
     int horasTrabajadas;
-    int sueldo;
+    float sueldo;
 }eEmpleado;
 
 /** \brief Constructor en memoria dinamica de un empleado
@@ -78,7 +78,7 @@ int employee_getHorasTrabajadas(eEmpleado* this);
  * \return int Retorna 1 en caso de haber completado la operacion correctamente, caso contrario retornara 0
  *
  */
-int employee_setSueldo(eEmpleado* this, int sueldo);
+int employee_setSueldo(eEmpleado* this, float sueldo);
 /** \brief Trae el sueldo de un empleado
  *
  * \param this Employee* Puntero al empleado
@@ -86,7 +86,7 @@ int employee_setSueldo(eEmpleado* this, int sueldo);
  * \return int Retorna 1 en caso de haber completado la operacion correctamente, caso contrario retornara 0
  *
  */
-int employee_getSueldo(eEmpleado* this);
+float employee_getSueldo(eEmpleado* this);
 /** \brief Compara los empleados por orden alfabetico
  *
  * \param Employee* Puntero a un empleado

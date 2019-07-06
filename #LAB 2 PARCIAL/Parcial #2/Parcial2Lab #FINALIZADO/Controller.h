@@ -68,4 +68,4 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee);
 
 int controller_sueldoAllEmployee(LinkedList* pArrayListEmployee);
 int controller_ListEmployeeSueldos(LinkedList* pArrayListEmployee);
-int controller_ListEmployeeFilter(LinkedList* pArrayListEmployee, LinkedList* pArrayListFilter);
+LinkedList* controller_ListEmployeeFilter(LinkedList* pArrayListEmployee);
