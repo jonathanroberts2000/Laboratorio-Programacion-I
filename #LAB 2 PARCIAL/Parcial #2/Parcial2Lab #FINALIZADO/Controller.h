@@ -53,19 +53,39 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee);
  *
  * \param path char* Ruta del archivo
  * \param pArrayListEmployee LinkedList* Puntero a la lista de empleados
- * \return int Retorna 1 en caso de haber completado la operacion correctamente, caso contrario retornara 0PREGUNTAR SI DESEA GUARDAR POSTA O CANCELAR
+ * \return int Retorna 1 en caso de haber completado la operacion correctamente, caso contrario retornara 0
  *
  */
 int controller_saveAsText(char* path, LinkedList* pArrayListEmployee);
 /** \brief Controla el guardado en modo binario de la lista de empleados tras los cambios hechos por el usuario
  *
  * \param path char* Ruta del archivo
- * \param pArrayListEmployee LinkedList* Punterio a la lista de empleados
- * \return int Retorna 1 en caso de haber completado la operacion correctamente, caso contrario retornara 0PREGUNTAR SI DESEA GUARDAR POSTA O CANCELAR
+ * \param pArrayListEmployee LinkedList* Puntero a la lista de empleados
+ * \return int Retorna 1 en caso de haber completado la operacion correctamente, caso contrario retornara 0
  *
  */
 int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee);
 
+/** \brief Realiza el calculo de los sueldos de los empleados por un puntero a funcion
+ *
+ * \param pArrayListEmployee LinkedList* Puntero a la lista de empleados
+ * \return int Retorna 1 en caso de haber completado la operacion correctamente, caso contrario retornara 0
+ *
+ */
 int controller_sueldoAllEmployee(LinkedList* pArrayListEmployee);
+
+/** \brief Muestra la lista con todos los empleados y sus sueldos ya calculados correspondientemente
+ *
+ * \param pArrayListEmployee LinkedList* Puntero a la lista de empleados
+ * \return int Retorna 1 en caso de haber completado la operacion correctamente, caso contrario retornara 0
+ *
+ */
 int controller_ListEmployeeSueldos(LinkedList* pArrayListEmployee);
+
+/** \brief Controla que se haya generado la nueva lista con los empleados que cumplan los parametros
+ *
+ * \param pArrayListEmployee LinkedList* Puntero a la lista de empleados
+ * \return LinkedList* Retorna un puntero a la nueva lista
+ *
+ */
 LinkedList* controller_ListEmployeeFilter(LinkedList* pArrayListEmployee);

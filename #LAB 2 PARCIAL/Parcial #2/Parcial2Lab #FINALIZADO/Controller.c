@@ -167,7 +167,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
     FILE* MAT;
     if(path != NULL && pArrayListEmployee != NULL)
     {
-        get_Char(&respuesta, "Desea guardar los cambios realizados?...");
+        get_Char(&respuesta, "Desea guardar los resultados de la busqueda?...");
         if(respuesta == 's')
         {
             MAT = fopen(path, "w");
