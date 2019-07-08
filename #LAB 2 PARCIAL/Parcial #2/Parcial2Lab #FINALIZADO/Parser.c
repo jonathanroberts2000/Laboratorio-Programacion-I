@@ -6,7 +6,7 @@
 #define PATHT "datos.csv"
 #define PATHTR "resultados.csv"
 
-int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
+int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)/*LISTO Y USADO...*/
 {
     int status = 0;
     char id[100], nombre[100], horasTrabajadas[100], edad[100], empleo[100];

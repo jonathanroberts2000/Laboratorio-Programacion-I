@@ -3,22 +3,22 @@
 #include <string.h>
 #include "eEmpleado.h"
 
-eEmpleado* employee_new()
+eEmpleado* employee_new()/*...LISTO...*/
 {
     eEmpleado* empleado = (eEmpleado*)malloc(sizeof(eEmpleado));
     return empleado;
 }
 
-eEmpleado* employee_newParametros(char* idStr, char* nombreStr, char* empleo, char* edad, char* horasTrabajadasStr)
+eEmpleado* employee_newParametros(char* idStr, char* nombreStr, char* empleoStr, char* edadStr, char* horasTrabajadasStr)/*...LISTO...*/
 {
     eEmpleado* empleado = employee_new();
-    if(idStr != NULL && nombreStr != NULL && horasTrabajadasStr != NULL && edad != NULL && empleado != NULL && empleo != NULL)
+    if(idStr != NULL && nombreStr != NULL && horasTrabajadasStr != NULL && edadStr != NULL && empleoStr != NULL && empleado != NULL)
     {
         employee_setId(empleado, atoi(idStr));
-        employee_setEmpleo(empleado, empleo);
+        employee_setEmpleo(empleado, empleoStr);
         employee_setNombre(empleado, nombreStr);
         employee_setHorasTrabajadas(empleado, atoi(horasTrabajadasStr));
-        employee_setEdad(empleado, atoi(edad));
+        employee_setEdad(empleado, atoi(edadStr));
         return empleado;
     }else
     {
@@ -26,7 +26,7 @@ eEmpleado* employee_newParametros(char* idStr, char* nombreStr, char* empleo, ch
     }
 }
 
-int employee_setId(eEmpleado* this, int id)
+int employee_setId(eEmpleado* this, int id)/*...LISTO...*/
 {
     int status = 0;
     if(this != NULL && id > 0)
@@ -37,7 +37,7 @@ int employee_setId(eEmpleado* this, int id)
     return status;
 }
 
-int employee_getId(eEmpleado* this)
+int employee_getId(eEmpleado* this)/*...LISTO...*/
 {
     int returnAux = -1;
     if(this != NULL)
@@ -47,7 +47,7 @@ int employee_getId(eEmpleado* this)
     return returnAux;
 }
 
-int employee_setNombre(eEmpleado* this, char* nombre)
+int employee_setNombre(eEmpleado* this, char* nombre)/*...LISTO...*/
 {
     int status = 0;
     if(this != NULL && nombre != NULL)
@@ -58,7 +58,7 @@ int employee_setNombre(eEmpleado* this, char* nombre)
     return status;
 }
 
-char* employee_getNombre(eEmpleado* this)
+char* employee_getNombre(eEmpleado* this)/*...LISTO...*/
 {
     char* returnAux = NULL;
     if(this != NULL)
@@ -68,55 +68,7 @@ char* employee_getNombre(eEmpleado* this)
     return returnAux;
 }
 
-int employee_setHorasTrabajadas(eEmpleado* this, int horasTrabajadas)
-{
-    int status = 0;
-    if(this != NULL)
-    {
-        this->horasTrabajadas = horasTrabajadas;
-        status = 1;
-    }
-    return status;
-}
-
-int employee_setSueldo(eEmpleado* this, float sueldo)
-{
-    int status = 0;
-    if(this != NULL)
-    {
-        this->sueldo = sueldo;
-        status = 1;
-    }
-    return status;
-}
-
-int employee_getHorasTrabajadas(eEmpleado* this)
-{
-    int returnAux;
-    if(this != NULL)
-    {
-        returnAux = (this->horasTrabajadas);
-    }
-    return returnAux;
-}
-
-int employee_compareByName(eEmpleado* e1, eEmpleado* e2)
-{
-    return strcmp(e1->nombre,e2->nombre);
-}
-
-int employee_setEdad(eEmpleado* this, int edad)
-{
-    int status = 0;
-    if(this != NULL)
-    {
-        this->edad = edad;
-        status = 1;
-    }
-    return status;
-}
-
-int employee_setEmpleo(eEmpleado* this, char* empleo)
+int employee_setEmpleo(eEmpleado* this, char* empleo)/*...LISTO...*/
 {
     int status = 0;
     if(this!= NULL && empleo != NULL)
@@ -127,7 +79,7 @@ int employee_setEmpleo(eEmpleado* this, char* empleo)
     return status;
 }
 
-char* employee_getEmpleo(eEmpleado* this)
+char* employee_getEmpleo(eEmpleado* this)/*...LISTO...*/
 {
     char* returnAux = NULL;
     if(this != NULL)
@@ -137,7 +89,39 @@ char* employee_getEmpleo(eEmpleado* this)
     return returnAux;
 }
 
-int employee_getEdad(eEmpleado* this)
+int employee_setHorasTrabajadas(eEmpleado* this, int horasTrabajadas)/*...LISTO...*/
+{
+    int status = 0;
+    if(this != NULL)
+    {
+        this->horasTrabajadas = horasTrabajadas;
+        status = 1;
+    }
+    return status;
+}
+
+int employee_getHorasTrabajadas(eEmpleado* this)/*...LISTO...*/
+{
+    int returnAux;
+    if(this != NULL)
+    {
+        returnAux = (this->horasTrabajadas);
+    }
+    return returnAux;
+}
+
+int employee_setEdad(eEmpleado* this, int edad)/*...LISTO...*/
+{
+    int status = 0;
+    if(this != NULL)
+    {
+        this->edad = edad;
+        status = 1;
+    }
+    return status;
+}
+
+int employee_getEdad(eEmpleado* this)/*...LISTO...*/
 {
     int returnAux;
     if(this != NULL)
@@ -147,19 +131,18 @@ int employee_getEdad(eEmpleado* this)
     return returnAux;
 }
 
-int laQueMapea(eEmpleado* unEmpleado)
+int employee_setSueldo(eEmpleado* this, float sueldo)/*...LISTO...*/
 {
-    int returnAux;
-    float sueldo;
-    if(unEmpleado != NULL)
+    int status = 0;
+    if(this != NULL)
     {
-        sueldo = employee_getHorasTrabajadas(unEmpleado) * 300;
-        returnAux = employee_setSueldo(unEmpleado, sueldo);
+        this->sueldo = sueldo;
+        status = 1;
     }
-    return returnAux;
+    return status;
 }
 
-float employee_getSueldo(eEmpleado* this)
+float employee_getSueldo(eEmpleado* this)/*...LISTO...*/
 {
     float returnAux = -1;
     if(this != NULL)
@@ -169,12 +152,29 @@ float employee_getSueldo(eEmpleado* this)
     return returnAux;
 }
 
-int laQuefiltra(eEmpleado* unEmpleado)
+int employee_compareByName(eEmpleado* this1, eEmpleado* this2)/*...LISTO...*/
+{
+    return strcmp(this1->nombre,this2->nombre);
+}
+
+int laQueMapea(eEmpleado* this)/*...LISTO...*/
+{
+    int returnAux;
+    float sueldo;
+    if(this != NULL)
+    {
+        sueldo = employee_getHorasTrabajadas(this) * 300;
+        returnAux = employee_setSueldo(this, sueldo);
+    }
+    return returnAux;
+}
+
+int laQuefiltra(eEmpleado* this)/*...LISTO...*/
 {
     int returnAux = -1;
-    if(unEmpleado != NULL)
+    if(this != NULL)
     {
-        if(stricmp(employee_getEmpleo(unEmpleado), "programador") == 0 && employee_getEdad(unEmpleado) > 20)
+        if(stricmp(employee_getEmpleo(this), "programador") == 0 && employee_getEdad(this) > 20)
         {
             returnAux = 1;
         }

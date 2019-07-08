@@ -3,7 +3,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1562561043 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\main.c
+1562607306 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\main.c
 	<stdio.h>
 	<stdlib.h>
 	"LinkedList.h"
@@ -11,19 +11,19 @@
 	"pInput.h"
 	"Controller.h"
 
-1562375072 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\eempleado.c
+1562609992 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\eempleado.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"eEmpleado.h"
 
-1562373705 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\linkedlist.c
+1562626076 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\linkedlist.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"LinkedList.h"
 
-1562277233 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\parser.c
+1562610136 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\parser.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -37,7 +37,7 @@
 	<string.h>
 	"pInput.h"
 
-1562561103 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\controller.c
+1562609308 source:c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\controller.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -49,9 +49,9 @@
 
 1562374914 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\linkedlist.h
 
-1562373230 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\eempleado.h
+1562626390 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\eempleado.h
 
-1562561930 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\controller.h
+1562619959 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\controller.h
 
 1562277233 c:\users\jonathan roberts\desktop\new\laboratorio_programacion_i\#lab 2 parcial\parcial #2\parcial2lab #finalizado\parser.h
 

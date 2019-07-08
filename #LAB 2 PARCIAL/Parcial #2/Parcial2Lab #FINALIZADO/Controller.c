@@ -9,7 +9,7 @@
 #define PATHT "datos.csv"
 #define PATHTR "resultados.csv"
 
-int controller_loadFromText(char* path, LinkedList* pArrayListEmployee)
+int controller_loadFromText(char* path, LinkedList* pArrayListEmployee)/*LISTO Y USADO...*/
 {
     int status = 0;
     if(path != NULL && pArrayListEmployee != NULL)
@@ -72,7 +72,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
                 get_String(aux->nombre, "Ingrese el nuevo nombre: ");
                 break;
             case 2:
-                get_String(aux->empleo, "Ingrese e nuevo empleo: ");
+                get_String(aux->empleo, "Ingrese el nuevo empleo: ");
                 break;
             case 3:
                 get_Int(&(aux->edad), "Ingrese la nueva edad: ");
@@ -109,7 +109,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
         aux = ll_get(pArrayListEmployee, (id-1));
         if(aux != NULL)
         {
-            printf("%d--%s--%s--%d--%d\n", aux->id, aux->nombre, aux->empleo, aux->edad, aux->horasTrabajadas);
+            printf("%d %10s %15s %4d %13d\n", employee_getId(aux), employee_getNombre(aux), employee_getEmpleo(aux), employee_getEdad(aux), employee_getHorasTrabajadas(aux));
             get_Char(&respuesta, "Desea eliminar el empleado mostrado anteriormente?");
             if(respuesta == 's')
             {
@@ -128,7 +128,7 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
     return status;
 }
 
-int controller_ListEmployee(LinkedList* pArrayListEmployee)///LISTO
+int controller_ListEmployee(LinkedList* pArrayListEmployee)/*LISTO Y USADO...*/
 {
     int status = 0;
     int i;
@@ -136,18 +136,18 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)///LISTO
     if(pArrayListEmployee != NULL)
     {
         controller_sortEmployee(pArrayListEmployee);
-        printf("Id--Nombre--Empleo--Edad--Horas trabajadas\n");
+        printf("ID    NOMBRE        EMPLEO    EDAD    HORAS TRABAJADAS\n");
         for(i=0;i<ll_len(pArrayListEmployee);i++)
         {
             aux = ll_get(pArrayListEmployee, i);
-            printf("%d--%s--%s--%d--%d\n", employee_getId(aux), employee_getNombre(aux), employee_getEmpleo(aux), employee_getEdad(aux), employee_getHorasTrabajadas(aux));
+            printf("%d %10s %15s %4d %13d\n", employee_getId(aux), employee_getNombre(aux), employee_getEmpleo(aux), employee_getEdad(aux), employee_getHorasTrabajadas(aux));
             status = 1;
         }
     }
     return status;
 }
 
-int controller_sortEmployee(LinkedList* pArrayListEmployee)
+int controller_sortEmployee(LinkedList* pArrayListEmployee)/*LISTO Y USADO...*/
 {
     int status = 0;
     if(pArrayListEmployee != NULL)
@@ -158,7 +158,7 @@ int controller_sortEmployee(LinkedList* pArrayListEmployee)
     return status;
 }
 
-int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
+int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)/*LISTO Y USADO...*/
 {
     int status = 0;
     int i;
@@ -174,7 +174,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListEmployee)
             for(i=0;i<ll_len(pArrayListEmployee);i++)
             {
                 aux = ll_get(pArrayListEmployee,i);
-                fprintf(MAT, "%d,%s,%s,%d,%d,%.2f\n", employee_getId(aux), employee_getNombre(aux), employee_getEmpleo(aux), employee_getEdad(aux), employee_getHorasTrabajadas(aux), employee_getSueldo(aux));
+                fprintf(MAT, "%d,%s,%s,%d,%d,%.3f\n", employee_getId(aux), employee_getNombre(aux), employee_getEmpleo(aux), employee_getEdad(aux), employee_getHorasTrabajadas(aux), employee_getSueldo(aux));
             }
             fclose(MAT);
             status = 1;
@@ -214,7 +214,7 @@ int controller_saveAsBinary(char* path , LinkedList* pArrayListEmployee)
     return status;
 }
 
-int controller_sueldoAllEmployee(LinkedList* pArrayListEmployee)
+int controller_sueldoAllEmployee(LinkedList* pArrayListEmployee)/*LISTO Y USADO...*/
 {
     int status = 0;
     if(pArrayListEmployee != NULL)
@@ -225,24 +225,25 @@ int controller_sueldoAllEmployee(LinkedList* pArrayListEmployee)
     return status;
 }
 
-int controller_ListEmployeeSueldos(LinkedList* pArrayListEmployee)
+int controller_ListEmployeeSueldos(LinkedList* pArrayListEmployee)/*LISTO Y USADO...*/
 {
     int status = 0;
     int i;
     eEmpleado* aux;
     if(pArrayListEmployee != NULL)
     {
+        printf("ID    NOMBRE        EMPLEO    EDAD    HORAS TRABAJADAS    SUELDO\n");
         for(i=0;i<ll_len(pArrayListEmployee);i++)
         {
             aux = ll_get(pArrayListEmployee, i);
-            printf("%d--%s--%s--%d--%d--%.3f\n", employee_getId(aux), employee_getNombre(aux), employee_getEmpleo(aux), employee_getEdad(aux), employee_getHorasTrabajadas(aux), employee_getSueldo(aux));
+            printf("%d %10s %15s %4d %13d %18.3f\n", employee_getId(aux), employee_getNombre(aux), employee_getEmpleo(aux), employee_getEdad(aux), employee_getHorasTrabajadas(aux), employee_getSueldo(aux));
         }
         status = 1;
     }
     return status;
 }
 
-LinkedList* controller_ListEmployeeFilter(LinkedList* pArrayListEmployee)
+LinkedList* controller_ListEmployeeFilter(LinkedList* pArrayListEmployee)/*ARREGLAR...*/
 {
     LinkedList* listFilter;
     if(pArrayListEmployee != NULL)
