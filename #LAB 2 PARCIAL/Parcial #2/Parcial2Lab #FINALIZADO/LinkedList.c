@@ -4,7 +4,7 @@
 #include "LinkedList.h"
 
 static Node* getNode(LinkedList* this, int nodeIndex);
-static int addNode(LinkedList* this, int nodeIndex,void* pElement);
+static int addNode(LinkedList* this, int nodeIndex, void* pElement);
 
 /** \brief Crea un nuevo LinkedList en memoria de manera dinamica
  *
@@ -12,7 +12,7 @@ static int addNode(LinkedList* this, int nodeIndex,void* pElement);
  *  \return LinkedList* Retorna (NULL) en el caso de no conseguir espacio en memoria
  *                      o el puntero al espacio reservado
  */
-LinkedList* ll_newLinkedList(void)
+LinkedList* ll_newLinkedList()
 {
     LinkedList* this;
     this = (LinkedList*) malloc(sizeof(LinkedList));
@@ -85,7 +85,7 @@ Node* test_getNode(LinkedList* this, int nodeIndex)
                         ( 0) Si funciono correctamente
  *
  */
-static int addNode(LinkedList* this, int nodeIndex,void* pElement)
+static int addNode(LinkedList* this, int nodeIndex, void* pElement)
 {
     int returnAux = -1;
     Node* newNode;
@@ -119,9 +119,9 @@ static int addNode(LinkedList* this, int nodeIndex,void* pElement)
                         ( 0) Si funciono correctamente
  *
  */
-int test_addNode(LinkedList* this, int nodeIndex,void* pElement)
+int test_addNode(LinkedList* this, int nodeIndex, void* pElement)
 {
-    return addNode(this,nodeIndex,pElement);
+    return addNode(this, nodeIndex, pElement);
 }
 
 /** \brief  Agrega un elemento a la lista
@@ -180,7 +180,7 @@ void* ll_get(LinkedList* this, int index)
                         ( 0) Si funciono correctamente
  *
  */
-int ll_set(LinkedList* this, int index,void* pElement)
+int ll_set(LinkedList* this, int index, void* pElement)
 {
     int returnAux = -1;
     Node* auxNode;
@@ -201,7 +201,7 @@ int ll_set(LinkedList* this, int index,void* pElement)
                         ( 0) Si funciono correctamente
  *
  */
-int ll_remove(LinkedList* this,int index)
+int ll_remove(LinkedList* this, int index)
 {
     int returnAux = -1;
     Node* previous;
@@ -343,7 +343,7 @@ int ll_push(LinkedList* this, int index, void* pElement)
                             (pElement) Si funciono correctamente
  *
  */
-void* ll_pop(LinkedList* this,int index)
+void* ll_pop(LinkedList* this, int index)
 {
     void* returnAux = NULL;
     if(this != NULL && (index >= 0 && index <= ll_len(this)))
@@ -389,7 +389,7 @@ int ll_contains(LinkedList* this, void* pElement)
                         ( 1) Si los elementos de (this2) estan contenidos en la lista (this)
                         ( 0) si los elementos de (this2) NO estan contenidos en la lista (this)
 */
-int ll_containsAll(LinkedList* this,LinkedList* this2)
+int ll_containsAll(LinkedList* this, LinkedList* this2)
 {
     int returnAux = -1;
     int i;
@@ -420,7 +420,7 @@ int ll_containsAll(LinkedList* this,LinkedList* this2)
                                 o (si el indice to es menor o igual a from o mayor al len de la lista)
                          (puntero a la nueva lista) Si ok
 */
-LinkedList* ll_subList(LinkedList* this,int from,int to)
+LinkedList* ll_subList(LinkedList* this, int from, int to)
 {
     LinkedList* cloneArray = NULL;
     int i;
@@ -458,7 +458,7 @@ LinkedList* ll_clone(LinkedList* this)
  * \return int Retorna  (-1) Error: si el puntero a la listas es NULL
                                 ( 0) Si ok
  */
-int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
+int ll_sort(LinkedList* this, int (*pFunc)(void*, void*), int order)
 {
     int returnAux = -1;
     int i,j;
@@ -534,3 +534,4 @@ LinkedList* ll_filter(LinkedList* listIn, int (*pFunc)(void*))
     }
     return newLinkedList;
 }
+

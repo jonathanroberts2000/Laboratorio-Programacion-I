@@ -34,8 +34,8 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
     eEmpleado* e1 = employee_new();
     if(pArrayListEmployee != NULL)
     {
-        puts("Id generado correctamente!");
         id = (ll_len(pArrayListEmployee) + 1);
+        puts("Id generado correctamente!");
         get_String(nombre, "Ingrese nombre: ");
         get_String(empleo, "Ingrese un empleo: ");
         fflush(stdin);

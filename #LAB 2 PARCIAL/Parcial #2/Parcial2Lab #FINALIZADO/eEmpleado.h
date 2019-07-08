@@ -152,10 +152,3 @@ int laQueMapea(eEmpleado* this);/*LISTO Y USADO...*/
  *
  */
 int laQuefiltra(eEmpleado* this);/*LISTO Y USADO...*/
-
-
-
-
-
-
-

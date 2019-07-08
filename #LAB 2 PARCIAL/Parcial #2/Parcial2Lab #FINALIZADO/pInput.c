@@ -88,3 +88,4 @@ void pointer_error(int retorno, char null[], char exito[], char eCondicion[], ch
         printf("%s\n", mErrorId);
     }
 }
+
