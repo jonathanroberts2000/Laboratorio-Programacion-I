@@ -1,0 +1,57 @@
+# depslib dependency file v1.0
+1562760195 source:c:\users\alumno\desktop\#lab 2 parcial\recup\lab i parcial 2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1562760170 c:\users\alumno\desktop\#lab 2 parcial\recup\lab i parcial 2\linkedlist.h
+
+1562764708 source:c:\users\alumno\desktop\#lab 2 parcial\recup\lab i parcial 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"ePelicula.h"
+	"pInput.h"
+	"parser.h"
+	"Controller.h"
+
+1562760338 source:c:\users\alumno\desktop\#lab 2 parcial\recup\lab i parcial 2\pinput.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"pInput.h"
+
+1562760338 c:\users\alumno\desktop\#lab 2 parcial\recup\lab i parcial 2\pinput.h
+
+1562764838 source:c:\users\alumno\desktop\#lab 2 parcial\recup\lab i parcial 2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"ePelicula.h"
+	"Controller.h"
+	"parser.h"
+	"pInput.h"
+
+1562762977 source:c:\users\alumno\desktop\#lab 2 parcial\recup\lab i parcial 2\epelicula.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ePelicula.h"
+
+1562762977 c:\users\alumno\desktop\#lab 2 parcial\recup\lab i parcial 2\epelicula.h
+
+1562763234 c:\users\alumno\desktop\#lab 2 parcial\recup\lab i parcial 2\controller.h
+
+1562761904 c:\users\alumno\desktop\#lab 2 parcial\recup\lab i parcial 2\parser.h
+
+1562762422 source:c:\users\alumno\desktop\#lab 2 parcial\recup\lab i parcial 2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"ePelicula.h"
+
