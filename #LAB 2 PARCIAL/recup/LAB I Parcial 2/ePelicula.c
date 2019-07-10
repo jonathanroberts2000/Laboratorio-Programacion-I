@@ -83,7 +83,7 @@ char* pelicula_getNombre(ePelicula* this)
     char* nombre;
     if(this != NULL)
     {
-        strcpy(nombre, this->nombre);
+        nombre = this->nombre;
     }
     return nombre;
 }
@@ -103,17 +103,18 @@ char* pelicula_getGenero(ePelicula* this)
     char* genero;
     if(this != NULL)
     {
-        strcpy(genero, this->genero);
+        genero = this->genero;
     }
     return genero;
 }
 
 int pelicula_compareById(ePelicula* p1, ePelicula* p2)
 {
-    int comp;
+    int comp = -1;
     if(pelicula_getId(p1) > pelicula_getId(p2))
     {
         comp = 1;
     }
     return comp;
 }
+

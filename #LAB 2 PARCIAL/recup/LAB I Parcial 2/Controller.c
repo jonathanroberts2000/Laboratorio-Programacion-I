@@ -30,13 +30,14 @@ int controller_ListPeliculas(LinkedList* pArrayListPeliculas)
     if(pArrayListPeliculas != NULL)
     {
         ll_sort(pArrayListPeliculas, &pelicula_compareById, 1);
-        printf("ID   NOMBRE   ANIO   GENERO\n");
+        printf("ID                     NOMBRE                                         ANIO                     GENERO\n");
         for(i=0;i<ll_len(pArrayListPeliculas);i++)
         {
             aux = ll_get(pArrayListPeliculas, i);
-            printf("%d---%s---%d---%s\n", pelicula_getId(aux), pelicula_getNombre(aux), pelicula_getAnio(aux), pelicula_getGenero(aux));
+            printf("%2d-%55s %15d%30s\n", pelicula_getId(aux), pelicula_getNombre(aux), pelicula_getAnio(aux), pelicula_getGenero(aux));
             status = 1;
         }
     }
     return status;
 }
+

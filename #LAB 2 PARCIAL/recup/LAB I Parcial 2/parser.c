@@ -9,9 +9,10 @@
 int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListPeliculas)
 {
     int status = 0;
-    char id[100], nombre[100], anio[100], genero[100];
+    char id[100], nombre[1000], anio[100], genero[1000];
     if(pFile != NULL && pArrayListPeliculas != NULL)
     {
+        fscanf(pFile, "%[^,],%[^,],%[^\n]\n", id, nombre, anio);
         while(!feof(pFile))
         {
             ePelicula* aux = pelicula_new();
@@ -23,3 +24,4 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListPeliculas)
     }
     return status;
 }
+

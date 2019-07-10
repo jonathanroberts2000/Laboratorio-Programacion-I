@@ -6,7 +6,8 @@
 #include "pInput.h"
 #include "parser.h"
 #include "Controller.h"
-//#define PATHT "datosMF1.csv"
+#define PATHDepurar "depuracion.csv"
+#define PATHFiltro "resultados.csv"
 int main()
 {
     int option;

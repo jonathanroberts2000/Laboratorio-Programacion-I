@@ -97,4 +97,3 @@ int controller_ListEmployeeSueldos(LinkedList* pArrayListEmployee);/*...LISTO...
  *
  */
 LinkedList* controller_ListEmployeeFilter(LinkedList* pArrayListEmployee);/*ARRREGLAR*/
-

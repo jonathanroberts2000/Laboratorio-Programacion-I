@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1562792449 source:c:\users\jonathan roberts\desktop\#lab 2 parcial\recup fecha final #2\lab 1 recup final2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Parser.h"
+	"pInput.h"
+
+1562791973 source:c:\users\jonathan roberts\desktop\#lab 2 parcial\recup fecha final #2\lab 1 recup final2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1562789732 source:c:\users\jonathan roberts\desktop\#lab 2 parcial\recup fecha final #2\lab 1 recup final2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1562789780 c:\users\jonathan roberts\desktop\#lab 2 parcial\recup fecha final #2\lab 1 recup final2\linkedlist.h
+
+1562789975 source:c:\users\jonathan roberts\desktop\#lab 2 parcial\recup fecha final #2\lab 1 recup final2\pinput.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"pInput.h"
+
+1562791668 source:c:\users\jonathan roberts\desktop\#lab 2 parcial\recup fecha final #2\lab 1 recup final2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"pInput.h"
+	"controller.h"
+
+1562791702 c:\users\jonathan roberts\desktop\#lab 2 parcial\recup fecha final #2\lab 1 recup final2\pinput.h
+
+1562792631 c:\users\jonathan roberts\desktop\#lab 2 parcial\recup fecha final #2\lab 1 recup final2\controller.h
+
+1562791837 c:\users\jonathan roberts\desktop\#lab 2 parcial\recup fecha final #2\lab 1 recup final2\parser.h
+

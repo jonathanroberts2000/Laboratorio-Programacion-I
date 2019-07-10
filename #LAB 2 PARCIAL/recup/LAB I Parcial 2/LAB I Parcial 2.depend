@@ -55,3 +55,60 @@
 	"LinkedList.h"
 	"ePelicula.h"
 
+1562789257 source:c:\users\jonathan roberts\desktop\new1.1\laboratorio_programacion_i\#lab 2 parcial\recup\lab i parcial 2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"ePelicula.h"
+	"Controller.h"
+	"parser.h"
+	"pInput.h"
+
+1562789311 c:\users\jonathan roberts\desktop\new1.1\laboratorio_programacion_i\#lab 2 parcial\recup\lab i parcial 2\linkedlist.h
+
+1562789289 c:\users\jonathan roberts\desktop\new1.1\laboratorio_programacion_i\#lab 2 parcial\recup\lab i parcial 2\epelicula.h
+
+1562789269 c:\users\jonathan roberts\desktop\new1.1\laboratorio_programacion_i\#lab 2 parcial\recup\lab i parcial 2\controller.h
+
+1562780796 c:\users\jonathan roberts\desktop\new1.1\laboratorio_programacion_i\#lab 2 parcial\recup\lab i parcial 2\parser.h
+
+1562780796 c:\users\jonathan roberts\desktop\new1.1\laboratorio_programacion_i\#lab 2 parcial\recup\lab i parcial 2\pinput.h
+
+1562789110 source:c:\users\jonathan roberts\desktop\new1.1\laboratorio_programacion_i\#lab 2 parcial\recup\lab i parcial 2\epelicula.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ePelicula.h"
+
+1562789300 source:c:\users\jonathan roberts\desktop\new1.1\laboratorio_programacion_i\#lab 2 parcial\recup\lab i parcial 2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1562789192 source:c:\users\jonathan roberts\desktop\new1.1\laboratorio_programacion_i\#lab 2 parcial\recup\lab i parcial 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"ePelicula.h"
+	"pInput.h"
+	"parser.h"
+	"Controller.h"
+
+1562789117 source:c:\users\jonathan roberts\desktop\new1.1\laboratorio_programacion_i\#lab 2 parcial\recup\lab i parcial 2\pinput.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"pInput.h"
+
+1562789157 source:c:\users\jonathan roberts\desktop\new1.1\laboratorio_programacion_i\#lab 2 parcial\recup\lab i parcial 2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"parser.h"
+	"ePelicula.h"
+

@@ -1,13 +1,14 @@
 
 typedef struct{
     int id;
-    char nombre[100];
+    char nombre[1000];
     int anio;
-    char genero[100];
+    char genero[1000];
 }ePelicula;
 
 ePelicula* pelicula_new();
 ePelicula* pelicula_newParametros(char* idStr, char* nombreStr, char* anioStr, char* generoStr);
+
 int pelicula_setId(ePelicula* this, int id);
 int pelicula_setNombre(ePelicula* this, char* nombre);
 int pelicula_setAnio(ePelicula* this, int anio);
